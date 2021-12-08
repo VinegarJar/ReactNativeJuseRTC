@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "summary": "A short description of ReactNativeJuseRTC.",
   "description": "TODO: Add long description of the pod here.",
-  "homepage": "https://github.com/15885460/ReactNativeJuseRTC",
+  "homepage": "https://github.com/VinegarJar/ReactNativeJuseRTC.git",
   "license": {
     "type": "MIT",
     "file": "LICENSE"
@@ -12,11 +12,16 @@
     "15885460": "2966497308@qq.com"
   },
   "source": {
-    "git": "https://github.com/15885460/ReactNativeJuseRTC.git",
+    "git": "https://github.com/VinegarJar/ReactNativeJuseRTC.git",
     "tag": "0.1.0"
   },
   "platforms": {
     "ios": "9.0"
   },
-  "source_files": "ReactNativeJuseRTC/Classes/**/*"
+  "source_files": "ReactNativeJuseRTC/Classes/**/*",
+  "dependencies": {
+    "React": [
+
+    ]
+  }
 }

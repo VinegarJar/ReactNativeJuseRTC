@@ -10,7 +10,13 @@
 #endif
 #endif
 
+#import "UIColor+XXYExtension.h"
+#import "UIImage+XXYImageColor.h"
+#import "UIView+XXYViewFrame.h"
+#import "Config.h"
 #import "FloatingWindowUtil.h"
+#import "FloatingWindowView.h"
+#import "RTCWindowView.h"
 
 FOUNDATION_EXPORT double ReactNativeJuseRTCVersionNumber;
 FOUNDATION_EXPORT const unsigned char ReactNativeJuseRTCVersionString[];
