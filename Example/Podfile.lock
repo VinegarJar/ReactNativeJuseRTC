@@ -1,0 +1,16 @@
+PODS:
+  - ReactNativeJuseRTC (0.1.0)
+
+DEPENDENCIES:
+  - ReactNativeJuseRTC (from `../`)
+
+EXTERNAL SOURCES:
+  ReactNativeJuseRTC:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  ReactNativeJuseRTC: a8e9bb8fccfeee99e606482ebda2ca94954f5598
+
+PODFILE CHECKSUM: b8846366eff6294262edd8b8ae312a87a26e4eab
+
+COCOAPODS: 1.10.1

@@ -1,0 +1,6 @@
+framework module Pods_ReactNativeJuseRTC_Example {
+  umbrella header "Pods-ReactNativeJuseRTC_Example-umbrella.h"
+
+  export *
+  module * { export * }
+}
