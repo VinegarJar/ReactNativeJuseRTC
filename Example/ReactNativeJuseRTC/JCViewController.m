@@ -7,7 +7,7 @@
 //
 
 #import "JCViewController.h"
-
+#import "FloatingWindowUtil.h"
 @interface JCViewController ()
 
 @end
@@ -18,7 +18,21 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+    button.backgroundColor = [UIColor orangeColor];
+    button.frame = CGRectMake(100, 100, 100, 100);
+//    button.titleLabel.text = @"跳转视频通话";
+    [ button  setTitle:@"跳转视频通话"  forState:UIControlStateNormal];
+    [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    [button addTarget:self action:@selector(touchesButtonWithSender:) forControlEvents:UIControlEventTouchUpInside];
+    
+    [self.view addSubview:button];
 }
+
+- (void)touchesButtonWithSender:(UIButton *)sender{
+   
+}
+
 
 - (void)didReceiveMemoryWarning
 {
