@@ -19,6 +19,12 @@
 		5952E5712760A11600EEE5B6 /* UIView+XXYViewFrame.h in Headers */ = {isa = PBXBuildFile; fileRef = 5952E56B2760A11600EEE5B6 /* UIView+XXYViewFrame.h */; };
 		5952E5722760A11600EEE5B6 /* UIImage+XXYImageColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 5952E56C2760A11600EEE5B6 /* UIImage+XXYImageColor.m */; };
 		5952E5732760A11600EEE5B6 /* UIImage+XXYImageColor.h in Headers */ = {isa = PBXBuildFile; fileRef = 5952E56D2760A11600EEE5B6 /* UIImage+XXYImageColor.h */; };
+		5952E5792760A22C00EEE5B6 /* FloatingWindowView.h in Headers */ = {isa = PBXBuildFile; fileRef = 5952E5772760A22C00EEE5B6 /* FloatingWindowView.h */; };
+		5952E57A2760A22C00EEE5B6 /* FloatingWindowView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5952E5782760A22C00EEE5B6 /* FloatingWindowView.m */; };
+		5952E5802760A27400EEE5B6 /* Config.h in Headers */ = {isa = PBXBuildFile; fileRef = 5952E57F2760A27400EEE5B6 /* Config.h */; };
+		5952E5902760AAE900EEE5B6 /* RTCWindowView.h in Headers */ = {isa = PBXBuildFile; fileRef = 5952E58E2760AAE900EEE5B6 /* RTCWindowView.h */; };
+		5952E5912760AAE900EEE5B6 /* RTCWindowView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5952E58F2760AAE900EEE5B6 /* RTCWindowView.m */; };
+		5952E5BA2760B81100EEE5B6 /* cut_normal@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5952E5B92760B81100EEE5B6 /* cut_normal@2x.png */; };
 		5EB800AB90CCF65A08C69064E61B7EAA /* FloatingWindowUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = F34A01419D74085E27B8AC58DE1EACC6 /* FloatingWindowUtil.m */; };
 		7254001C91A10593182EF68C2B030A5A /* ReactNativeJuseRTC-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = DFEE64288ACB5FBA2201DABEB31E9C07 /* ReactNativeJuseRTC-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		82095B5863DF6E34952499C8C3DA3C39 /* Pods-ReactNativeJuseRTC_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 63C3C5FCFDF5224FB2CC01B76FA18CE0 /* Pods-ReactNativeJuseRTC_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -58,6 +64,12 @@
 		5952E56B2760A11600EEE5B6 /* UIView+XXYViewFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+XXYViewFrame.h"; sourceTree = "<group>"; };
 		5952E56C2760A11600EEE5B6 /* UIImage+XXYImageColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+XXYImageColor.m"; sourceTree = "<group>"; };
 		5952E56D2760A11600EEE5B6 /* UIImage+XXYImageColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+XXYImageColor.h"; sourceTree = "<group>"; };
+		5952E5772760A22C00EEE5B6 /* FloatingWindowView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = FloatingWindowView.h; path = ReactNativeJuseRTC/Classes/FloatingWindowView.h; sourceTree = "<group>"; };
+		5952E5782760A22C00EEE5B6 /* FloatingWindowView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = FloatingWindowView.m; path = ReactNativeJuseRTC/Classes/FloatingWindowView.m; sourceTree = "<group>"; };
+		5952E57F2760A27400EEE5B6 /* Config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Config.h; path = ReactNativeJuseRTC/Classes/Config.h; sourceTree = "<group>"; };
+		5952E58E2760AAE900EEE5B6 /* RTCWindowView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = RTCWindowView.h; path = ReactNativeJuseRTC/Classes/RTCWindowView.h; sourceTree = "<group>"; };
+		5952E58F2760AAE900EEE5B6 /* RTCWindowView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = RTCWindowView.m; path = ReactNativeJuseRTC/Classes/RTCWindowView.m; sourceTree = "<group>"; };
+		5952E5B92760B81100EEE5B6 /* cut_normal@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cut_normal@2x.png"; sourceTree = "<group>"; };
 		5B30F0D5698331A9ED1216E935FD4E80 /* ReactNativeJuseRTC.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ReactNativeJuseRTC.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		63C3C5FCFDF5224FB2CC01B76FA18CE0 /* Pods-ReactNativeJuseRTC_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-ReactNativeJuseRTC_Example-umbrella.h"; sourceTree = "<group>"; };
 		675479013C026029D61A26D9F2A61937 /* Pods_ReactNativeJuseRTC_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ReactNativeJuseRTC_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -177,6 +189,12 @@
 				5952E5672760A0F600EEE5B6 /* Category */,
 				816BA6673B8E085E50AA139995B9F94C /* FloatingWindowUtil.h */,
 				F34A01419D74085E27B8AC58DE1EACC6 /* FloatingWindowUtil.m */,
+				5952E5772760A22C00EEE5B6 /* FloatingWindowView.h */,
+				5952E5782760A22C00EEE5B6 /* FloatingWindowView.m */,
+				5952E58E2760AAE900EEE5B6 /* RTCWindowView.h */,
+				5952E58F2760AAE900EEE5B6 /* RTCWindowView.m */,
+				5952E57F2760A27400EEE5B6 /* Config.h */,
+				5952E5B92760B81100EEE5B6 /* cut_normal@2x.png */,
 				E5725EC961D8B5B14C30A47392711967 /* Pod */,
 				DF1B7759C91C9BB76E1D47F79571EF8B /* Support Files */,
 			);
@@ -271,8 +289,11 @@
 				CB7574A9E5057AE36653CBBFD1ABB273 /* FloatingWindowUtil.h in Headers */,
 				7254001C91A10593182EF68C2B030A5A /* ReactNativeJuseRTC-umbrella.h in Headers */,
 				5952E5712760A11600EEE5B6 /* UIView+XXYViewFrame.h in Headers */,
+				5952E5802760A27400EEE5B6 /* Config.h in Headers */,
 				5952E56F2760A11600EEE5B6 /* UIColor+XXYExtension.h in Headers */,
 				5952E5732760A11600EEE5B6 /* UIImage+XXYImageColor.h in Headers */,
+				5952E5792760A22C00EEE5B6 /* FloatingWindowView.h in Headers */,
+				5952E5902760AAE900EEE5B6 /* RTCWindowView.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -384,6 +405,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5952E5BA2760B81100EEE5B6 /* cut_normal@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -417,10 +439,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5952E57A2760A22C00EEE5B6 /* FloatingWindowView.m in Sources */,
 				5952E56E2760A11600EEE5B6 /* UIView+XXYViewFrame.m in Sources */,
 				5EB800AB90CCF65A08C69064E61B7EAA /* FloatingWindowUtil.m in Sources */,
 				1D2D52417B1A2E4F5FD1CF624717A8EF /* ReactNativeJuseRTC-dummy.m in Sources */,
 				5952E5702760A11600EEE5B6 /* UIColor+XXYExtension.m in Sources */,
+				5952E5912760AAE900EEE5B6 /* RTCWindowView.m in Sources */,
 				5952E5722760A11600EEE5B6 /* UIImage+XXYImageColor.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

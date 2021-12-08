@@ -12,6 +12,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface FloatingWindowUtil : NSObject
 
++ (instancetype)shareInstance;
+
+- (void)xxy_startCallWithNumbers;
 @end
 
 NS_ASSUME_NONNULL_END

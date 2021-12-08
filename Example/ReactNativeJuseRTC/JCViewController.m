@@ -31,6 +31,8 @@
 
 - (void)touchesButtonWithSender:(UIButton *)sender{
    
+    [[FloatingWindowUtil shareInstance] xxy_startCallWithNumbers];
+    
 }
 
 
