@@ -41,9 +41,9 @@
     //切换button
     self.smallScreenButton = [self xxy_floatingWindowViewButton];
     self.smallScreenButton.backgroundColor = [UIColor orangeColor];
-    [self.smallScreenButton setTitle:@"切换" forState:UIControlStateNormal];
+//    [self.smallScreenButton setTitle:@"切换" forState:UIControlStateNormal];
 //    [self.smallScreenButton setImage:[UIImage imageNamed:@"cut_normal"] forState:UIControlStateNormal];
-//    [self.smallScreenButton setBackgroundImage:[UIImage imageNamed:@"cut_normal"] forState:UIControlStateNormal];
+    [self.smallScreenButton setBackgroundImage:[UIImage imageNamed:@"cut_normal"] forState:UIControlStateNormal];
     self.smallScreenButton.tag = 10000;
     self.smallScreenButton.frame = CGRectMake(kXXYScreenW-50, 30, 50 , 50);
     [self addSubview:self.smallScreenButton];

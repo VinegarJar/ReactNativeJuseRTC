@@ -2,7 +2,7 @@ PODS:
   - React (0.11.0):
     - React/Core (= 0.11.0)
   - React/Core (0.11.0)
-  - ReactNativeJuseRTC (0.1.0):
+  - ReactNativeJuseRTC (0.2.0):
     - React
 
 DEPENDENCIES:
@@ -18,7 +18,7 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   React: ab1a2e21deb34965c38328d5ec40cc7d12c6050a
-  ReactNativeJuseRTC: fc42e5e6eb9312221ee072390fee0b638262c530
+  ReactNativeJuseRTC: 22baa3d945bbb03dd827fce3b138169e2e6ff9d6
 
 PODFILE CHECKSUM: b8846366eff6294262edd8b8ae312a87a26e4eab
 

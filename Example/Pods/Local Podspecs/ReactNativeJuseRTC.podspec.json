@@ -1,6 +1,6 @@
 {
   "name": "ReactNativeJuseRTC",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "summary": "A short description of ReactNativeJuseRTC.",
   "description": "TODO: Add long description of the pod here.",
   "homepage": "https://github.com/VinegarJar/ReactNativeJuseRTC.git",
@@ -13,12 +13,17 @@
   },
   "source": {
     "git": "https://github.com/VinegarJar/ReactNativeJuseRTC.git",
-    "tag": "0.1.0"
+    "tag": "0.2.0"
   },
   "platforms": {
     "ios": "9.0"
   },
   "source_files": "ReactNativeJuseRTC/Classes/**/*",
+  "resource_bundles": {
+    "ReactNativeJuseRTC": [
+      "ReactNativeJuseRTC/Assets/*.png"
+    ]
+  },
   "dependencies": {
     "React": [
 
