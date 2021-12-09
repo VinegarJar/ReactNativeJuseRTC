@@ -1,6 +1,10 @@
 # Acknowledgements
 This application makes use of the following third party libraries:
 
+## NERtcSDK
+
+Copyright 2020 Netease 
+
 ## React
 
 BSD License

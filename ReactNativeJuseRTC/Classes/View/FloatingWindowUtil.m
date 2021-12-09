@@ -55,13 +55,7 @@
         [[UIApplication sharedApplication].delegate.window addSubview:self.currentCallManager.callManagerView];
         self.currentCallManager.callManagerView.alpha = 1.0f;
     } completion:^(BOOL finished) {
-        // 6.新的通话中 将状态设置为 正在通话中 self.isCalling = YES;
-        // 7.保存原通话数据: @[@"号码"]  self.oldData = phones;
-        
-        // 8.保存当前号码通话view
-//        self.currentView = self.currentCallManager.callManagerView;
-        // 9.保存当前通话管理对象
-//            self.oldCurrentCallManager = self.currentCallManager;
+
         // 10.开始通话或视频
         [self.currentCallManager xxy_startCallManagerWithNumbers];
     }];

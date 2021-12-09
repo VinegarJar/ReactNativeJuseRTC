@@ -48,18 +48,16 @@
     [self addSubview:self.smallScreenButton];
     
 
-    //拒绝button
-    UIImage *refuseBT = [UIImage imageNamed:@"btn_guaduan_normal"];
+
     self.closeButton = [self xxy_floatingWindowViewButton];
     self.closeButton.tag = 10002;
     [self.closeButton setTitle:@"拒绝" forState:UIControlStateNormal];
-//    [self.closeButton setBackgroundImage:refuseBT forState:UIControlStateNormal];
     self.closeButton.frame = CGRectMake(100, 30, 50 , 50 );
     [self addSubview:self.closeButton];
     
-
-    
 }
+
+
 
 //添加基本手势
 - (void)xxy_setBaseConfig{
@@ -79,7 +77,7 @@
 #pragma mark -- Events
 //切换视图  全屏或小窗口
 - (void)xxy_callViewTapHandle:(UITapGestureRecognizer *)callViewTap{
-    if (self.state==RTCWindowFloatingWindow) {
+    if (self->_state==RTCWindowFloatingWindow) {
  
         [UIView animateWithDuration:.3f animations:^{
             
@@ -105,8 +103,7 @@
     
 
     
-
-    if (self.state==RTCWindowFloatingWindow) {
+    if (self->_state==RTCWindowFloatingWindow) {
         switch (recognizer.state) {
                 
             case UIGestureRecognizerStateEnded:
@@ -118,14 +115,14 @@
               
                 
                 CGPoint translation = [recognizer translationInView:self];
-                CGPoint newCenter = CGPointMake(recognizer.view.center.x+ translation.x,
-                                                recognizer.view.center.y + translation.y);
-            // 限制屏幕范围：
-                newCenter.y = MAX(recognizer.view.frame.size.height/2, newCenter.y);
-                newCenter.y = MIN([UIApplication sharedApplication].delegate.window.size.height - recognizer.view.frame.size.height/2, newCenter.y);
-                newCenter.x = MAX(recognizer.view.frame.size.width/2, newCenter.x);
-                newCenter.x = MIN([UIApplication sharedApplication].delegate.window.size.width - recognizer.view.frame.size.width/2,newCenter.x);
-                recognizer.view.center = newCenter;
+                CGPoint center = CGPointMake(recognizer.view.center.x+ translation.x,
+                             recognizer.view.center.y + translation.y);
+               //限制屏幕范围：
+                center.y = MAX(recognizer.view.frame.size.height/2, center.y);
+                center.y = MIN([UIApplication sharedApplication].delegate.window.size.height - recognizer.view.frame.size.height/2, center.y);
+                center.x = MAX(recognizer.view.frame.size.width/2, center.x);
+                center.x = MIN([UIApplication sharedApplication].delegate.window.size.width - recognizer.view.frame.size.width/2,center.x);
+                recognizer.view.center = center;
                 [recognizer setTranslation:CGPointZero inView:[UIApplication sharedApplication].delegate.window];
                 
             }
@@ -198,16 +195,15 @@
 }
 
 
-//移除小窗口button
+//移除小窗口
 - (void)xxy_removeSmallButton{
-//    self.smallScreenButton .hidden = YES;
+
+    
     [self.smallScreenButton removeFromSuperview];
     self.smallScreenButton = nil;
-    
 
-    //
     [self.closeButton removeFromSuperview];
     self.closeButton = nil;
-
 }
+
 @end

@@ -24,7 +24,7 @@ TODO: Add long description of the pod here.
   s.homepage         = 'https://github.com/VinegarJar/ReactNativeJuseRTC.git'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
-  s.author           = { '15885460' => '2966497308@qq.com' }
+  s.author           = { 'chenmeian' => '2966497308@qq.com' }
   s.source           = { :git => 'https://github.com/VinegarJar/ReactNativeJuseRTC.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
@@ -42,4 +42,6 @@ TODO: Add long description of the pod here.
   # s.frameworks = 'UIKit', 'MapKit'
   # s.dependency 'AFNetworking', '~> 2.3'
   s.dependency "React"
+  s.dependency'NERtcSDK', '3.9.0'
+  
 end

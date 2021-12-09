@@ -15,6 +15,7 @@
 #import "UIImage+XXYImageColor.h"
 #import "UIView+XXYViewFrame.h"
 #import "Config.h"
+#import "ReactNativeJuseRTC.h"
 #import "FloatingWindowUtil.h"
 #import "FloatingWindowView.h"
 #import "RTCWindowView.h"

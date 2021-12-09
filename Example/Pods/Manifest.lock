@@ -1,8 +1,10 @@
 PODS:
+  - NERtcSDK (3.9.0)
   - React (0.11.0):
     - React/Core (= 0.11.0)
   - React/Core (0.11.0)
   - ReactNativeJuseRTC (0.2.0):
+    - NERtcSDK (= 3.9.0)
     - React
 
 DEPENDENCIES:
@@ -10,6 +12,7 @@ DEPENDENCIES:
 
 SPEC REPOS:
   trunk:
+    - NERtcSDK
     - React
 
 EXTERNAL SOURCES:
@@ -17,8 +20,9 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
+  NERtcSDK: 7c417ed429cdac3020fc5cd47461f8a478012236
   React: ab1a2e21deb34965c38328d5ec40cc7d12c6050a
-  ReactNativeJuseRTC: 22baa3d945bbb03dd827fce3b138169e2e6ff9d6
+  ReactNativeJuseRTC: ad22a26c1a386d28f97f6fce1f61d8a6c221233c
 
 PODFILE CHECKSUM: b8846366eff6294262edd8b8ae312a87a26e4eab
 
