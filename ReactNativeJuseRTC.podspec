@@ -35,6 +35,8 @@ TODO: Add long description of the pod here.
   s.resource_bundles = {
      'ReactNativeJuseRTC' => ['ReactNativeJuseRTC/Assets/*.png']
   }
+  
+  #s.resources = ['ReactNativeJuseRTC/Assets/resource/*.png']
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'

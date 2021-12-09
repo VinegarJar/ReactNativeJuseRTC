@@ -40,10 +40,9 @@
 
     //切换button
     self.smallScreenButton = [self xxy_floatingWindowViewButton];
-    self.smallScreenButton.backgroundColor = [UIColor orangeColor];
-//    [self.smallScreenButton setTitle:@"切换" forState:UIControlStateNormal];
-//    [self.smallScreenButton setImage:[UIImage imageNamed:@"cut_normal"] forState:UIControlStateNormal];
-    [self.smallScreenButton setBackgroundImage:[UIImage imageNamed:@"cut_normal"] forState:UIControlStateNormal];
+
+    [self.smallScreenButton setImage:[UIImage bundleForImage:@"cut_normal"] forState:UIControlStateNormal];
+
     self.smallScreenButton.tag = 10000;
     self.smallScreenButton.frame = CGRectMake(kXXYScreenW-50, 30, 50 , 50);
     [self addSubview:self.smallScreenButton];
@@ -175,8 +174,9 @@
 //            [self addSubview:self.smallScreenButton];
             
             self.smallScreenButton = [self xxy_floatingWindowViewButton];
-            self.smallScreenButton.backgroundColor = [UIColor orangeColor];
-            [self.smallScreenButton setTitle:@"切换" forState:UIControlStateNormal];
+//            self.smallScreenButton.backgroundColor = [UIColor orangeColor];
+//            [self.smallScreenButton setTitle:@"切换" forState:UIControlStateNormal];
+            [self.smallScreenButton setImage:[UIImage bundleForImage:@"cut_normal"] forState:UIControlStateNormal];
 //            UIImage *image = kGetImage(@"btn_-cut_hujiao_normal");
 //            [self.smallScreenButton setBackgroundImage:image forState:UIControlStateNormal];
             self.smallScreenButton.tag = 10000;

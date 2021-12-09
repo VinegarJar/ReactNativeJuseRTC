@@ -11,6 +11,7 @@
 #endif
 
 #import "UIColor+XXYExtension.h"
+#import "UIImage+TExtension.h"
 #import "UIImage+XXYImageColor.h"
 #import "UIView+XXYViewFrame.h"
 #import "Config.h"

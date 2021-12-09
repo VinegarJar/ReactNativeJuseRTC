@@ -7,6 +7,7 @@
 
 #import <UIKit/UIKit.h>
 #import "UIView+XXYViewFrame.h"
+#import "UIImage+TExtension.h"
 #import "Config.h"
 
 /**
