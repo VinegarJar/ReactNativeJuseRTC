@@ -44,7 +44,7 @@
     [self.smallScreenButton setImage:[UIImage bundleForImage:@"cut_normal"] forState:UIControlStateNormal];
 
     self.smallScreenButton.tag = 10000;
-    self.smallScreenButton.frame = CGRectMake(kXXYScreenW-50, 30, 50 , 50);
+    self.smallScreenButton.frame = CGRectMake(ScreenW-50, 30, 50 , 50);
     [self addSubview:self.smallScreenButton];
     
 
@@ -81,7 +81,7 @@
  
         [UIView animateWithDuration:.3f animations:^{
             
-            self.frame = kXXYScreenBounds;
+            self.frame = ScreenBounds;
             [self xxy_removeSmallButton];
       
         } completion:^(BOOL finished) {
@@ -157,6 +157,7 @@
     return button;
 }
 
+
 - (void)xxy_floatingWindowButtonWithSender:(UIButton *)sender{
     UIButton * button = sender;
 
@@ -166,7 +167,7 @@
             __strong typeof(weak_self) strongSelf = weak_self;
             [strongSelf xxy_removeSmallButton];
             
-            self.frame = CGRectMake(kXXYScreenW-KWindowDisplayWidth1-20, 20, KWindowDisplayWidth1, KWindowDisplayHeight1);
+            self.frame = CGRectMake(ScreenW-WindowDisplayWidth-20, 20, WindowDisplayWidth, WindowDisplayHeight);
           
 //            [self addSubview:self.smallScreenButton];
             
@@ -177,7 +178,7 @@
 //            UIImage *image = kGetImage(@"btn_-cut_hujiao_normal");
 //            [self.smallScreenButton setBackgroundImage:image forState:UIControlStateNormal];
             self.smallScreenButton.tag = 10000;
-            self.smallScreenButton.frame = CGRectMake(KWindowDisplayWidth1-50, 30, 50 , 50);
+            self.smallScreenButton.frame = CGRectMake(WindowDisplayWidth-50, 30, 50 , 50);
             [self addSubview:self.smallScreenButton];
             
             
@@ -205,5 +206,8 @@
     [self.closeButton removeFromSuperview];
     self.closeButton = nil;
 }
+
+
+
 
 @end

@@ -8,17 +8,15 @@
 #ifndef Config_h
 #define Config_h
 
-#define kXXYScreenW [UIScreen mainScreen].bounds.size.width
-#define kXXYScreenH [UIScreen mainScreen].bounds.size.height
-#define kXXYScreenBounds [UIScreen mainScreen].bounds
+#define ScreenW [UIScreen mainScreen].bounds.size.width
+#define ScreenH [UIScreen mainScreen].bounds.size.height
+#define ScreenBounds [UIScreen mainScreen].bounds
 
-#define kGetImage(imageName)     [UIImage imageNamed:imageName]
 
-/// (16.f / 9.f)
 //视频
 
-#define KWindowDisplayWidth1 100
-#define KWindowDisplayHeight1 100
+#define WindowDisplayWidth 100
+#define WindowDisplayHeight 100
 
 // 设置颜色RGB值
 #define kRGBColor(a,b,c) [UIColor colorWithRed:(a/255.0) green:(b/255.0) blue:(c/255.0) alpha:1.0]

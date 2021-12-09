@@ -16,10 +16,14 @@
      associateBundleURL = [[associateBundleURL URLByAppendingPathComponent:@"ReactNativeJuseRTC"] URLByAppendingPathExtension:@"framework"];
      associateBundleURL = [[NSBundle bundleWithURL:associateBundleURL] URLForResource:@"ReactNativeJuseRTC" withExtension:@"bundle"];
     
-    
      NSBundle *bundle = [NSBundle bundleWithURL:associateBundleURL];
-     NSString *imgName = [NSString stringWithFormat:@"%@@%ldx.png", name, (long)[[UIScreen mainScreen] scale]];
-     return [self imageWithContentsOfFile:[bundle pathForResource:imgName ofType:nil]];
+     NSString *imgName = [NSString stringWithFormat:@"%@.png", name];
+     if (imgName) {
+         return [self imageWithContentsOfFile:[bundle pathForResource:imgName ofType:nil]];
+     }
+     
+     NSString *imgScaleName = [NSString stringWithFormat:@"%@@%ldx.png", name, (long)[[UIScreen mainScreen] scale]];
+     return [self imageWithContentsOfFile:[bundle pathForResource:imgScaleName ofType:nil]];
 }
 
 
