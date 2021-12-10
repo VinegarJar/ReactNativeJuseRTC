@@ -21,7 +21,14 @@
 
 @implementation FloatingWindowUtil
 
-
+- (instancetype)init{
+    self = [super init];
+    if (self) {
+        //通话视屏初始化SDK
+        [self.floatWindow setupRTCEngine];
+    }
+    return self;
+}
 
 + (instancetype)shareInstance{
     static FloatingWindowUtil *floatViewUtil = nil;
@@ -37,7 +44,7 @@
 -(FloatingWindowView*)floatWindow{
     if (!_floatWindow) {
         [_floatWindow.callRTCView removeFromSuperview];
-        _floatWindow = [[FloatingWindowView alloc] initWithSignalingCall:@{} ];
+        _floatWindow = [[FloatingWindowView alloc] initWithSignalingCall:YES];
         _floatWindow.callRTCView.frame = [UIScreen mainScreen].bounds;
         _floatWindow.callRTCView.delegate = self;
         _floatWindow.callRTCView.alpha = .0f;
@@ -47,17 +54,17 @@
 
 
 
-- (void)startSignalingCall{
+- (void)startSignalingCall:(BOOL)signalingCall{
     
-    [UIView animateWithDuration:.3f animations:^{
-        [[UIApplication sharedApplication].delegate.window addSubview:self.floatWindow.callRTCView];
+    [UIView animateWithDuration:0.5 animations:^{
         self.floatWindow.callRTCView.alpha = 1.0f;
     } completion:^(BOOL finished) {
-
-        //通话视屏初始化SDK
-        [self.floatWindow setupRTCEngine];
+        [UIView animateWithDuration:0.25 animations:^{
+          self->_floatWindow.callRTCView.transform = CGAffineTransformIdentity;
+         [[UIApplication sharedApplication].delegate.window addSubview:self.floatWindow.callRTCView];
+        }];
+       
     }];
-    
 }
 
 

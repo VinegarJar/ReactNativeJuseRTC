@@ -7,7 +7,6 @@
 
 #import <UIKit/UIKit.h>
 #import "UIView+XXYViewFrame.h"
-#import "UIImage+TExtension.h"
 #import "Config.h"
 #import <NERtcSDK/NERtcSDK.h>
 #import <AVFoundation/AVFoundation.h>
@@ -35,12 +34,12 @@ typedef NS_ENUM(NSInteger, RTCWindowState) {
 
 @property (nonatomic, assign) RTCWindowState state;
 
-- (instancetype)initWithRTCWindowViewSignalingCall:(NSDictionary*)data;
+- (instancetype)initWithRTCWindowViewSignalingCall:(BOOL)signalingCall;
 
 @property (nonatomic, strong)  AVAudioPlayer *audioPlayer;/** 播放铃声player */
 
 
-
+-(void)signalingCallinfor:(NSDictionary *)data;
 
 @end
 

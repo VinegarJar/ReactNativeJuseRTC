@@ -14,7 +14,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (instancetype)shareInstance;
 
-- (void)startSignalingCall;
+- (void)startSignalingCall:(BOOL)signalingCall;
+
 @end
 
 NS_ASSUME_NONNULL_END

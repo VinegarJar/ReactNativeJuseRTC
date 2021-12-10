@@ -12,12 +12,16 @@
 #define ScreenH [UIScreen mainScreen].bounds.size.height
 #define ScreenBounds [UIScreen mainScreen].bounds
 
-
 //视频
-
 #define WindowDisplayWidth 100
 #define WindowDisplayHeight 100
 
+#define RTCRate     ([UIScreen mainScreen].bounds.size.width / 375.0)
+
+// 底部按钮
+#define RTCBtnWidth 60
+// 底部按钮容器的高度
+#define ContainerH  150
 
 // 设置颜色RGB值
 #define kRGBColor(a,b,c) [UIColor colorWithRed:(a/255.0) green:(b/255.0) blue:(c/255.0) alpha:1.0]

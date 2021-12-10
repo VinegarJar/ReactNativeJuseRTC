@@ -17,7 +17,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) RTCWindowView *callRTCView;
 
 
-- (instancetype)initWithSignalingCall:(NSDictionary*)data;
+- (instancetype)initWithSignalingCall:(BOOL)signalingCall;
 
 - (void)setupRTCEngine;
 
