@@ -1,6 +1,5 @@
 //
 //  UIImage+TExtension.h
-//  TRectDetector
 //
 //  Created by tao on 2019/4/19.
 //

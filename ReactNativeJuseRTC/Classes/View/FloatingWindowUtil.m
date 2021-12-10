@@ -10,10 +10,10 @@
 #import "FloatingWindowView.h"
 
 
-@interface FloatingWindowUtil ()<FloatingWindowViewDelegate>
+@interface FloatingWindowUtil ()<RTCWindowViewDelegate>
 
 // 通话管理对象
-@property (nonatomic, strong)FloatingWindowView *currentCallManager;
+@property (nonatomic, strong)FloatingWindowView *floatWindow;
 
 
 
@@ -34,48 +34,47 @@
 
 
 
-//单例操作
+-(FloatingWindowView*)floatWindow{
+    if (!_floatWindow) {
+        [_floatWindow.callRTCView removeFromSuperview];
+        _floatWindow = [[FloatingWindowView alloc] initWithSignalingCall:@{} ];
+        _floatWindow.callRTCView.frame = [UIScreen mainScreen].bounds;
+        _floatWindow.callRTCView.delegate = self;
+        _floatWindow.callRTCView.alpha = .0f;
+    }
+    return  _floatWindow;
+}
 
-- (void)xxy_startCallWithNumbers{
-    
-    [self.currentCallManager.callManagerView removeFromSuperview];
-    // 1.初始化通话管理
-    self.currentCallManager = [[FloatingWindowView alloc] initWithSignalingCall:@{}];
-    
-    
-    
-    self.currentCallManager.callManagerView.frame = [UIScreen mainScreen].bounds;
-    // 2.设置代理
-    self.currentCallManager.delegate = self;
-    self.currentCallManager.callManagerView.alpha = .0f;
-    
 
+
+- (void)startSignalingCall{
     
     [UIView animateWithDuration:.3f animations:^{
-        [[UIApplication sharedApplication].delegate.window addSubview:self.currentCallManager.callManagerView];
-        self.currentCallManager.callManagerView.alpha = 1.0f;
+        [[UIApplication sharedApplication].delegate.window addSubview:self.floatWindow.callRTCView];
+        self.floatWindow.callRTCView.alpha = 1.0f;
     } completion:^(BOOL finished) {
 
-        // 10.开始通话或视频
-        [self.currentCallManager xxy_startCallManagerWithNumbers];
+        //通话视屏初始化SDK
+        [self.floatWindow setupRTCEngine];
     }];
+    
 }
 
 
 //悬浮窗口消失
-- (void)xxy_dismissCurrentFloatView{
+- (void)dismissCurrentFloatView{
     [UIView animateWithDuration:.3f animations:^{
-        self.currentCallManager.callManagerView.alpha = .0f;
+        self.floatWindow.callRTCView.alpha = .0f;
     } completion:^(BOOL finished) {
-        [self.currentCallManager.callManagerView removeFromSuperview];
-        self.currentCallManager = nil;
+        [self.floatWindow.callRTCView removeFromSuperview];
+        self.floatWindow = nil;
     }];
 }
 
 #pragma mark - CallManagerDelegate
 //结束通话操作
-- (void)xxy_endCallButtonOperation{
-    [self xxy_dismissCurrentFloatView];
+- (void)endCallButtonHandle{
+    [self dismissCurrentFloatView];
 }
 
 

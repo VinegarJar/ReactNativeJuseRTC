@@ -1,6 +1,5 @@
 //
 //  UIColor+XXYExtension.m
-//  MCRM
 //
 //  Created by Jason on 16/8/6.
 //

@@ -1,6 +1,5 @@
 //
 //  UIImage+TExtension.m
-//  TRectDetector
 //
 //  Created by tao on 2019/4/19.
 //
@@ -10,23 +9,39 @@
 @implementation UIImage (TExtension)
 
 
++(NSBundle*)getBundleResource{
+    NSURL *associateBundleURL = [[NSBundle mainBundle]URLForResource:@"Frameworks"  withExtension:nil];
+    associateBundleURL = [[associateBundleURL URLByAppendingPathComponent:@"ReactNativeJuseRTC"] URLByAppendingPathExtension:@"framework"];
+    associateBundleURL = [[NSBundle bundleWithURL:associateBundleURL] URLForResource:@"ReactNativeJuseRTC" withExtension:@"bundle"];
+   associateBundleURL = [[NSBundle bundleWithURL:associateBundleURL] URLForResource:@"RCTResource" withExtension:@"bundle"];
+   return [NSBundle bundleWithURL:associateBundleURL];
+}
+
+
  + (UIImage *)bundleForImage:(NSString *)name {
-    
-     NSURL *associateBundleURL = [[NSBundle mainBundle]URLForResource:@"Frameworks"  withExtension:nil];
-     associateBundleURL = [[associateBundleURL URLByAppendingPathComponent:@"ReactNativeJuseRTC"] URLByAppendingPathExtension:@"framework"];
-     associateBundleURL = [[NSBundle bundleWithURL:associateBundleURL] URLForResource:@"ReactNativeJuseRTC" withExtension:@"bundle"];
-    
-     NSBundle *bundle = [NSBundle bundleWithURL:associateBundleURL];
+     NSBundle *bundle = [self getBundleResource];
      NSString *imgName = [NSString stringWithFormat:@"%@.png", name];
      if (imgName) {
          return [self imageWithContentsOfFile:[bundle pathForResource:imgName ofType:nil]];
      }
-     
      NSString *imgScaleName = [NSString stringWithFormat:@"%@@%ldx.png", name, (long)[[UIScreen mainScreen] scale]];
      return [self imageWithContentsOfFile:[bundle pathForResource:imgScaleName ofType:nil]];
 }
 
 
+
+//color转UIImage
++ (UIImage *)imageFromCurrentWithColor:(UIColor *)color{
+    CGRect rect = CGRectMake(0.0f, 0.0f, 1.0f, 1.0f);
+    UIGraphicsBeginImageContext(rect.size);
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    CGContextSetFillColorWithColor(context, [color CGColor]);
+    CGContextFillRect(context, rect);
+    UIImage *theImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    return theImage;
+}
 
 // Returns true if the image has an alpha layer
 - (BOOL)hasAlpha {

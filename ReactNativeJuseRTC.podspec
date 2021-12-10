@@ -32,12 +32,17 @@ TODO: Add long description of the pod here.
 
   s.source_files = 'ReactNativeJuseRTC/Classes/**/*'
   
+  
+  #s.resource_bundles = {
+  #   'ReactNativeJuseRTC' => ['ReactNativeJuseRTC/Assets/*.png']
+  #    'ReactNativeJuseRTC' => ['ReactNativeJuseRTC/Assets/*.{xib,RCTResource.bundle}']
+  #}
+  
   s.resource_bundles = {
-     'ReactNativeJuseRTC' => ['ReactNativeJuseRTC/Assets/*.png']
+   'ReactNativeJuseRTC' => ['ReactNativeJuseRTC/Assets/RCTResource.bundle']
   }
   
-  #s.resources = ['ReactNativeJuseRTC/Assets/resource/*.png']
-
+  #s.resources = ['ReactNativeJuseRTC/Assets/RCTResource.bundle']
   # s.public_header_files = 'Pod/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'
   # s.dependency 'AFNetworking', '~> 2.3'

@@ -18,6 +18,7 @@
 #define WindowDisplayWidth 100
 #define WindowDisplayHeight 100
 
+
 // 设置颜色RGB值
 #define kRGBColor(a,b,c) [UIColor colorWithRed:(a/255.0) green:(b/255.0) blue:(c/255.0) alpha:1.0]
 // 设置颜色RGB值+透明度

@@ -21,7 +21,7 @@
   "source_files": "ReactNativeJuseRTC/Classes/**/*",
   "resource_bundles": {
     "ReactNativeJuseRTC": [
-      "ReactNativeJuseRTC/Assets/*.png"
+      "ReactNativeJuseRTC/Assets/RCTResource.bundle"
     ]
   },
   "dependencies": {

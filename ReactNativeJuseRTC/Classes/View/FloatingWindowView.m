@@ -8,7 +8,7 @@
 #import "FloatingWindowView.h"
 
 
-@interface FloatingWindowView ()<RTCWindowViewDelegate>
+@interface FloatingWindowView ()
 
 @end
 
@@ -18,30 +18,19 @@
 
 
 
-- (instancetype)initWithSignalingCall:(NSDictionary*)data {
+- (instancetype)initWithSignalingCall:(NSDictionary*)data{
     self = [super init];
     if (self) {
-        
-        self.callManagerView = [[RTCWindowView alloc] initWithRTCWindowViewSignalingCall:data];
-        self.callManagerView.delegate = self;
-      
+        self.callRTCView = [[RTCWindowView alloc] initWithRTCWindowViewSignalingCall:data];
     }
     return self;
 }
 
 
-//挂断或者拒接
-- (void)xxy_endCallButtonHandle{
-    if (self.delegate && [self.delegate respondsToSelector:@selector(xxy_endCallButtonOperation)]) {
-        [self.delegate xxy_endCallButtonOperation];
-    }
-}
-
-
-
-#pragma mark - 通话 视屏 ...操作
-- (void)xxy_startCallManagerWithNumbers{
+#pragma mark - 通话视屏初始化SDK
+- (void)setupRTCEngine{
     
 }
+
 
 @end

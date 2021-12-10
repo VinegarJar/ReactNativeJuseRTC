@@ -9,26 +9,22 @@
 #import "UIView+XXYViewFrame.h"
 #import "UIImage+TExtension.h"
 #import "Config.h"
+#import <NERtcSDK/NERtcSDK.h>
+#import <AVFoundation/AVFoundation.h>
+#import <AudioToolbox/AudioToolbox.h>
+#import "NSURL+URLxtension.h"
 
-/**
-  屏幕窗口状态
- -  FloatWindowViewDefaultt: 默认
- -  FloatWindowViewFloatingWindow: 小窗口
- */
 
-//
+
+
 typedef NS_ENUM(NSInteger, RTCWindowState) {
-    RTCWindowDefault = 0,
-    RTCWindowFloatingWindow = 1
+    RTCWindowDefault = 0,//默认
+    RTCWindowFloatingWindow = 1//小窗口
 };
-
 
 @protocol RTCWindowViewDelegate <NSObject>
 
-
-
-- (void)xxy_endCallButtonHandle;
-
+- (void)endCallButtonHandle;
 
 @end
 
@@ -38,16 +34,12 @@ typedef NS_ENUM(NSInteger, RTCWindowState) {
 @property (nonatomic, weak) id<RTCWindowViewDelegate>delegate;
 
 @property (nonatomic, assign) RTCWindowState state;
-//操作superview
-@property (nonatomic, strong) UIView *superConcentView;
-
-//小窗口button
-@property (nonatomic, strong) UIButton *smallScreenButton;
-
-//结束按钮
-@property (nonatomic, strong) UIButton *closeButton;
 
 - (instancetype)initWithRTCWindowViewSignalingCall:(NSDictionary*)data;
+
+@property (nonatomic, strong)  AVAudioPlayer *audioPlayer;/** 播放铃声player */
+
+
 
 
 @end

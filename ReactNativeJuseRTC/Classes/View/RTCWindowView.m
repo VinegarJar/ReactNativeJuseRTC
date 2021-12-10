@@ -10,11 +10,19 @@
 
 @interface  RTCWindowView ()<UIGestureRecognizerDelegate>
 
+//操作superview
+@property (nonatomic, strong) UIView *superConcentView;
 
+//小窗口button
+@property (nonatomic, strong) UIButton *smallScreenButton;
+
+//结束按钮
+@property (nonatomic, strong) UIButton *closeButton;
 
 @end
 
 @implementation RTCWindowView
+
 
 
 - (instancetype)initWithRTCWindowViewSignalingCall:(NSDictionary*)data{
@@ -93,6 +101,7 @@
     }else{
 
         NSLog(@"什么时候触发---------->>>>>进去全屏幕,,,我在屏幕上勒");
+//        [self.audioPlayer play];
         
     }
 }
@@ -189,8 +198,8 @@
     }
 
     if (10002 == button.tag) {//拒绝
-        if (self.delegate && [self.delegate respondsToSelector:@selector(xxy_endCallButtonHandle)]) {
-            [self.delegate xxy_endCallButtonHandle];
+        if (self.delegate && [self.delegate respondsToSelector:@selector(endCallButtonHandle)]) {
+            [self.delegate endCallButtonHandle];
         }
     }
 }
@@ -209,5 +218,17 @@
 
 
 
+-(AVAudioPlayer *)audioPlayer{
+    if (!_audioPlayer) {
+
+        // 1. 获取资源URL
+        // 2. 根据资源URL, 创建 AVAudioPlayer 对象
+        _audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:[NSURL bundleForMusic:@"avchat_ring"] error:nil];
+        _audioPlayer.numberOfLoops = -1;
+        //3. 准备播放(音乐播放的内存空间的开辟等功能)  不写这行代码直接播放也会默认调用prepareToPlay
+        [_audioPlayer prepareToPlay];
+    }
+    return _audioPlayer;
+}
 
 @end

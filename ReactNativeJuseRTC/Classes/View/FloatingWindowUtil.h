@@ -14,7 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (instancetype)shareInstance;
 
-- (void)xxy_startCallWithNumbers;
+- (void)startSignalingCall;
 @end
 
 NS_ASSUME_NONNULL_END
