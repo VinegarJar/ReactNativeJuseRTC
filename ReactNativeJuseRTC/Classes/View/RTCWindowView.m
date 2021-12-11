@@ -79,7 +79,7 @@
 
     
     
-    if (_signalingCall) { // 视频通话时,被呼叫UI初始化
+    if (_signalingCall) { // 视频通话时,被对方呼叫UI初始化
         if ([self internetStatus]) {
             RTCAlertView *alertVie = [[ RTCAlertView alloc]initWithAlertView];
             alertVie.delegate = self;
@@ -90,22 +90,22 @@
         UIVisualEffectView *effectView = [[UIVisualEffectView alloc] initWithEffect:effect];
         effectView.frame = CGRectMake(50, 300, 100, 100);
         [self addSubview:effectView];
-    }else{ // 视频通话时,呼叫UI初始化
         
+        [UIView animateWithDuration:0.5 animations:^{
+            self.alpha = 1;
+        } completion:^(BOOL finished) {
+            [UIView animateWithDuration:0.35 animations:^{
+              self->_btnContainerView.transform = CGAffineTransformIdentity;
+            [self addSubview:self.btnContainerView];
+            }];
+        }];
+    }else{ // 视频通话时,呼叫对方UI初始化
+        [self addSubview:self.btnContainerView];
     }
     
-    [UIView animateWithDuration:0.5 animations:^{
-        self.alpha = 1;
-    } completion:^(BOOL finished) {
-        [UIView animateWithDuration:0.25 animations:^{
-//          self->_portraitImageView.transform = CGAffineTransformIdentity;
-//          self->_nickNameLabel.transform = CGAffineTransformIdentity;
-//          self->_connectLabel.transform = CGAffineTransformIdentity;
-//          self->_swichBtn.transform = CGAffineTransformIdentity;
-          self->_btnContainerView.transform = CGAffineTransformIdentity;
-        [self addSubview:self.btnContainerView];
-        }];
-    }];
+
+    
+    
    
 }
 
@@ -124,9 +124,9 @@
 - (RTCButtonView *)btnContainerView{
     if (!_btnContainerView) {
         _btnContainerView = [[RTCButtonView alloc]initWithFrame:CGRectMake(0, ScreenH-ContainerH, ScreenW, ContainerH) signaCall:_signalingCall];
-        [_btnContainerView.swichBtn addTarget:self action:@selector(switchClick) forControlEvents:UIControlEventTouchUpInside];
-        [_btnContainerView.hangupBtn addTarget:self action:@selector(hangupClick) forControlEvents:UIControlEventTouchUpInside];
-        [_btnContainerView.answerBtn addTarget:self action:@selector(answerClick) forControlEvents:UIControlEventTouchUpInside];
+        [_btnContainerView.swichBtn.button addTarget:self action:@selector(switchClick) forControlEvents:UIControlEventTouchUpInside];
+        [_btnContainerView.hangupBtn.button addTarget:self action:@selector(hangupClick) forControlEvents:UIControlEventTouchUpInside];
+        [_btnContainerView.answerBtn.button addTarget:self action:@selector(answerClick) forControlEvents:UIControlEventTouchUpInside];
     }
     return _btnContainerView;
 }

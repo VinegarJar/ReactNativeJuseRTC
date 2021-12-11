@@ -39,7 +39,7 @@
 /* Begin PBXFileReference section */
 		09D16CB0CEA41800EFC6F460 /* Pods-ReactNativeJuseRTC_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReactNativeJuseRTC_Example.debug.xcconfig"; path = "Target Support Files/Pods-ReactNativeJuseRTC_Example/Pods-ReactNativeJuseRTC_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		3C7BD2518C9FE2424147C81A /* Pods-ReactNativeJuseRTC_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReactNativeJuseRTC_Tests.debug.xcconfig"; path = "Target Support Files/Pods-ReactNativeJuseRTC_Tests/Pods-ReactNativeJuseRTC_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		4268347CF70C56C2676045A5 /* ReactNativeJuseRTC.podspec */ = {isa = PBXFileReference; includeInIndex = 1; name = ReactNativeJuseRTC.podspec; path = ../ReactNativeJuseRTC.podspec; sourceTree = "<group>"; };
+		4268347CF70C56C2676045A5 /* ReactNativeJuseRTC.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = ReactNativeJuseRTC.podspec; path = ../ReactNativeJuseRTC.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		6003F58A195388D20070C39A /* ReactNativeJuseRTC_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReactNativeJuseRTC_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6003F58D195388D20070C39A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		6003F58F195388D20070C39A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -63,9 +63,9 @@
 		839E452DED9F6D1863F29CDE /* Pods-ReactNativeJuseRTC_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReactNativeJuseRTC_Example.release.xcconfig"; path = "Target Support Files/Pods-ReactNativeJuseRTC_Example/Pods-ReactNativeJuseRTC_Example.release.xcconfig"; sourceTree = "<group>"; };
 		873B8AEA1B1F5CCA007FD442 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9E8810CE948FCDF35AB01BA7 /* Pods-ReactNativeJuseRTC_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReactNativeJuseRTC_Tests.release.xcconfig"; path = "Target Support Files/Pods-ReactNativeJuseRTC_Tests/Pods-ReactNativeJuseRTC_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		A18EA755D2E17B8AFB2663F2 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		A18EA755D2E17B8AFB2663F2 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		AC9C16156DA748C05FB2128E /* Pods_ReactNativeJuseRTC_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ReactNativeJuseRTC_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		B514FDE82B56F1CE1FEC4C28 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		B514FDE82B56F1CE1FEC4C28 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		D78E4EEF7187C16F40BFC0C7 /* Pods_ReactNativeJuseRTC_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ReactNativeJuseRTC_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -193,7 +193,6 @@
 				3C7BD2518C9FE2424147C81A /* Pods-ReactNativeJuseRTC_Tests.debug.xcconfig */,
 				9E8810CE948FCDF35AB01BA7 /* Pods-ReactNativeJuseRTC_Tests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -258,6 +257,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);

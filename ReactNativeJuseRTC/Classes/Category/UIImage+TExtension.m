@@ -5,21 +5,11 @@
 //
 
 #import "UIImage+TExtension.h"
-
+#import "NSBundle+EXtension.h"
 @implementation UIImage (TExtension)
 
-
-+(NSBundle*)getBundleResource{
-    NSURL *associateBundleURL = [[NSBundle mainBundle]URLForResource:@"Frameworks"  withExtension:nil];
-    associateBundleURL = [[associateBundleURL URLByAppendingPathComponent:@"ReactNativeJuseRTC"] URLByAppendingPathExtension:@"framework"];
-    associateBundleURL = [[NSBundle bundleWithURL:associateBundleURL] URLForResource:@"ReactNativeJuseRTC" withExtension:@"bundle"];
-   associateBundleURL = [[NSBundle bundleWithURL:associateBundleURL] URLForResource:@"RCTResource" withExtension:@"bundle"];
-   return [NSBundle bundleWithURL:associateBundleURL];
-}
-
-
  + (UIImage *)bundleForImage:(NSString *)name {
-     NSBundle *bundle = [self getBundleResource];
+     NSBundle *bundle = [NSBundle getBundleResource];
      NSString *imgName = [NSString stringWithFormat:@"%@.png", name];
      if (imgName) {
          return [self imageWithContentsOfFile:[bundle pathForResource:imgName ofType:nil]];

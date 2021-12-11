@@ -10,27 +10,38 @@
 @implementation RTCButton
 
 
-- (instancetype)initWithTitle:(NSString *)title imageName:(NSString *)noHandleImageName
-{
+- (instancetype)initWithTitle:(NSString *)title imageName:(NSString *)noHandleImageName{
     self = [super init];
     if (self) {
-
-        if (title) {
-            // button.titleEdgeInsets = UIEdgeInsetsMake(10, 16, 10, 200 - 62);
-            [self setTitle:title forState:UIControlStateNormal];
-            self.titleLabel.font = [UIFont systemFontOfSize:15.0f];
-            [self setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-            [self setTitleColor:[UIColor lightGrayColor] forState:UIControlStateDisabled];
-//            self.titleEdgeInsets = UIEdgeInsetsMake(10, 16, 10, 200 - 62);
-        }
-        if (noHandleImageName) {
-          [self setImage:[UIImage bundleForImage:noHandleImageName] forState:UIControlStateNormal];
-//          self.imageEdgeInsets = UIEdgeInsetsMake(27, 200 - 30, 27, 10);
-        }
+        [self.button setImage:[UIImage bundleForImage:noHandleImageName] forState:UIControlStateNormal];
+        [self.title setText:title];
     }
     return self;
 }
 
+
+-(UILabel*)title{
+    if (!_title) {
+        _title = [[UILabel alloc] init];
+        _title.font = [UIFont systemFontOfSize:15.0f];
+        _title.textColor = [UIColor whiteColor];
+        _title.textAlignment = NSTextAlignmentCenter;
+        _title.frame = CGRectMake(0, 5+RTCBtnWidth, RTCBtnWidth, RTCTextHeight);
+        [self addSubview:_title];
+    }
+    return  _title;
+}
+
+
+- (UIButton *)button{
+    if (!_button) {
+        _button = [UIButton buttonWithType:UIButtonTypeCustom];
+        _button.backgroundColor = [UIColor clearColor];
+        _button.frame =  CGRectMake(0, 0, RTCBtnWidth,  RTCBtnWidth);
+        [self addSubview:_button];
+    }
+    return _button;
+}
 
 
 @end

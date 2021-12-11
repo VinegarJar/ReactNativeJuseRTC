@@ -8,6 +8,7 @@
 
 #import "JCViewController.h"
 #import "FloatingWindowUtil.h"
+
 @interface JCViewController ()
 
 @end
@@ -27,6 +28,8 @@
     [button addTarget:self action:@selector(touchesButtonWithSender:) forControlEvents:UIControlEventTouchUpInside];
     
     [self.view addSubview:button];
+    
+
 }
 
 - (void)touchesButtonWithSender:(UIButton *)sender{

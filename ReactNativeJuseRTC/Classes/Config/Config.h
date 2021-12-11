@@ -20,6 +20,9 @@
 
 // 底部按钮
 #define RTCBtnWidth 60
+#define RTCTextHeight 20
+#define RTCViewWidth 60
+#define RTCViewHeight 80
 // 底部按钮容器的高度
 #define ContainerH  150
 

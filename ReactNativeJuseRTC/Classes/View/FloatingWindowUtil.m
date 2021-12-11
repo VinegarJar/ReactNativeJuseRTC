@@ -44,7 +44,7 @@
 -(FloatingWindowView*)floatWindow{
     if (!_floatWindow) {
         [_floatWindow.callRTCView removeFromSuperview];
-        _floatWindow = [[FloatingWindowView alloc] initWithSignalingCall:YES];
+        _floatWindow = [[FloatingWindowView alloc] initWithSignalingCall:NO];
         _floatWindow.callRTCView.frame = [UIScreen mainScreen].bounds;
         _floatWindow.callRTCView.delegate = self;
         _floatWindow.callRTCView.alpha = .0f;

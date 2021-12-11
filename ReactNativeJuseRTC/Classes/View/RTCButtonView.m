@@ -6,7 +6,7 @@
 //
 
 #import "RTCButtonView.h"
-#import "Config.h"
+
 @implementation RTCButtonView
 
 
@@ -37,7 +37,7 @@
         _swichBtn = [[RTCButton alloc]initWithTitle:@"切换" imageName:@"switch"];
         CGFloat paddingX = [self getpaddingX];
         CGFloat paddingY = [self getpaddingY];
-        _swichBtn.frame = CGRectMake(paddingX * 3, paddingY,RTCBtnWidth, RTCBtnWidth);
+        _swichBtn.frame = CGRectMake(paddingX * 3, paddingY, RTCViewWidth, RTCViewHeight);
         _swichBtn.hidden = YES;
     }
     return _swichBtn;
@@ -54,11 +54,11 @@
         if (_signaCall) {
             paddingX = [self getpaddingX];
         }else{
-            paddingX =  (self.frame.size.width - RTCBtnWidth) / 2;
+            paddingX =  (self.frame.size.width - RTCViewWidth) / 2;
         }
         
         CGFloat paddingY = [self getpaddingY];
-        _hangupBtn.frame = CGRectMake(paddingX, paddingY, RTCBtnWidth, RTCBtnWidth);
+        _hangupBtn.frame = CGRectMake(paddingX, paddingY, RTCViewWidth, RTCViewHeight);
     }
     return _hangupBtn;
 }
@@ -69,24 +69,24 @@
         _answerBtn = [[RTCButton alloc] initWithTitle:@"接听" imageName:@"answer"];
         CGFloat paddingX = [self getpaddingX];
         CGFloat paddingY = [self getpaddingY];
-        _answerBtn.frame = CGRectMake(paddingX * 2 + RTCBtnWidth, paddingY,RTCBtnWidth, RTCBtnWidth);
+        _answerBtn.frame = CGRectMake(paddingX * 2 + RTCViewWidth, paddingY,RTCViewWidth, RTCViewHeight);
     }
     return _answerBtn;
 }
 
 -(CGFloat )getpaddingX{
-    return (ScreenW -RTCBtnWidth * 2) / 3;
+    return (ScreenW -RTCViewWidth * 2) / 3;
 }
 
 -(CGFloat )getpaddingY{
-    return (ContainerH - RTCBtnWidth) / 3;
+    return (ContainerH - RTCViewWidth) / 3;
 }
 
 
 -(void)setHangupBtnframe{
-    CGFloat paddingX =  (self.frame.size.width - RTCBtnWidth) / 2;
+    CGFloat paddingX =  (self.frame.size.width - RTCViewWidth) / 2;
     CGFloat paddingY = [self getpaddingY];
-    _hangupBtn.frame = CGRectMake(paddingX, paddingY, RTCBtnWidth, RTCBtnWidth);
+    _hangupBtn.frame = CGRectMake(paddingX, paddingY, RTCViewWidth, RTCViewHeight);
 }
 
 @end
