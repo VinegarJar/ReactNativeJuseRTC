@@ -18,9 +18,16 @@ NS_ASSUME_NONNULL_BEGIN
 @property (strong, nonatomic)RTCButton *answerBtn;
 //被呼叫or呼叫
 @property (assign, nonatomic) BOOL  signaCall;
+/** 计时器*/
+@property (nonatomic,strong) NSTimer *myTimer;
+@property (nonatomic,assign)  int seconds;
+
+@property (strong, nonatomic)  UILabel *timerLabel;
 
 - (instancetype)initWithFrame:(CGRect)frame signaCall:(BOOL)signaCall;
--(void)setHangupBtnframe;
+-(void)replaceHangupButtonframe;
+-(void)startTimers;
+-(void)removeAnswerButton;
 @end
 
 NS_ASSUME_NONNULL_END

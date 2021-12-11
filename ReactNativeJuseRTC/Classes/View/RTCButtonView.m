@@ -30,6 +30,7 @@
         [self addSubview:self.answerBtn];
     }
     [self addSubview:self.swichBtn];
+    [self addSubview:self.timerLabel];
 }
 
 - (RTCButton *)swichBtn{
@@ -82,11 +83,62 @@
     return (ContainerH - RTCViewWidth) / 3;
 }
 
+//接听操作,显示切换按钮,倒计时
+-(void)removeAnswerButton{
+    _swichBtn.hidden = NO;
+    _timerLabel.hidden = NO;
+    [_answerBtn removeFromSuperview];
+}
 
--(void)setHangupBtnframe{
+
+-(void)replaceHangupButtonframe{
     CGFloat paddingX =  (self.frame.size.width - RTCViewWidth) / 2;
     CGFloat paddingY = [self getpaddingY];
     _hangupBtn.frame = CGRectMake(paddingX, paddingY, RTCViewWidth, RTCViewHeight);
+    _hangupBtn.title.text = @"挂断";
 }
+
+- (UILabel*)timerLabel{
+    if (!_timerLabel) {
+        _timerLabel = [[UILabel alloc] init];
+        _timerLabel.text = @"00:00";
+        _timerLabel.font = [UIFont systemFontOfSize:17.0f];
+        _timerLabel.textColor = [UIColor whiteColor];
+        _timerLabel.textAlignment = NSTextAlignmentCenter;
+        CGFloat paddingX =  (self.frame.size.width - RTCViewWidth) / 2;
+        CGFloat paddingY = [self getpaddingY];
+        _timerLabel.frame = CGRectMake(paddingX, paddingY-RTCTextHeight-5, RTCViewWidth, RTCTextHeight);
+        _timerLabel.hidden = YES;
+    }
+    return _timerLabel;
+}
+
+-(void)startTimers{
+    //计时器
+    self.myTimer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(start:) userInfo:nil repeats:YES];
+    //放在主运行----(主要是解决在界面上进行的其它操作导致计时器停止的问题)
+    [[NSRunLoop mainRunLoop] addTimer:self->_myTimer forMode:NSDefaultRunLoopMode];
+}
+
+
+//计时器计数
+-(void)start:(NSTimer *)timer{
+    _seconds ++;
+    NSString *str = [self getMMSSFromSS:[NSString stringWithFormat:@"%ds",_seconds]];
+    _timerLabel.text = [NSString stringWithString:str];
+}
+
+
+-(NSString *)getMMSSFromSS:(NSString *)totalTime{
+    NSInteger seconds = [totalTime integerValue];
+    //format of minute
+    NSString *str_minute = [NSString stringWithFormat:@"%02ld",(seconds%3600)/60];
+      //format of second
+    NSString *str_second = [NSString stringWithFormat:@"%02ld",seconds%60];
+    //format of time
+    NSString *format_time = [NSString stringWithFormat:@"%@:%@",str_minute,str_second];
+    return format_time;
+}
+
 
 @end

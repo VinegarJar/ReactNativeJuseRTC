@@ -17,6 +17,7 @@
 #import "UIView+XXYViewFrame.h"
 #import "Config.h"
 #import "HSNetworkTool.h"
+#import "NTESDemoUserModel.h"
 #import "Reachability.h"
 #import "ReactNativeJuseRTC.h"
 #import "RTCButton.h"

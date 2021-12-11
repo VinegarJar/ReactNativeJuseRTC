@@ -33,12 +33,6 @@ TODO: Add long description of the pod here.
   s.source_files = 'ReactNativeJuseRTC/Classes/**/*'
   
   
-  #s.resource_bundles = {
-  #   'ReactNativeJuseRTC' => ['ReactNativeJuseRTC/Assets/*.png']
-  #   'ReactNativeJuseRTC' => ['ReactNativeJuseRTC/Assets/RCTResource.bundle']
-  #    'ReactNativeJuseRTC' => ['ReactNativeJuseRTC/Assets/*.{xib,RCTResource.bundle}']
-  #}
-  
   s.resource_bundles = {
    'ReactNativeJuseRTC' => ['ReactNativeJuseRTC/Assets/RCTResource.bundle']
   }

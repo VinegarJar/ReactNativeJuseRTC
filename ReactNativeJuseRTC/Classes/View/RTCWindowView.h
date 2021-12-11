@@ -8,7 +8,6 @@
 #import <UIKit/UIKit.h>
 #import "UIView+XXYViewFrame.h"
 #import "Config.h"
-#import <NERtcSDK/NERtcSDK.h>
 #import <AVFoundation/AVFoundation.h>
 #import <AudioToolbox/AudioToolbox.h>
 #import "NSURL+URLxtension.h"
@@ -38,8 +37,11 @@ typedef NS_ENUM(NSInteger, RTCWindowState) {
 
 @property (nonatomic, strong)  AVAudioPlayer *audioPlayer;/** 播放铃声player */
 
+@property (copy, nonatomic) NSString            *roomID;
+@property (copy, nonatomic) NSString            *userID;
+@property (copy, nonatomic) NSString            *token;
 
 -(void)signalingCallinfor:(NSDictionary *)data;
-
+- (void)setupRTCEngine;
 @end
 
