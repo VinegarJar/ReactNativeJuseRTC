@@ -8,7 +8,8 @@
 
 #import "FloatingWindowUtil.h"
 #import "FloatingWindowView.h"
-
+#import "HSNetworkTool.h"
+#import "StringToDic.h"
 
 @interface FloatingWindowUtil ()<RTCWindowViewDelegate>
 
@@ -32,6 +33,15 @@
 }
 
 
+- (void)setDevelopmentUrl:(NSString *)developmentUrl{
+  _developmentUrl = developmentUrl;
+}
+
+
+- (void)setSignaUserInfo:(NSDictionary *)signaUserInfo{
+    _signaUserInfo = signaUserInfo;
+}
+
 
 -(FloatingWindowView*)floatWindow{
     if (!_floatWindow) {
@@ -42,14 +52,12 @@
 }
 
 
-
 - (void)startSignalingCall:(BOOL)signalingCall{
     
-   [self.floatWindow startCallWithSignaling:signalingCall];
+    [self.floatWindow startCallWithSignaling:signalingCall];
     self.floatWindow.callRTCView.frame = [UIScreen mainScreen].bounds;
     self.floatWindow.callRTCView.delegate = self;
     self.floatWindow.callRTCView.alpha = .0f;
-    
     
     [UIView animateWithDuration:0.5 animations:^{
         self.floatWindow.callRTCView.alpha = 1.0f;
@@ -61,6 +69,34 @@
     }];
 }
 
+
+//原生获取数据
+- (void)requestToken{
+
+  HSNetworkTool *NetworkTool = [HSNetworkTool shareInstance];
+
+  if([ _developmentUrl isEqual:@"development"]){
+    NetworkTool.requestURL = @"https://strong.ylccmp.com/API/user";
+  }else if([_developmentUrl isEqual:@"pre-release"]){
+    NetworkTool.requestURL = @"https://prem.gooeto120.com/API/user";
+  }else{
+    NetworkTool.requestURL = @"https://m.gooeto120.com/API/user";
+  }
+
+    [NetworkTool requestGET:@"/video/token" params:nil successBlock:^(NSDictionary *responseObject) {
+
+        NSInteger resultRep = [[responseObject objectForKey:@"code"] integerValue];
+        if(resultRep  == 200){
+            NSDictionary *data = [responseObject objectForKey:@"data"];
+            [self.floatWindow.callRTCView signalingCallinfo:data userInfo:self->_signaUserInfo];
+        }
+        
+    } failBlock:^(NSError *error) {
+        
+    }];
+    
+    
+}
 
 
 //悬浮窗口消失
@@ -81,6 +117,14 @@
 }
 
 
+//接受通话请求
+- (void)acceptCallHandle{
+    
+}
 
+//通话销毁
+- (void)destroyCallHandle{
+    
+}
 
 @end

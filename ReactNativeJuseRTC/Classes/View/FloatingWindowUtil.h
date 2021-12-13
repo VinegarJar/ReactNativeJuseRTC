@@ -15,6 +15,8 @@ NS_ASSUME_NONNULL_BEGIN
 + (instancetype)shareInstance;
 
 - (void)startSignalingCall:(BOOL)signalingCall;
+@property(nonatomic,copy)NSString *developmentUrl;
+@property(nonatomic,copy)NSDictionary *signaUserInfo;
 
 @end
 

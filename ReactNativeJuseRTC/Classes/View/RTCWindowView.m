@@ -180,9 +180,6 @@
     }
     
 
-    
-    
-   
 }
 
 
@@ -239,6 +236,11 @@
     [self stopShakeSound];
 }
 
+//网易云通信加入房间
+- (void)joinChannelWithRoomId:(NSString *)roomId
+         userId:(NSString *)userId token:(NSString *)token {
+
+}
 
 
 #pragma  mark -点击缩小窗口
@@ -252,10 +254,10 @@
     }];
 }
 
+
 #pragma mark --切换视图全屏或小窗口
 - (void)callViewTapHandle:(UITapGestureRecognizer *)callViewTap{
     if (self->_state==RTCWindowFloatingWindow) {
- 
         [UIView animateWithDuration:.3f animations:^{
             self.frame = ScreenBounds;
         } completion:^(BOOL finished) {
@@ -264,9 +266,10 @@
             self->_state =  RTCWindowDefault;
         }];
     }else{
-        NSLog(@"什么时候触发---------->>>>>进去全屏幕,,,我在屏幕上勒");
+        
     }
 }
+
 
 #pragma mark --拖动视图
 - (void)swipePanGestureHandle:(UIPanGestureRecognizer *)recognizer{
@@ -323,7 +326,7 @@
 
 
 //呼叫信息设置显示
--(void)signalingCallinfor:(NSDictionary *)data{
+-(void)signalingCallinfo:(NSDictionary *)data userInfo:(NSDictionary *)dic{
     
     
 }
@@ -363,14 +366,16 @@
 //释放资源
 - (void)dismiss{
     
+    [NERtcEngine destroyEngine];
+    
     [_audioPlayer stop];
     _audioPlayer = nil;
     
     [self.vibrationTimer invalidate];
     [self.btnContainerView.myTimer invalidate];
     [self.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
-    
-    [NERtcEngine destroyEngine];
+    [self removeFromSuperview];
+
 }
 
 - (void)dealloc{

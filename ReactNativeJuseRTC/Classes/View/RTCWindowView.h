@@ -21,8 +21,21 @@ typedef NS_ENUM(NSInteger, RTCWindowState) {
 };
 
 @protocol RTCWindowViewDelegate <NSObject>
-
+//结束通话
 - (void)endCallButtonHandle;
+//接受通话请求
+- (void)acceptCallHandle;
+//通话销毁
+- (void)destroyCallHandle;
+
+//主动取消通话发送通知到rn端 @"CLOSE
+//主动拒绝通话发送通知到rn端 @"REJECT"
+//主动接受通话发送通知到rn端 @"ACCEPT"
+//发送通知到rn端 页面销毁   @"DESTORY"
+//无应答发送通知到rn端      @"CANCEL"
+//有人离开房间             @"LEAVE"
+//视频状态,需要更新到后台并且发送自定义消息 @"VIDEO_STATUS"
+//发送通知到rn端获取TOKEN  @"GET_TOKEN"
 
 @end
 
@@ -41,7 +54,7 @@ typedef NS_ENUM(NSInteger, RTCWindowState) {
 @property (copy, nonatomic) NSString            *userID;
 @property (copy, nonatomic) NSString            *token;
 
--(void)signalingCallinfor:(NSDictionary *)data;
+-(void)signalingCallinfo:(NSDictionary *)data userInfo:(NSDictionary *)dic;
 - (void)setupRTCEngine;
 @end
 

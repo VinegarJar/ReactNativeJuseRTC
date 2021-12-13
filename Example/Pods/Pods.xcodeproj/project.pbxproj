@@ -15,6 +15,7 @@
 			dependencies = (
 			);
 			name = NERtcSDK;
+			productName = NERtcSDK;
 		};
 /* End PBXAggregateTarget section */
 
@@ -139,6 +140,8 @@
 		55D071F6A1AD0A1D46E2F653C4061C7E /* RCTModalHostView.h in Headers */ = {isa = PBXBuildFile; fileRef = C74D02F65B189038F4CB93AA487BD2E6 /* RCTModalHostView.h */; };
 		56674062B867166102289D4FE78A9783 /* RCTFrameUpdate.m in Sources */ = {isa = PBXBuildFile; fileRef = 279229E47D66F79E1BE7D53DA4069D79 /* RCTFrameUpdate.m */; };
 		583100B5795FECED974AEB2426BF614B /* RCTPointerEvents.h in Copy React/Views Public Headers */ = {isa = PBXBuildFile; fileRef = 2E109DE1915653EF2D047E1DE0D8D750 /* RCTPointerEvents.h */; };
+		5952E6EE2764AF2800EEE5B6 /* StringToDic.h in Headers */ = {isa = PBXBuildFile; fileRef = 5952E6EC2764AF2800EEE5B6 /* StringToDic.h */; };
+		5952E6EF2764AF2800EEE5B6 /* StringToDic.m in Sources */ = {isa = PBXBuildFile; fileRef = 5952E6ED2764AF2800EEE5B6 /* StringToDic.m */; };
 		59F593655AA34D18D528B36B29784239 /* RCTComponent.h in Headers */ = {isa = PBXBuildFile; fileRef = 338DCB1417B38E8EB165DCF06D6CADD5 /* RCTComponent.h */; };
 		5AE136E4021D56C036D7690EAF414E1B /* RCTStatusBarManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FA5F44353C26E6EDCA0F6A153269C74 /* RCTStatusBarManager.m */; };
 		5B76276B463AB5AD184F26EF041CED2C /* RCTUIManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 08894F33D9A2C3F0BF61FE3F457B71FE /* RCTUIManager.m */; };
@@ -530,12 +533,12 @@
 		099D132248BB1377FD0637DAC65B8F6B /* RCTTabBar.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = RCTTabBar.m; path = React/Views/RCTTabBar.m; sourceTree = "<group>"; };
 		0CB254D89921F2A5EA5E1886517AD7DD /* RCTContextExecutor.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = RCTContextExecutor.m; path = React/Executors/RCTContextExecutor.m; sourceTree = "<group>"; };
 		0CF42E3A8C0DDFABCED61660B07522DD /* RCTContextExecutor.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = RCTContextExecutor.h; path = React/Executors/RCTContextExecutor.h; sourceTree = "<group>"; };
-		0E7C341FA544E64E23E052A68E4A0A5E /* React.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = React.framework; path = React.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0E7C341FA544E64E23E052A68E4A0A5E /* React.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = React.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E95E4418D33F0B081A2DEC723B5D2AE /* RCTPointAnnotation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = RCTPointAnnotation.h; path = React/Modules/RCTPointAnnotation.h; sourceTree = "<group>"; };
 		0F1563ED7CF0FB676C14542B79F0FB3D /* ReactNativeJuseRTC-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ReactNativeJuseRTC-umbrella.h"; sourceTree = "<group>"; };
 		11C54E63B426AA1E186CD4681444F102 /* RCTMap.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = RCTMap.m; path = React/Views/RCTMap.m; sourceTree = "<group>"; };
 		12279D0B538A61B932DB78C717E418A2 /* RCTShadowView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = RCTShadowView.h; path = React/Views/RCTShadowView.h; sourceTree = "<group>"; };
-		1258A3D532B90F69C7D5CCE1269262C9 /* ReactNativeJuseRTC.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = ReactNativeJuseRTC.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		1258A3D532B90F69C7D5CCE1269262C9 /* ReactNativeJuseRTC.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = ReactNativeJuseRTC.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		12B46A05D3B1A338623A8C566A90BC57 /* RCTAutoInsetsProtocol.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = RCTAutoInsetsProtocol.h; path = React/Views/RCTAutoInsetsProtocol.h; sourceTree = "<group>"; };
 		12BFEBCD0F52BEF40EA350EC0DE1D507 /* RCTNavigator.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = RCTNavigator.m; path = React/Views/RCTNavigator.m; sourceTree = "<group>"; };
 		1362EEEC1EB20EDF9C84CA1C54BD7896 /* RCTActivityIndicatorViewManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = RCTActivityIndicatorViewManager.m; path = React/Views/RCTActivityIndicatorViewManager.m; sourceTree = "<group>"; };
@@ -605,8 +608,10 @@
 		5693CF76591292DED04C97CB53824DAF /* RCTComponentData.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = RCTComponentData.m; path = React/Views/RCTComponentData.m; sourceTree = "<group>"; };
 		5738A27AD76B74C60E7D0168772EE5E4 /* RCTViewManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = RCTViewManager.h; path = React/Views/RCTViewManager.h; sourceTree = "<group>"; };
 		5904C055DC9A9DE8553E18511B247F32 /* RCTBorderDrawing.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = RCTBorderDrawing.m; path = React/Views/RCTBorderDrawing.m; sourceTree = "<group>"; };
+		5952E6EC2764AF2800EEE5B6 /* StringToDic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StringToDic.h; sourceTree = "<group>"; };
+		5952E6ED2764AF2800EEE5B6 /* StringToDic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StringToDic.m; sourceTree = "<group>"; };
 		5B277108CD993A30C0D4FDF874CF11AC /* RCTTiming.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = RCTTiming.m; path = React/Modules/RCTTiming.m; sourceTree = "<group>"; };
-		5B30F0D5698331A9ED1216E935FD4E80 /* ReactNativeJuseRTC.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = ReactNativeJuseRTC.framework; path = ReactNativeJuseRTC.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5B30F0D5698331A9ED1216E935FD4E80 /* ReactNativeJuseRTC.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ReactNativeJuseRTC.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5BCF1BFE1E7C22AB48A8D124A6B2F011 /* RCTDevMenu.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = RCTDevMenu.h; path = React/Modules/RCTDevMenu.h; sourceTree = "<group>"; };
 		5DC74BAE0AC5C364DF496F61BF60F9EC /* RCTBridge.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = RCTBridge.h; path = React/Base/RCTBridge.h; sourceTree = "<group>"; };
 		617042E1620D0AFDDF4405041C060BFE /* RCTKeyCommands.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = RCTKeyCommands.h; path = React/Base/RCTKeyCommands.h; sourceTree = "<group>"; };
@@ -614,7 +619,7 @@
 		639BB2E4F9461B7ACDF5BD5EE0566144 /* RCTBorderDrawing.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = RCTBorderDrawing.h; path = React/Views/RCTBorderDrawing.h; sourceTree = "<group>"; };
 		63C3C5FCFDF5224FB2CC01B76FA18CE0 /* Pods-ReactNativeJuseRTC_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-ReactNativeJuseRTC_Example-umbrella.h"; sourceTree = "<group>"; };
 		64D914D6E7C32365E9FB047FFAFE940C /* RCTTabBarManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = RCTTabBarManager.m; path = React/Views/RCTTabBarManager.m; sourceTree = "<group>"; };
-		675479013C026029D61A26D9F2A61937 /* Pods_ReactNativeJuseRTC_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_ReactNativeJuseRTC_Example.framework; path = "Pods-ReactNativeJuseRTC_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		675479013C026029D61A26D9F2A61937 /* Pods_ReactNativeJuseRTC_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ReactNativeJuseRTC_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6773C17C7F90F8DFAA1E27EB91D7E227 /* RCTMapManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = RCTMapManager.m; path = React/Views/RCTMapManager.m; sourceTree = "<group>"; };
 		69D6FF72DFD4FDE50E0E5FB26EE45F22 /* RCTModalHostView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = RCTModalHostView.m; path = React/Views/RCTModalHostView.m; sourceTree = "<group>"; };
 		69D8DE7527FA04411C68D5AB65F92298 /* RCTStatusBarManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = RCTStatusBarManager.h; path = React/Modules/RCTStatusBarManager.h; sourceTree = "<group>"; };
@@ -657,7 +662,7 @@
 		9400D4DBB865771B2C536B47A4D447B2 /* NERtcSDK.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = NERtcSDK.debug.xcconfig; sourceTree = "<group>"; };
 		94662B2307AAB18BA5000D398B6CDE69 /* Reachability.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		94C86860E8979C8AF9E3E2920939EE5C /* RCTSparseArray.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = RCTSparseArray.m; path = React/Base/RCTSparseArray.m; sourceTree = "<group>"; };
-		94FA3F23925A186D2E851A0F1E26E50B /* ReactNativeJuseRTC.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = ReactNativeJuseRTC.bundle; path = "ReactNativeJuseRTC-ReactNativeJuseRTC.bundle"; sourceTree = BUILT_PRODUCTS_DIR; };
+		94FA3F23925A186D2E851A0F1E26E50B /* ReactNativeJuseRTC.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ReactNativeJuseRTC.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		9695C1193F64205DF963311E14AAF318 /* HSNetworkTool.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = HSNetworkTool.m; sourceTree = "<group>"; };
 		977C8D091C9B06B8DC6B30F642CDE755 /* RCTRedBox.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = RCTRedBox.m; path = React/Modules/RCTRedBox.m; sourceTree = "<group>"; };
 		97BB0044946E03B4D22CB4143AC02A4C /* ReactNativeJuseRTC.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = ReactNativeJuseRTC.modulemap; sourceTree = "<group>"; };
@@ -670,7 +675,7 @@
 		9C1A8A3DB8D9731623C0BA329A6E4D4E /* RCTBridge.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = RCTBridge.m; path = React/Base/RCTBridge.m; sourceTree = "<group>"; };
 		9D5333E17096917AD7CF9282D0FBB425 /* UIColor+XXYExtension.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UIColor+XXYExtension.m"; sourceTree = "<group>"; };
 		9D8D0BDE4297F9AC58109456DA4184D3 /* RCTTouchHandler.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = RCTTouchHandler.m; path = React/Base/RCTTouchHandler.m; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9D9E927E8C740559453574784953E684 /* RTCWindowView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = RTCWindowView.m; sourceTree = "<group>"; };
 		9DE7D2AC74C884C4A8168AE57D76771D /* RCTJavaScriptLoader.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = RCTJavaScriptLoader.h; path = React/Base/RCTJavaScriptLoader.h; sourceTree = "<group>"; };
 		9E558D4FB8211C2CF46656028C91931A /* RCTKeyboardObserver.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = RCTKeyboardObserver.m; path = React/Base/RCTKeyboardObserver.m; sourceTree = "<group>"; };
@@ -695,7 +700,7 @@
 		B4FB6D25F7284A600BA139B7066E646D /* RCTScrollView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = RCTScrollView.m; path = React/Views/RCTScrollView.m; sourceTree = "<group>"; };
 		B65FE5D617845ACF54F2EDF36BBF0ED6 /* RCTAlertManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = RCTAlertManager.m; path = React/Modules/RCTAlertManager.m; sourceTree = "<group>"; };
 		B6BBFAE41CD913342A43D3F4F7F2151F /* RCTUIManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = RCTUIManager.h; path = React/Modules/RCTUIManager.h; sourceTree = "<group>"; };
-		B7079D9F80BF161F7D14B919E6A5B980 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		B7079D9F80BF161F7D14B919E6A5B980 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		B8379C98DC02C9CC7D327DA5C33B8E98 /* RCTModuleData.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = RCTModuleData.h; path = React/Base/RCTModuleData.h; sourceTree = "<group>"; };
 		B85C0FC9A84C865E315B8B4B89554418 /* RCTPerfStats.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = RCTPerfStats.m; path = React/Base/RCTPerfStats.m; sourceTree = "<group>"; };
 		B9F6EF62D3E430A7DBDE433F16F243C9 /* React-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "React-Info.plist"; sourceTree = "<group>"; };
@@ -729,7 +734,7 @@
 		DD240917FFC541A49E3F2B00A60EA8F2 /* React-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "React-umbrella.h"; sourceTree = "<group>"; };
 		DDC8BC3D57C866CF4F2019465EB21D89 /* RCTResource.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = RCTResource.bundle; path = ReactNativeJuseRTC/Assets/RCTResource.bundle; sourceTree = "<group>"; };
 		DDCE0A9A102FF0072A832B56379C824C /* RCTModuleMethod.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = RCTModuleMethod.m; path = React/Base/RCTModuleMethod.m; sourceTree = "<group>"; };
-		DE0F1F325AD6C0D58356E160095AF26C /* Pods_ReactNativeJuseRTC_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_ReactNativeJuseRTC_Tests.framework; path = "Pods-ReactNativeJuseRTC_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DE0F1F325AD6C0D58356E160095AF26C /* Pods_ReactNativeJuseRTC_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ReactNativeJuseRTC_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF46B2FEC3D30B243314FB586F221F1A /* RCTPerformanceLogger.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = RCTPerformanceLogger.m; path = React/Base/RCTPerformanceLogger.m; sourceTree = "<group>"; };
 		DFD8FA63B9A59A670E0B85272CC8AABC /* Reachability.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		E00857FC25CA6FC6CD5DBCDA30FBF13C /* UIView+React.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIView+React.m"; path = "React/Views/UIView+React.m"; sourceTree = "<group>"; };
@@ -746,7 +751,7 @@
 		EA9D7EF4A00D69E2475566216930D001 /* RCTProgressViewManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = RCTProgressViewManager.m; path = React/Views/RCTProgressViewManager.m; sourceTree = "<group>"; };
 		EBE56678CC437434C488C9D97604812E /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/JavaScriptCore.framework; sourceTree = DEVELOPER_DIR; };
 		EE30C2AEFCFC5694256CAFAB8AF2D744 /* RCTTabBarManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = RCTTabBarManager.h; path = React/Views/RCTTabBarManager.h; sourceTree = "<group>"; };
-		EEE99AFC31DD449196E3F0E1C4F61A81 /* Layout.c */ = {isa = PBXFileReference; includeInIndex = 1; name = Layout.c; path = React/Layout/Layout.c; sourceTree = "<group>"; };
+		EEE99AFC31DD449196E3F0E1C4F61A81 /* Layout.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = Layout.c; path = React/Layout/Layout.c; sourceTree = "<group>"; };
 		EEEB691F2C291E686CC3635400EFC639 /* ReactNativeJuseRTC-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ReactNativeJuseRTC-Info.plist"; sourceTree = "<group>"; };
 		F1634280F4CF958452B697B90042AD2F /* RCTConvert+MapKit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "RCTConvert+MapKit.h"; path = "React/Views/RCTConvert+MapKit.h"; sourceTree = "<group>"; };
 		F198551C168F267DFA683050456D5046 /* RCTWrapperViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = RCTWrapperViewController.h; path = React/Views/RCTWrapperViewController.h; sourceTree = "<group>"; };
@@ -756,7 +761,7 @@
 		F7EE0C40BD7CF614EC272EC464B35723 /* RCTRootView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = RCTRootView.h; path = React/Base/RCTRootView.h; sourceTree = "<group>"; };
 		F7F22FDF8B698AFCFB802F2E12F3F9F4 /* RCTAccessibilityManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = RCTAccessibilityManager.h; path = React/Modules/RCTAccessibilityManager.h; sourceTree = "<group>"; };
 		F830C97CC4CDAA2B59355934E8D5ED05 /* RCTMap.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = RCTMap.h; path = React/Views/RCTMap.h; sourceTree = "<group>"; };
-		F8C353EB568DF2014F4DFB11A20A89E5 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		F8C353EB568DF2014F4DFB11A20A89E5 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		F9FB4F1BD38FDCF5D304F2A3D76790E2 /* RCTConvert+CoreLocation.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "RCTConvert+CoreLocation.m"; path = "React/Views/RCTConvert+CoreLocation.m"; sourceTree = "<group>"; };
 		FA6B8E8DBE4E602EBE9D7BABD96BB582 /* RCTFPSGraph.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = RCTFPSGraph.m; path = React/Base/RCTFPSGraph.m; sourceTree = "<group>"; };
 		FB3416701C53F21358BBCEA306891A75 /* RCTLog.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = RCTLog.m; path = React/Base/RCTLog.m; sourceTree = "<group>"; };
@@ -883,6 +888,8 @@
 				98FDE2F798671D42C6719E729CA2D394 /* ReactNativeJuseRTC.m */,
 				A3EE9185B2023E458DEAD461C6FBDE12 /* RTCButton.h */,
 				C8A07DF18C8F09A8E83C1965FCCAB828 /* RTCButton.m */,
+				5952E6EC2764AF2800EEE5B6 /* StringToDic.h */,
+				5952E6ED2764AF2800EEE5B6 /* StringToDic.m */,
 			);
 			name = Utils;
 			path = ReactNativeJuseRTC/Classes/Utils;
@@ -906,7 +913,6 @@
 				96CC63F6494A15AA069D6D6E690B86C9 /* Core */,
 				1284628E507F51E66D94D7F41FEB331D /* Support Files */,
 			);
-			name = React;
 			path = React;
 			sourceTree = "<group>";
 		};
@@ -993,7 +999,6 @@
 				60D8A354D7CD6B18DFA131ADB8B40A02 /* Frameworks */,
 				75F7E981F84CED022A62524116A4A17B /* Support Files */,
 			);
-			name = NERtcSDK;
 			path = NERtcSDK;
 			sourceTree = "<group>";
 		};
@@ -1370,6 +1375,7 @@
 				0C5B573631E2F944F7713FC69AB9104F /* NSBundle+EXtension.h in Headers */,
 				73D68429A10065F147C6DC85813ABBE2 /* NSURL+URLxtension.h in Headers */,
 				A868369E7111800BC619D7CB53F23903 /* NTESDemoUserModel.h in Headers */,
+				5952E6EE2764AF2800EEE5B6 /* StringToDic.h in Headers */,
 				519A169C2A47C7BED178F44D0EB2072A /* Reachability.h in Headers */,
 				CBAE65C37C6B2E2F211A7C5203E56F4D /* ReactNativeJuseRTC.h in Headers */,
 				B1F97B157C2B6C561D3064B368D9B0A6 /* ReactNativeJuseRTC-umbrella.h in Headers */,
@@ -1598,6 +1604,7 @@
 				04EDD5B62BE0168520C97696E62B0CAD /* ReactNativeJuseRTC-dummy.m in Sources */,
 				319046A7A89FAAB60B37F1238E51B3E2 /* RTCAlertView.m in Sources */,
 				90729E1E3BA74838576A5ACE3D60862C /* RTCButton.m in Sources */,
+				5952E6EF2764AF2800EEE5B6 /* StringToDic.m in Sources */,
 				34FA35BD5BD94150A9677DAD8DA56A5A /* RTCButtonView.m in Sources */,
 				11A50BFEC661939F66E85D3D8717FECA /* RTCWindowView.m in Sources */,
 				302392DEBD81B8F64DB587FDC1D3C36C /* UIColor+XXYExtension.m in Sources */,
@@ -2092,8 +2099,7 @@
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_INSTALLED_PRODUCT = NO;
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 5.0;
 				SYMROOT = "${SRCROOT}/../build";
 			};
