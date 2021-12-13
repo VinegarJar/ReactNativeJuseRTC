@@ -68,6 +68,7 @@
         }];
     }];
 
+    [self->_floatWindow.callRTCView signalingCallinfo:@{} userInfo:self->_signaUserInfo];
 }
 
 

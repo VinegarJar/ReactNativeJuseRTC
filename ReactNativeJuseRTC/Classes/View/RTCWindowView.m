@@ -264,8 +264,6 @@ static int const showtime = 70;
     self = [super init];
     if (self) {
         _signalingCall = signalingCall;
-        //呼叫声音初始化调用
-        [self.audioPlayer play];
         [self initWithsubviewsfloatingWindow];
     }
     return self;
@@ -307,6 +305,9 @@ static int const showtime = 70;
     
     
     if (_signalingCall) { // 视频通话时,被对方呼叫UI初始化
+        //呼叫声音初始化调用
+        [self.audioPlayer play];
+        
         if ([self internetStatus]) {
             RTCAlertView *alertVie = [[ RTCAlertView alloc]initWithAlertView];
             alertVie.delegate = self;
@@ -336,11 +337,17 @@ static int const showtime = 70;
 -(void)hide{
     self.btnContainerView.hidden = YES;
     self.smallScreenButton.hidden = YES;
+    self.toHeadImage.hidden = YES;
+    self.nickNameLabel.hidden = YES;
+    self.connectLabel.hidden = YES;
 }
 
 -(void)show{
     self.btnContainerView.hidden = NO;
     self.smallScreenButton.hidden = NO;
+    self.toHeadImage.hidden = NO;
+    self.nickNameLabel.hidden = NO;
+    self.connectLabel.hidden = NO;
     
 }
 
@@ -394,6 +401,7 @@ static int const showtime = 70;
        [self stopShakeSound];
        self->_nickNameLabel.text = @"有效视频时长";
        [self startCoundown];
+       [self->_audioPlayer stop];
    });
     
 
@@ -457,9 +465,10 @@ static int const showtime = 70;
     [UIView animateWithDuration:0.3 animations:^{
         [self hide];
         self.frame = CGRectMake(ScreenW-WindowDisplayWidth-20, 20, WindowDisplayWidth, WindowDisplayHeight);
-        self->_remoteRender.frame = CGRectMake(ScreenW-WindowDisplayWidth-20, 20, WindowDisplayWidth, WindowDisplayHeight);
+        self->_remoteRender.frame = CGRectMake(0, 0,WindowDisplayWidth, WindowDisplayHeight);
     }completion:^(BOOL finished) {
         self->_state = RTCWindowFloatingWindow;
+       
     }];
 }
 
