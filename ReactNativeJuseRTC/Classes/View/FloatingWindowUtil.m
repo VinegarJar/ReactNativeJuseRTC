@@ -67,6 +67,7 @@
          [[UIApplication sharedApplication].delegate.window addSubview:self.floatWindow.callRTCView];
         }];
     }];
+
 }
 
 
@@ -88,7 +89,9 @@
         NSInteger resultRep = [[responseObject objectForKey:@"code"] integerValue];
         if(resultRep  == 200){
             NSDictionary *data = [responseObject objectForKey:@"data"];
-            [self.floatWindow.callRTCView signalingCallinfo:data userInfo:self->_signaUserInfo];
+            [self->_floatWindow.callRTCView signalingCallinfo:data userInfo:self->_signaUserInfo];
+        }else{
+            [self->_floatWindow.callRTCView signalingCallinfo:@{} userInfo:self->_signaUserInfo];
         }
         
     } failBlock:^(NSError *error) {

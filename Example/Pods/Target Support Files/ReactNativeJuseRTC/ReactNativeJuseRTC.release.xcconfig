@@ -1,6 +1,6 @@
 CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = NO
 CONFIGURATION_BUILD_DIR = ${PODS_CONFIGURATION_BUILD_DIR}/ReactNativeJuseRTC
-FRAMEWORK_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/React" "${PODS_ROOT}/NERtcSDK/NERTC/NERtcSDK"
+FRAMEWORK_SEARCH_PATHS = $(inherited) "${PODS_ROOT}/NERtcSDK/NERTC/NERtcSDK"
 GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
 OTHER_LDFLAGS = $(inherited) -framework "AVFoundation" -framework "AudioToolbox" -framework "CoreGraphics" -framework "CoreMedia" -framework "CoreVideo" -framework "GLKit" -framework "Metal" -framework "MetalKit" -framework "NERtcSDK" -framework "NMCBasicModuleFramework" -framework "OpenGLES" -framework "QuartzCore" -framework "UIKit" -framework "VideoToolbox"
 PODS_BUILD_DIR = ${BUILD_DIR}

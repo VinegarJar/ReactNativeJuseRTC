@@ -11,7 +11,7 @@
 #import <AVFoundation/AVFoundation.h>
 #import <AudioToolbox/AudioToolbox.h>
 #import "NSURL+URLxtension.h"
-
+#import "StringToDic.h"
 
 
 
@@ -49,10 +49,6 @@ typedef NS_ENUM(NSInteger, RTCWindowState) {
 - (instancetype)initWithRTCWindowViewSignalingCall:(BOOL)signalingCall;
 
 @property (nonatomic, strong)  AVAudioPlayer *audioPlayer;/** 播放铃声player */
-
-@property (copy, nonatomic) NSString            *roomID;
-@property (copy, nonatomic) NSString            *userID;
-@property (copy, nonatomic) NSString            *token;
 
 -(void)signalingCallinfo:(NSDictionary *)data userInfo:(NSDictionary *)dic;
 - (void)setupRTCEngine;

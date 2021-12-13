@@ -25,9 +25,6 @@
     ]
   },
   "dependencies": {
-    "React": [
-
-    ],
     "NERtcSDK": [
       "3.9.0"
     ]

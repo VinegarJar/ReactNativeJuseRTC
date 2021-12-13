@@ -177,13 +177,11 @@ code_sign_if_enabled() {
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "${PODS_ROOT}/NERtcSDK/NERTC/NERtcSDK/NERtcSDK.framework"
   install_framework "${PODS_ROOT}/NERtcSDK/NERTC/NERtcSDK/NMCBasicModuleFramework.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/React/React.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/ReactNativeJuseRTC/ReactNativeJuseRTC.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "${PODS_ROOT}/NERtcSDK/NERTC/NERtcSDK/NERtcSDK.framework"
   install_framework "${PODS_ROOT}/NERtcSDK/NERTC/NERtcSDK/NMCBasicModuleFramework.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/React/React.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/ReactNativeJuseRTC/ReactNativeJuseRTC.framework"
 fi
 if [ "${COCOAPODS_PARALLEL_CODE_SIGN}" == "true" ]; then

@@ -326,14 +326,12 @@
 				"${PODS_ROOT}/Target Support Files/Pods-ReactNativeJuseRTC_Example/Pods-ReactNativeJuseRTC_Example-frameworks.sh",
 				"${PODS_ROOT}/NERtcSDK/NERTC/NERtcSDK/NERtcSDK.framework",
 				"${PODS_ROOT}/NERtcSDK/NERTC/NERtcSDK/NMCBasicModuleFramework.framework",
-				"${BUILT_PRODUCTS_DIR}/React/React.framework",
 				"${BUILT_PRODUCTS_DIR}/ReactNativeJuseRTC/ReactNativeJuseRTC.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NERtcSDK.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NMCBasicModuleFramework.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/React.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReactNativeJuseRTC.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;

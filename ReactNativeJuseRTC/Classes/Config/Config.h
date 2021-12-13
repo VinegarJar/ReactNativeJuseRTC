@@ -16,7 +16,7 @@
 #define WindowDisplayWidth 100
 #define WindowDisplayHeight 100
 
-#define RTCRate     ([UIScreen mainScreen].bounds.size.width / 375.0)
+#define RTCRate     ([UIScreen mainScreen].bounds.size.width / 320.0)
 
 // 底部按钮
 #define RTCBtnWidth 60
@@ -25,6 +25,17 @@
 #define RTCViewHeight 80
 // 底部按钮容器的高度
 #define ContainerH  150
+
+// 视频聊天时，小窗口的宽
+#define kMicVideoW   (100 * RTCRate)
+// 视频聊天时，小窗口的高
+#define kMicVideoH   (120 * RTCRate)
+
+// 视频聊天时，昵称的宽
+#define NickWidth   (120 * RTCRate)
+// 视频聊天时，昵称的高
+#define NickHeight (20 * RTCRate)
+
 
 // 设置颜色RGB值
 #define kRGBColor(a,b,c) [UIColor colorWithRed:(a/255.0) green:(b/255.0) blue:(c/255.0) alpha:1.0]
