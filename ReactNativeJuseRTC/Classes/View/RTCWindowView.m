@@ -161,6 +161,16 @@
     return _smallScreenButton;
 }
 
+//开启本地预览
+- (NERtcVideoCanvas *)startVideoPreview {
+  
+  if(_localCanvas == nil){
+    _localCanvas = [[NTESDemoUserModel alloc] init];
+  }
+  _localCanvas.uid = [_userID intValue];
+  _localCanvas.renderContainer = self.toHeadImage;
+  return [_localCanvas setupCanvas];
+}
 
 //建立本地canvas模型，表示已经接通/开启本地预览(显示对方头像)
 - (NERtcVideoCanvas *)setupLocalCanvas {
@@ -277,9 +287,15 @@
     [self remoteRender];
     [self addSubviews];
     [self addGestureToWindowView];
+    [self performSelector:@selector(startPreview) withObject:nil/*可传任意类型参数*/ afterDelay:0.5];
 }
 
 
+//开启预览
+- (void)startPreview{
+  [NERtcEngine.sharedEngine setupLocalVideoCanvas:[self startVideoPreview]];
+  [NERtcEngine.sharedEngine startPreview];
+}
 
 
 - (void)addSubviews{
@@ -409,9 +425,10 @@
             NSLog(@"%@", msg);
         } else {
             [self->_audioPlayer stop];
+    
             //加入成功，建立本地canvas渲染本地视图
-            NERtcVideoCanvas *canvas = [weakSelf setupLocalCanvas];
-            [coreEngine setupLocalVideoCanvas:canvas];
+            self->_localCanvas = [weakSelf setupLocalCanvas];
+            [NERtcEngine.sharedEngine setupLocalVideoCanvas:self->_localCanvas];
             
             if (self.delegate && [self.delegate respondsToSelector:@selector(acceptCallHandle)]) {
                 [self.delegate acceptCallHandle];
@@ -421,7 +438,6 @@
 
 }
 
-//自己呼叫加入房间
 - (void)signalingNotifyJoinWithEventType:(NSString *)eventType{
     
    
@@ -577,11 +593,11 @@
    });
     
    
-    if (_signalingCall) {//自己呼叫对方
-        NSString *eventType = [userInfo objectForKey:@"eventType"];
-        [self signalingNotifyJoinWithEventType:eventType];
-        [self performSelector:@selector(noAnswer) withObject:nil afterDelay:60.0];
-    }
+//    if (_signalingCall) {//自己呼叫对方
+//        NSString *eventType = [userInfo objectForKey:@"eventType"];
+//        [self signalingNotifyJoinWithEventType:eventType];
+//        [self performSelector:@selector(noAnswer) withObject:nil afterDelay:60.0];
+//    }
  
 
 }

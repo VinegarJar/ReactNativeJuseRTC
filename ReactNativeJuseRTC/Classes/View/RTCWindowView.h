@@ -54,5 +54,6 @@ typedef NS_ENUM(NSInteger, RTCWindowState) {
 -(void)signalingCallinfo:(NSDictionary *)callinfo userInfo:(NSDictionary *)userInfo;
 - (void)setupRTCEngine;
 - (void)signalingMutilClientSyncNotify;
+- (void)signalingNotifyJoinWithEventType:(NSString *)eventType;
 @end
 

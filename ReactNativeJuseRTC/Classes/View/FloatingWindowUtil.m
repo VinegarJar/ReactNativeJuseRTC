@@ -53,23 +53,38 @@
     return  _floatWindow;
 }
 
+//1.初始化SDK
+
 
 - (void)startSignalingCall:(BOOL)signalingCall{
     
+
     [self.floatWindow startCallWithSignaling:signalingCall];
-    self.floatWindow.callRTCView.frame = [UIScreen mainScreen].bounds;
-    self.floatWindow.callRTCView.delegate = self;
-    self.floatWindow.callRTCView.alpha = .0f;
+   
+    NSString *eventType = [ _signaUserInfo objectForKey:@"eventType"];
     
-    [UIView animateWithDuration:0.5 animations:^{
-        self.floatWindow.callRTCView.alpha = 1.0f;
-    } completion:^(BOOL finished) {
-        [UIView animateWithDuration:0.25 animations:^{
-          self->_floatWindow.callRTCView.transform = CGAffineTransformIdentity;
-         [[UIApplication sharedApplication].delegate.window addSubview:self.floatWindow.callRTCView];
-        }];
+    if([eventType isEqual: @"INVITE"]){
+
         [self requestToken];
-    }];
+
+    }else if([eventType isEqual: @"CANCEL_INVITE"]){
+    
+    }else if([eventType isEqual: @"REJECT"]){//对方拒接
+
+
+    }else if([eventType isEqualToString:@"finishVideo"]){
+        //离开频道，结束或退出通话
+
+    }else if([eventType isEqualToString:@"CONTROL"]){//对方正忙
+
+        
+    }else{
+      [self.floatWindow.callRTCView signalingNotifyJoinWithEventType:eventType];
+    }
+    
+    
+    
+  
 
 }
 
@@ -93,6 +108,23 @@
         if(resultRep  == 200){
             NSDictionary *data = [responseObject objectForKey:@"data"];
             [self->_floatWindow.callRTCView signalingCallinfo:data userInfo:self->_signaUserInfo];
+            
+            //加载UI显示
+            dispatch_async(dispatch_get_main_queue(), ^{
+                
+                self.floatWindow.callRTCView.frame = [UIScreen mainScreen].bounds;
+                self.floatWindow.callRTCView.delegate = self;
+                self.floatWindow.callRTCView.alpha = .0f;
+                [UIView animateWithDuration:0.5 animations:^{
+                    self.floatWindow.callRTCView.alpha = 1.0f;
+                } completion:^(BOOL finished) {
+                    [UIView animateWithDuration:0.25 animations:^{
+                      self->_floatWindow.callRTCView.transform = CGAffineTransformIdentity;
+                     [[UIApplication sharedApplication].delegate.window addSubview:self.floatWindow.callRTCView];
+                    }];
+                   
+                }];
+            });
         }
         
     } failBlock:^(NSError *error) {
