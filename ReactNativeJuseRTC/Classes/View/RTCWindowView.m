@@ -577,7 +577,7 @@
    });
     
    
-    if (!_signalingCall) {//自己呼叫对方
+    if (_signalingCall) {//自己呼叫对方
         NSString *eventType = [userInfo objectForKey:@"eventType"];
         [self signalingNotifyJoinWithEventType:eventType];
         [self performSelector:@selector(noAnswer) withObject:nil afterDelay:60.0];
