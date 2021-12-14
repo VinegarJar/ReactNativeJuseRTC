@@ -682,6 +682,7 @@
 }
 
 - (void)signalingMutilClientSyncNotify{
+    [WHToast showMessage:@"多设备同步" duration:2 finishHandler:^{ }];
     [self hangupClick];
 }
 

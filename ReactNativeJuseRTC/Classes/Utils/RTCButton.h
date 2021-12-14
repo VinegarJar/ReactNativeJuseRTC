@@ -7,7 +7,7 @@
 
 #import <UIKit/UIKit.h>
 #import "UIImage+TExtension.h"
-#import "Config.h"
+#import "FloatConfig.h"
 NS_ASSUME_NONNULL_BEGIN
 
 @interface RTCButton : UIView

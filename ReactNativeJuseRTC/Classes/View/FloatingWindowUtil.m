@@ -264,6 +264,6 @@
 
 - (void)signalingMutilClientSyncNotify{
      
-    [self.floatWindow.callRTCView signalingMutilClientSyncNotify]
+    [self.floatWindow.callRTCView signalingMutilClientSyncNotify];
 }
 @end
