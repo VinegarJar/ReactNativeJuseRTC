@@ -63,13 +63,9 @@
           self->_floatWindow.callRTCView.transform = CGAffineTransformIdentity;
          [[UIApplication sharedApplication].delegate.window addSubview:self.floatWindow.callRTCView];
         }];
+        [self requestToken];
     }];
 
-    //rn和原生桥接是异步的，所以需要对UI操作必须在主线程。
-    dispatch_async(dispatch_get_main_queue(), ^{
-      [self requestToken];
-    });
-    
 }
 
 
