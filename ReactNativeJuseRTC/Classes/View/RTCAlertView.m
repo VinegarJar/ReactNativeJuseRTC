@@ -7,7 +7,7 @@
 
 #import "RTCAlertView.h"
 #import "Reachability.h"
-#import "Config.h"
+#import "FloatConfig.h"
 
 @interface RTCAlertView ()
 @property (strong, nonatomic) UIView*tipsView;

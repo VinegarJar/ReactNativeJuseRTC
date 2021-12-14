@@ -681,6 +681,8 @@
     [_vibrationTimer invalidate];
 }
 
-
+- (void)signalingMutilClientSyncNotify{
+    [self hangupClick];
+}
 
 @end

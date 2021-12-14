@@ -15,196 +15,195 @@
 			dependencies = (
 			);
 			name = NERtcSDK;
-			productName = NERtcSDK;
 		};
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
-		00F7C0A627912CDADB2E22305B69BFC1 /* RTCWindowView.m in Sources */ = {isa = PBXBuildFile; fileRef = 15ECCFD3BD6AFB99DFBDE817248C54B5 /* RTCWindowView.m */; };
-		0ADEE0D377187CE16300759B7A6001D8 /* HSNetworkTool.h in Headers */ = {isa = PBXBuildFile; fileRef = 9FB7A79F3365AC84C48D78083F8BADB4 /* HSNetworkTool.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0E0F0FA4440D0E8F97B7A52260B666DA /* UIImage+TExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DD75D634E681A1F680483141C7BB1D0 /* UIImage+TExtension.m */; };
-		10262ECD2ADC7772A4B25B989F806541 /* StringToDic.h in Headers */ = {isa = PBXBuildFile; fileRef = CF7B2BBCAE44FCD0CCD9DE33EA17B02A /* StringToDic.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		1B9FAA1DCAA8FA096EAA632678E50C54 /* NTESDemoUserModel.h in Headers */ = {isa = PBXBuildFile; fileRef = BE5B602C93138403CA466ECB4E667854 /* NTESDemoUserModel.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		205939175A43EC38526E223249C4EC65 /* WHToast.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B26C7AE4EAC1A95E3C6CE9F875F51FC /* WHToast.m */; };
-		22D695B82E78EC111A9A1FD5C99ACF5B /* Config.h in Headers */ = {isa = PBXBuildFile; fileRef = 80E0DFED6B00852119718EEB66C18C84 /* Config.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		23249A84592790AFE196E264F9592011 /* RTCAlertView.h in Headers */ = {isa = PBXBuildFile; fileRef = CFAE1C4DFD63EF1E5AF911D54FD4039E /* RTCAlertView.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		33BAD814B12CFE8F87CA57479A23CFAC /* NSBundle+EXtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 4083A94B0B65FD6AB4BDD35F59778BB7 /* NSBundle+EXtension.m */; };
+		094A97F54C6A9EE5ED0CC40244359AE8 /* RTCButton.h in Headers */ = {isa = PBXBuildFile; fileRef = 5C366353366CFFB1512CE9D684F72D50 /* RTCButton.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0E1ED9D62DA41222B4F41822862CCC46 /* NTESDemoUserModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 303A831E4FA41B507E18AA946995E510 /* NTESDemoUserModel.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0F410AAFF6D5EA741D7E71F9D2C0A427 /* NSBundle+EXtension.h in Headers */ = {isa = PBXBuildFile; fileRef = 3C2C490E9079CF6B260DF52F81E2FCF2 /* NSBundle+EXtension.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		13664B93D141EFCE6B8D37941AE0F097 /* NSURL+URLxtension.m in Sources */ = {isa = PBXBuildFile; fileRef = EF745557216BE6292B901D27F5759E04 /* NSURL+URLxtension.m */; };
+		1B68B74DF87E7AF170540751F3689328 /* RTCWindowView.h in Headers */ = {isa = PBXBuildFile; fileRef = F967FD973687F9EC3465B1E9607D93AC /* RTCWindowView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1BA20355F528CBD8FF885B8E68B9A07D /* WHToastView.h in Headers */ = {isa = PBXBuildFile; fileRef = 0F21AD03574DD0D65F9230FD6E6BEC84 /* WHToastView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		232C64C3AFF839887E6010333379F89C /* WHToast.h in Headers */ = {isa = PBXBuildFile; fileRef = 7322B07EEFA26D95B0EC8244456CB1BE /* WHToast.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2C401166E558D476C168BCCCD280BB56 /* FloatingWindowView.h in Headers */ = {isa = PBXBuildFile; fileRef = CE6FCE23FE1BA64B99464B564EB5FD67 /* FloatingWindowView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2DFA535BAA2A0C4C3B38B2E803F0CE10 /* RTCWindowView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D9254BE3ACE9258BC7AAC838C9180AE /* RTCWindowView.m */; };
+		32091CE253CB5EF2183B0B57BE53BD0C /* whtoast_success@2x.png in Sources */ = {isa = PBXBuildFile; fileRef = E09AD78AE998887126D6033659199A9A /* whtoast_success@2x.png */; };
 		35B1A82215E603361B405391F462AC0A /* Pods-ReactNativeJuseRTC_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 8CFD1012D035AA7A95448C75FD64134E /* Pods-ReactNativeJuseRTC_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		37A507D7E518BD20DEFF1E099BD8C5C3 /* WHToastView.m in Sources */ = {isa = PBXBuildFile; fileRef = 13E5F609EF376EC822C2E4A550BC9F52 /* WHToastView.m */; };
 		3A07710B117EFD1253AF3CD35EA796D9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		3CA5EFCF58CAB626145A9F36510317A5 /* NTESDemoUserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B65536E1C5E386387C49CF6B4CE24F9 /* NTESDemoUserModel.m */; };
+		3FD2A0A9A30A320385E95ABF8461A861 /* FloatingWindowUtil.h in Headers */ = {isa = PBXBuildFile; fileRef = 03D07EE4F305C8E386CDBA4EE36AB36F /* FloatingWindowUtil.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		40418B55F7B50E720D519A4EEDB3F1C7 /* UIImage+TExtension.h in Headers */ = {isa = PBXBuildFile; fileRef = 51A507AA1904D33D223311734BCCF79B /* UIImage+TExtension.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		415C5C9620460BECE800C6880B9204FE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
-		4511CE9C6671D5DD86DB9886F41C7F30 /* whtoast_success@2x.png in Sources */ = {isa = PBXBuildFile; fileRef = 14D505A2DE7B08791DB3042B00B2189B /* whtoast_success@2x.png */; };
-		4BC029295FC5F683C4BB3B1F6C7AD4DE /* UIView+XXYViewFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D1EFEF5FF52B1752491D6E966A9BB31 /* UIView+XXYViewFrame.m */; };
-		5137A30566442605E322C97821FF2ACF /* UIImage+TExtension.h in Headers */ = {isa = PBXBuildFile; fileRef = D8FEF18E7C89C27CFB4A22FDFB185D27 /* UIImage+TExtension.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		471C7FB77DA47DA942B3704929279E48 /* FloatingWindowUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = C967E7445A5A7E9C28FDF140BD0660F9 /* FloatingWindowUtil.m */; };
+		491DD86775FAC49806A4548DD146D622 /* StringToDic.h in Headers */ = {isa = PBXBuildFile; fileRef = D1D635739CC282D0B28D7885A7C40BCA /* StringToDic.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4BF4B7E29C96BE422F75C73269C1C76A /* RCTResource.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 547114C402661B5B6A942D58492825AA /* RCTResource.bundle */; };
 		5168C481B2326A9FEBE41B788E4114F7 /* Pods-ReactNativeJuseRTC_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 744440EB6F77054CDD37227F077062EE /* Pods-ReactNativeJuseRTC_Tests-dummy.m */; };
 		569CF66626203CE0357A930483834C15 /* Pods-ReactNativeJuseRTC_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = FC954E65E7071A7E28B06FF4B13B9E81 /* Pods-ReactNativeJuseRTC_Example-dummy.m */; };
+		56BAA17F44E9DC00A04C3423B92C4E44 /* UIView+XXYViewFrame.h in Headers */ = {isa = PBXBuildFile; fileRef = 102F78CDB2824C76A2FA3B329CB1C879 /* UIView+XXYViewFrame.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		58EECAC7098F19A832A61C83775953F4 /* Pods-ReactNativeJuseRTC_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 63C3C5FCFDF5224FB2CC01B76FA18CE0 /* Pods-ReactNativeJuseRTC_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		5952E71C2768699300EEE5B6 /* Safety.m in Sources */ = {isa = PBXBuildFile; fileRef = 5952E71A2768699200EEE5B6 /* Safety.m */; };
-		5952E71D2768699300EEE5B6 /* Safety.h in Headers */ = {isa = PBXBuildFile; fileRef = 5952E71B2768699200EEE5B6 /* Safety.h */; };
-		5CC99BA62BB5332F76096B452AE03A5E /* RCTResource.bundle in Resources */ = {isa = PBXBuildFile; fileRef = B33A85C84D3282F277E8E0503D26AD93 /* RCTResource.bundle */; };
-		5CDF4CEE47A4B194BC5F60EF20F3A0CE /* ReactNativeJuseRTC-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 4E3159B41E7EAA3B8EDD495BDED359B1 /* ReactNativeJuseRTC-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		6004B8116C4D4BFC0E1536AFF6AAB273 /* WHToast.h in Headers */ = {isa = PBXBuildFile; fileRef = 99DDB2FA0861384F9735861F63DA7BB4 /* WHToast.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		6437E0E5B60E1ECD9126F750ADE3573C /* WHToastConfig.h in Headers */ = {isa = PBXBuildFile; fileRef = C8291BBB1B56C47FA14FE87FD7386BCF /* WHToastConfig.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		6DF9D919A55C6712B8037B6FD9ACD65E /* RTCButtonView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4684F4D73212E5648188E03DA1B5A778 /* RTCButtonView.m */; };
-		746B9A4F24130D8D39378AE046FDA5FD /* NSURL+URLxtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 87AA276A2955BF91858464F523817A3A /* NSURL+URLxtension.m */; };
-		763CF26D591931D1FD0B74B682EBF8C0 /* FloatingWindowUtil.h in Headers */ = {isa = PBXBuildFile; fileRef = 99A95A74A59E01F950371A2EC796D633 /* FloatingWindowUtil.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7EF4970D801800EDFCD88A677885CA16 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = E2516254F92A72C944855BCEDF074307 /* Reachability.m */; };
-		7F582698BB0F5920A28466EF3A3409A5 /* UIImage+WHToast.m in Sources */ = {isa = PBXBuildFile; fileRef = 883C2A51F705CF2C4B41472EBAB612C6 /* UIImage+WHToast.m */; };
-		832DF09D8091F682F4DFE95738BC5CEA /* WHToastConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 518ED3380D3D5C70038F278765ECC87C /* WHToastConfig.m */; };
-		8545AE947043DC8698059DAE2EAF657E /* whtoast_error.png in Sources */ = {isa = PBXBuildFile; fileRef = 0FE02155D446F3DBEB8AF182787E4203 /* whtoast_error.png */; };
-		8E1CC83658C5BF4CE5DE547E933BF01C /* StringToDic.m in Sources */ = {isa = PBXBuildFile; fileRef = 281D5DB5BB3C63860202BD366FB84029 /* StringToDic.m */; };
-		8F0EA6D90E1D33160A2096D433666198 /* RTCWindowView.h in Headers */ = {isa = PBXBuildFile; fileRef = 92A7643F3E3D9AE72BB1E640F2CE2BDF /* RTCWindowView.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		93AC8157E3F5864403B894FA2912E2F7 /* RTCButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BACDF384FCAA39BBAF9CE5CEFBF5A25 /* RTCButton.m */; };
-		9749881C5C4D5705799C3026A857680E /* RTCButtonView.h in Headers */ = {isa = PBXBuildFile; fileRef = 4D53A9774CFFEBF9DE5643CE195228DC /* RTCButtonView.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		97B3DCCDFF6065C534F9BD2084D8CED9 /* WHToastView.m in Sources */ = {isa = PBXBuildFile; fileRef = A10E735DD3B1D6734B00D0DA4C81714C /* WHToastView.m */; };
-		98EA1EB182D73C191EE7A1A92D40CAAF /* ReactNativeJuseRTC.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 94FA3F23925A186D2E851A0F1E26E50B /* ReactNativeJuseRTC.bundle */; };
-		A0273D609CA41084C07889A9179A6DAE /* RTCAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = CD0653E29E12DBD9CF4DF9E5C88CD403 /* RTCAlertView.m */; };
-		A32720F347112E9C91C56954C67A7188 /* RTCButton.h in Headers */ = {isa = PBXBuildFile; fileRef = EDB3BB555B9CAC6BE563C041660C96F0 /* RTCButton.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		A334845470854576EC2FA6241E15ACA7 /* HSNetworkTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EBF71FF7701764587E4CF7F606FD721 /* HSNetworkTool.m */; };
-		A7B8366F2EFDA3052C70DB22EC816F48 /* NSURL+URLxtension.h in Headers */ = {isa = PBXBuildFile; fileRef = 8EB42F381AA4E753FEEE4E3C1055D7C4 /* NSURL+URLxtension.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		ADD5E26DC46D8F35000E5D3F7D248B04 /* Reachability.h in Headers */ = {isa = PBXBuildFile; fileRef = E7E79593264824EA4D29273BFDC592D1 /* Reachability.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		AEE8E95E681A86D1256C16F5A9F1966F /* whtoast_success@3x.png in Sources */ = {isa = PBXBuildFile; fileRef = F8C11DDDF1464FEF917D13167EB78BCD /* whtoast_success@3x.png */; };
-		AF518D843DCFC55681C62AAB04F9D182 /* NSBundle+EXtension.h in Headers */ = {isa = PBXBuildFile; fileRef = DBCF0DC379E6F62EACEBAB11E67C5E4A /* NSBundle+EXtension.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		AF6282271E1E3D91326C9755D435158E /* WHToastView.h in Headers */ = {isa = PBXBuildFile; fileRef = 651F89B834851A0D7C7ED47EDBAC09A5 /* WHToastView.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B33A3B433A0721528D5150904A6045DF /* FloatingWindowView.h in Headers */ = {isa = PBXBuildFile; fileRef = 677B37D4A6D6BE260E93AA9859D1DD17 /* FloatingWindowView.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		BDB9358977E6CAD6FB31C4719D75483D /* whtoast_error@2x.png in Sources */ = {isa = PBXBuildFile; fileRef = D83DA8A50F30ED9CB6098B0481DC8E66 /* whtoast_error@2x.png */; };
-		CFEBF73A654856A203B690D734F2B710 /* whtoast_error@3x.png in Sources */ = {isa = PBXBuildFile; fileRef = 03BE74C57229C436B72BB2AD4C7FEC9C /* whtoast_error@3x.png */; };
-		D0B94ED110A7B5B60F22FE18B1C9391D /* ReactNativeJuseRTC-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E8A80E70069F8FC5E009DC4ACC34A43C /* ReactNativeJuseRTC-dummy.m */; };
-		D2AC98E6ED35165EE6A5B3B9AC3CA2EE /* FloatingWindowUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DD3C8CA9037C32EEE40CB3B7EB95E7C /* FloatingWindowUtil.m */; };
-		D60D104AF626906C99B932C038B7BB3E /* UIColor+XXYExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F6D2E4119AA6259F896824C014F39E1 /* UIColor+XXYExtension.m */; };
-		D80E30BD0F1AB58554576A890B482B17 /* UIImage+WHToast.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F6E3684EDADC7233B6613515EAEA580 /* UIImage+WHToast.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		DA0E41F4BFC32C4BB49D06EB1E5150D6 /* FloatingWindowView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DB87CB8986DA1465860967B7C7AF9AA /* FloatingWindowView.m */; };
-		E74BB00B145333510679FE1A6EA3988A /* whtoast_success.png in Sources */ = {isa = PBXBuildFile; fileRef = 73A10B071E78C81ADA290DEC7D738BF0 /* whtoast_success.png */; };
-		E7DA625AF58F09D2003FA90906F92225 /* NTESDemoUserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 59EF576F21937F6ADCA15DB4D2CCDC45 /* NTESDemoUserModel.m */; };
-		ED05BB7E4E99B768263A035E5B9CFCE8 /* UIColor+XXYExtension.h in Headers */ = {isa = PBXBuildFile; fileRef = 9E2F9494FD773361753E9F21C484C9EC /* UIColor+XXYExtension.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		F84BE09BDEFE735130E34C138C0CE18F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
-		FC94D4E9DDCED803026953402A0CC9FE /* UIView+XXYViewFrame.h in Headers */ = {isa = PBXBuildFile; fileRef = CBA67F36F07BF5881E9CA2EC0C09ABD8 /* UIView+XXYViewFrame.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		61D50225976C39F4159724B8686A7348 /* WHToastConfig.h in Headers */ = {isa = PBXBuildFile; fileRef = DA5A483572A455F25708EDFFB122546E /* WHToastConfig.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		673151943E7969CF2AAF27FCA9FB287A /* WHToast.m in Sources */ = {isa = PBXBuildFile; fileRef = A647569B1FF3FEC40B217D6EDF4B1B16 /* WHToast.m */; };
+		67C2CDFD451C7201854C9DE926F5D5AC /* UIImage+WHToast.h in Headers */ = {isa = PBXBuildFile; fileRef = 85261F1726D6DC22E6B6D43096749FDA /* UIImage+WHToast.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		681D2AA8A7C12FD872387CD27C42131A /* whtoast_success@3x.png in Sources */ = {isa = PBXBuildFile; fileRef = 3DAEC3238BDC50A77197D7893555D6C4 /* whtoast_success@3x.png */; };
+		6BC586A28B99F29AB878DB077AA64EA4 /* whtoast_success.png in Sources */ = {isa = PBXBuildFile; fileRef = CBFE7E92037B88A9AF8F2FA03CFFCE2F /* whtoast_success.png */; };
+		6C6F0BEAA34DB47FC42E22B600CF23CB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		71D12F4DCADD1E95FBEB6099CFF4CB75 /* UIColor+XXYExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = DF670C6581F608EFBA519EF60A77C2DF /* UIColor+XXYExtension.m */; };
+		8E77B64F59346386F6E992A344404E84 /* Safety.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E89D5A32EAB8948904294BF4B8F3BBD /* Safety.m */; };
+		90F893E34AE20855B7E9538221E0C44C /* UIColor+XXYExtension.h in Headers */ = {isa = PBXBuildFile; fileRef = C9BB555D2143C8D0F95907C1C58BF928 /* UIColor+XXYExtension.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9ED144D275E6CFF978EAAA01B5DC1E4D /* StringToDic.m in Sources */ = {isa = PBXBuildFile; fileRef = F8FF10B92A6BB2887B0CF7764A61AD27 /* StringToDic.m */; };
+		9F8B394FB48BE12F582D7C56016E6AB2 /* UIView+XXYViewFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D95F560AB5897A032D17EF9FFB02705 /* UIView+XXYViewFrame.m */; };
+		A0FF561733A6B5653DD05322AAD9CF1B /* ReactNativeJuseRTC-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = FE7858DA0E618319D5191A9B64090F56 /* ReactNativeJuseRTC-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A3EF1FB4B85D2FEA88863D4892B0D503 /* UIImage+TExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 986EFA3FDD87B3ABF49666CF39C35885 /* UIImage+TExtension.m */; };
+		A53B6670D259561EB09051A06EA0F98E /* whtoast_error@2x.png in Sources */ = {isa = PBXBuildFile; fileRef = EB3073990647AC074E6557634473BA72 /* whtoast_error@2x.png */; };
+		A93187F762487028833B6FC67112EF0C /* HSNetworkTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 255ADD26B0105968F6A1CE9B7D89C854 /* HSNetworkTool.m */; };
+		AC7C58F57D548D6D0CADF35FE0ECE216 /* WHToastConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = DE00923F8CAF9B2A4EA49CEF7ECD6229 /* WHToastConfig.m */; };
+		B0C4DDA8F03B77F5CEEEC0CB89A8B7E8 /* RTCAlertView.h in Headers */ = {isa = PBXBuildFile; fileRef = C8A2500819F5AF481EC13572E3FC4703 /* RTCAlertView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B32702924B3BA342A0AB4057B04C54D7 /* UIImage+WHToast.m in Sources */ = {isa = PBXBuildFile; fileRef = FC42BC74D54A80AD648FC85713470920 /* UIImage+WHToast.m */; };
+		B43C91F9AA062580438FE830C830C353 /* RTCButtonView.m in Sources */ = {isa = PBXBuildFile; fileRef = E574EF2766FADFD36037CD4B67669748 /* RTCButtonView.m */; };
+		BD16C92B4A9AC1E97724A97C76316B5F /* RTCButtonView.h in Headers */ = {isa = PBXBuildFile; fileRef = EE4D274E33D263A18486DE9F98B4AEDA /* RTCButtonView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C6C0D09A016366C983FEACF38E8FA9FA /* ReactNativeJuseRTC-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EAE6AFCA8BD3529301D15F44B16F37A /* ReactNativeJuseRTC-dummy.m */; };
+		C7ABB23D0B19D8BCAC3AEE1D148B63BF /* FloatConfig.h in Headers */ = {isa = PBXBuildFile; fileRef = 7C0586F232C627152F73434D85B8A077 /* FloatConfig.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C848FB76A8BEDBD9CA0411E960C8C6A0 /* RTCAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 48D7DB4E924B62656CB5766BD17588A9 /* RTCAlertView.m */; };
+		D435C245DEAEBB5CA71200C87C318959 /* whtoast_error.png in Sources */ = {isa = PBXBuildFile; fileRef = 1F6983354492B3DA42E679DD73606717 /* whtoast_error.png */; };
+		D4A9C2F845531C7D5F1ED68C53E5B2FB /* Safety.h in Headers */ = {isa = PBXBuildFile; fileRef = D18820D00402E5FFAE4C40F90B323F0C /* Safety.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D7B677627F5E477FE60E0C02D8E0EBAC /* HSNetworkTool.h in Headers */ = {isa = PBXBuildFile; fileRef = 9696F50434EFDF28EBA6CC62FA32CDD3 /* HSNetworkTool.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D7C0F93A655F7A20384A3604DD772A1B /* NSBundle+EXtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D0C0236A73A66CBBC6FC092F4609ADE /* NSBundle+EXtension.m */; };
+		DDAE746C6B830C55C49E6D926F325D9B /* NSURL+URLxtension.h in Headers */ = {isa = PBXBuildFile; fileRef = 5248639D4516B01514360FAC0707078B /* NSURL+URLxtension.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DF1D39308C8C36F48BC8CF3C41D217B0 /* whtoast_error@3x.png in Sources */ = {isa = PBXBuildFile; fileRef = 1F0135D923A6EAA792E32616A2CD4B6F /* whtoast_error@3x.png */; };
+		E01DE0C2EED0EF7BDF2096CE05FF04B3 /* FloatingWindowView.m in Sources */ = {isa = PBXBuildFile; fileRef = B43AD77ACF37F4E60AB61B30A00E2056 /* FloatingWindowView.m */; };
+		EF3D98B0744B7FECCC1F4911979DBBD6 /* RTCButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 670B48D1CE7C268B12EC419EB41F9AA2 /* RTCButton.m */; };
+		F511958618BD39D28E8FB9A937B8F2C2 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AEB90F5545517F9EB8D9F29E086DDE4 /* Reachability.m */; };
+		F66B3DB6C2E25C23611C3052C7F13363 /* Reachability.h in Headers */ = {isa = PBXBuildFile; fileRef = A4249A5015F1AD24D0730C21EC317770 /* Reachability.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F9CB9B784A5D03834E429DE2028BA000 /* ReactNativeJuseRTC.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 94FA3F23925A186D2E851A0F1E26E50B /* ReactNativeJuseRTC.bundle */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		3E2E802916AB6B5F307548836347CD16 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 32A91B845124664501E7D0D6A4E9FDAE;
-			remoteInfo = "Pods-ReactNativeJuseRTC_Example";
-		};
-		6F40F29566A961E4E9EDDE748C07A27E /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 37A6A8EAD658245BC447B0CB223076FD;
-			remoteInfo = NERtcSDK;
-		};
-		8B6314968367D7B48005FE6745F4A29D /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 4254021B58CA49C8C826B740DA8C2571;
-			remoteInfo = ReactNativeJuseRTC;
-		};
-		B407115B104DAFE56F4136FD72D05F9F /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 37A6A8EAD658245BC447B0CB223076FD;
-			remoteInfo = NERtcSDK;
-		};
-		EC4AFE094FF0D360AC08D87452E546EE /* PBXContainerItemProxy */ = {
+		07CBEB2906F3272B96426936996F6215 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 0F591268EDF63FB94EFC0248BEBA22C8;
 			remoteInfo = "ReactNativeJuseRTC-ReactNativeJuseRTC";
 		};
+		5ED48B5BBCF06941CD3442CC33063785 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 37A6A8EAD658245BC447B0CB223076FD;
+			remoteInfo = NERtcSDK;
+		};
+		B0E7091B322F40AB2203AF1715016987 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 32A91B845124664501E7D0D6A4E9FDAE;
+			remoteInfo = "Pods-ReactNativeJuseRTC_Example";
+		};
+		E20E8679614751659A63F2E0576C8B5A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 37A6A8EAD658245BC447B0CB223076FD;
+			remoteInfo = NERtcSDK;
+		};
+		EB9E1599D358FAD42A36F09077F09F13 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4254021B58CA49C8C826B740DA8C2571;
+			remoteInfo = ReactNativeJuseRTC;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		03BE74C57229C436B72BB2AD4C7FEC9C /* whtoast_error@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = "whtoast_error@3x.png"; sourceTree = "<group>"; };
+		010CF085CA9A9D07E43393F649D4FED0 /* ReactNativeJuseRTC-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ReactNativeJuseRTC-prefix.pch"; sourceTree = "<group>"; };
+		03D07EE4F305C8E386CDBA4EE36AB36F /* FloatingWindowUtil.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = FloatingWindowUtil.h; sourceTree = "<group>"; };
 		054BE18FD01033ED0193D3C166C97345 /* Pods-ReactNativeJuseRTC_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-ReactNativeJuseRTC_Tests.modulemap"; sourceTree = "<group>"; };
-		05F30D1B1977D859E9C0762F4879DF28 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		0683D11F1A25719B1ED76E689277880A /* ReactNativeJuseRTC-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ReactNativeJuseRTC-Info.plist"; sourceTree = "<group>"; };
+		0B72D3A69882DB8ADCF3B7C042FB49ED /* ReactNativeJuseRTC.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ReactNativeJuseRTC.debug.xcconfig; sourceTree = "<group>"; };
 		0CE1D9F20EA20C691F3B9A63BAA9F633 /* NERtcSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NERtcSDK.framework; path = NERTC/NERtcSDK/NERtcSDK.framework; sourceTree = "<group>"; };
-		0DD3C8CA9037C32EEE40CB3B7EB95E7C /* FloatingWindowUtil.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = FloatingWindowUtil.m; sourceTree = "<group>"; };
-		0FE02155D446F3DBEB8AF182787E4203 /* whtoast_error.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = whtoast_error.png; sourceTree = "<group>"; };
-		10173F6BF6C2230E97E7E6273C0B6E4C /* ResourceBundle-ReactNativeJuseRTC-ReactNativeJuseRTC-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ResourceBundle-ReactNativeJuseRTC-ReactNativeJuseRTC-Info.plist"; sourceTree = "<group>"; };
-		14D505A2DE7B08791DB3042B00B2189B /* whtoast_success@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = "whtoast_success@2x.png"; sourceTree = "<group>"; };
-		15ECCFD3BD6AFB99DFBDE817248C54B5 /* RTCWindowView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = RTCWindowView.m; sourceTree = "<group>"; };
-		1EBF71FF7701764587E4CF7F606FD721 /* HSNetworkTool.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = HSNetworkTool.m; sourceTree = "<group>"; };
-		210AFEA083C5B670DDD44AAC025C3B66 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
-		281D5DB5BB3C63860202BD366FB84029 /* StringToDic.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = StringToDic.m; sourceTree = "<group>"; };
+		0F21AD03574DD0D65F9230FD6E6BEC84 /* WHToastView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = WHToastView.h; sourceTree = "<group>"; };
+		102F78CDB2824C76A2FA3B329CB1C879 /* UIView+XXYViewFrame.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UIView+XXYViewFrame.h"; sourceTree = "<group>"; };
+		13E5F609EF376EC822C2E4A550BC9F52 /* WHToastView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = WHToastView.m; sourceTree = "<group>"; };
+		14B5094F265DCF4E699B1C7903BA65F6 /* ReactNativeJuseRTC.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = ReactNativeJuseRTC.modulemap; sourceTree = "<group>"; };
+		1935C9CF533CE022B937B2B184C937C0 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		1F0135D923A6EAA792E32616A2CD4B6F /* whtoast_error@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = "whtoast_error@3x.png"; sourceTree = "<group>"; };
+		1F6983354492B3DA42E679DD73606717 /* whtoast_error.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = whtoast_error.png; sourceTree = "<group>"; };
+		255ADD26B0105968F6A1CE9B7D89C854 /* HSNetworkTool.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = HSNetworkTool.m; sourceTree = "<group>"; };
 		2BDA2477607B3EC75969D016182752C4 /* Pods-ReactNativeJuseRTC_Example-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-ReactNativeJuseRTC_Example-Info.plist"; sourceTree = "<group>"; };
-		4083A94B0B65FD6AB4BDD35F59778BB7 /* NSBundle+EXtension.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "NSBundle+EXtension.m"; sourceTree = "<group>"; };
+		2D95F560AB5897A032D17EF9FFB02705 /* UIView+XXYViewFrame.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UIView+XXYViewFrame.m"; sourceTree = "<group>"; };
+		303A831E4FA41B507E18AA946995E510 /* NTESDemoUserModel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = NTESDemoUserModel.h; sourceTree = "<group>"; };
+		3C2C490E9079CF6B260DF52F81E2FCF2 /* NSBundle+EXtension.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "NSBundle+EXtension.h"; sourceTree = "<group>"; };
+		3DAEC3238BDC50A77197D7893555D6C4 /* whtoast_success@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = "whtoast_success@3x.png"; sourceTree = "<group>"; };
 		4168067C93C7084B7AA49CA4D10D5828 /* Pods-ReactNativeJuseRTC_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-ReactNativeJuseRTC_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		4684F4D73212E5648188E03DA1B5A778 /* RTCButtonView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = RTCButtonView.m; sourceTree = "<group>"; };
-		4B26C7AE4EAC1A95E3C6CE9F875F51FC /* WHToast.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = WHToast.m; sourceTree = "<group>"; };
-		4D53A9774CFFEBF9DE5643CE195228DC /* RTCButtonView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = RTCButtonView.h; sourceTree = "<group>"; };
-		4E3159B41E7EAA3B8EDD495BDED359B1 /* ReactNativeJuseRTC-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ReactNativeJuseRTC-umbrella.h"; sourceTree = "<group>"; };
+		48D7DB4E924B62656CB5766BD17588A9 /* RTCAlertView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = RTCAlertView.m; sourceTree = "<group>"; };
+		4AEB90F5545517F9EB8D9F29E086DDE4 /* Reachability.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		4B65536E1C5E386387C49CF6B4CE24F9 /* NTESDemoUserModel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = NTESDemoUserModel.m; sourceTree = "<group>"; };
 		4FE3EF8C1DA9012EFC8D5ADF4EE2CF8A /* Pods-ReactNativeJuseRTC_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ReactNativeJuseRTC_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		50B76F42621A4DD9395344DF4B0AB572 /* ReactNativeJuseRTC.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = ReactNativeJuseRTC.modulemap; sourceTree = "<group>"; };
-		518ED3380D3D5C70038F278765ECC87C /* WHToastConfig.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = WHToastConfig.m; sourceTree = "<group>"; };
-		5952E71A2768699200EEE5B6 /* Safety.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Safety.m; sourceTree = "<group>"; };
-		5952E71B2768699200EEE5B6 /* Safety.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Safety.h; sourceTree = "<group>"; };
-		59EF576F21937F6ADCA15DB4D2CCDC45 /* NTESDemoUserModel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = NTESDemoUserModel.m; sourceTree = "<group>"; };
-		5B30F0D5698331A9ED1216E935FD4E80 /* ReactNativeJuseRTC.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ReactNativeJuseRTC.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		51A507AA1904D33D223311734BCCF79B /* UIImage+TExtension.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UIImage+TExtension.h"; sourceTree = "<group>"; };
+		5248639D4516B01514360FAC0707078B /* NSURL+URLxtension.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "NSURL+URLxtension.h"; sourceTree = "<group>"; };
+		547114C402661B5B6A942D58492825AA /* RCTResource.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = RCTResource.bundle; path = ReactNativeJuseRTC/Assets/RCTResource.bundle; sourceTree = "<group>"; };
+		5B30F0D5698331A9ED1216E935FD4E80 /* ReactNativeJuseRTC.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = ReactNativeJuseRTC.framework; path = ReactNativeJuseRTC.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5C366353366CFFB1512CE9D684F72D50 /* RTCButton.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = RTCButton.h; sourceTree = "<group>"; };
 		5D4A77D22C6A72FC4C7DF98633BA1E2A /* NERtcSDK.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = NERtcSDK.debug.xcconfig; sourceTree = "<group>"; };
+		5E2F600381D807CB21E68A630600F750 /* ResourceBundle-ReactNativeJuseRTC-ReactNativeJuseRTC-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ResourceBundle-ReactNativeJuseRTC-ReactNativeJuseRTC-Info.plist"; sourceTree = "<group>"; };
 		63C3C5FCFDF5224FB2CC01B76FA18CE0 /* Pods-ReactNativeJuseRTC_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-ReactNativeJuseRTC_Example-umbrella.h"; sourceTree = "<group>"; };
-		651F89B834851A0D7C7ED47EDBAC09A5 /* WHToastView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = WHToastView.h; sourceTree = "<group>"; };
-		675479013C026029D61A26D9F2A61937 /* Pods_ReactNativeJuseRTC_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ReactNativeJuseRTC_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		677B37D4A6D6BE260E93AA9859D1DD17 /* FloatingWindowView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = FloatingWindowView.h; sourceTree = "<group>"; };
-		6BACDF384FCAA39BBAF9CE5CEFBF5A25 /* RTCButton.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = RTCButton.m; sourceTree = "<group>"; };
-		6D1EFEF5FF52B1752491D6E966A9BB31 /* UIView+XXYViewFrame.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UIView+XXYViewFrame.m"; sourceTree = "<group>"; };
-		6DB87CB8986DA1465860967B7C7AF9AA /* FloatingWindowView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = FloatingWindowView.m; sourceTree = "<group>"; };
-		6F6D2E4119AA6259F896824C014F39E1 /* UIColor+XXYExtension.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UIColor+XXYExtension.m"; sourceTree = "<group>"; };
+		670B48D1CE7C268B12EC419EB41F9AA2 /* RTCButton.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = RTCButton.m; sourceTree = "<group>"; };
+		675479013C026029D61A26D9F2A61937 /* Pods_ReactNativeJuseRTC_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_ReactNativeJuseRTC_Example.framework; path = "Pods-ReactNativeJuseRTC_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6E89D5A32EAB8948904294BF4B8F3BBD /* Safety.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = Safety.m; sourceTree = "<group>"; };
+		725073D1A598D8EC2214AFA1F73FAA7B /* ReactNativeJuseRTC-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ReactNativeJuseRTC-Info.plist"; sourceTree = "<group>"; };
 		72FFA9143543E56E063D93E426CA923A /* Pods-ReactNativeJuseRTC_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ReactNativeJuseRTC_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		73A10B071E78C81ADA290DEC7D738BF0 /* whtoast_success.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = whtoast_success.png; sourceTree = "<group>"; };
+		7322B07EEFA26D95B0EC8244456CB1BE /* WHToast.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = WHToast.h; sourceTree = "<group>"; };
 		744440EB6F77054CDD37227F077062EE /* Pods-ReactNativeJuseRTC_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-ReactNativeJuseRTC_Tests-dummy.m"; sourceTree = "<group>"; };
-		80E0DFED6B00852119718EEB66C18C84 /* Config.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = Config.h; sourceTree = "<group>"; };
-		85533C12F134D3966163F23E3BC9A382 /* ReactNativeJuseRTC.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = ReactNativeJuseRTC.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		87AA276A2955BF91858464F523817A3A /* NSURL+URLxtension.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "NSURL+URLxtension.m"; sourceTree = "<group>"; };
-		883C2A51F705CF2C4B41472EBAB612C6 /* UIImage+WHToast.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UIImage+WHToast.m"; sourceTree = "<group>"; };
+		7C0586F232C627152F73434D85B8A077 /* FloatConfig.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = FloatConfig.h; sourceTree = "<group>"; };
+		7D9254BE3ACE9258BC7AAC838C9180AE /* RTCWindowView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = RTCWindowView.m; sourceTree = "<group>"; };
+		85261F1726D6DC22E6B6D43096749FDA /* UIImage+WHToast.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UIImage+WHToast.h"; sourceTree = "<group>"; };
 		8CFD1012D035AA7A95448C75FD64134E /* Pods-ReactNativeJuseRTC_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-ReactNativeJuseRTC_Tests-umbrella.h"; sourceTree = "<group>"; };
-		8EB42F381AA4E753FEEE4E3C1055D7C4 /* NSURL+URLxtension.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "NSURL+URLxtension.h"; sourceTree = "<group>"; };
-		92A7643F3E3D9AE72BB1E640F2CE2BDF /* RTCWindowView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = RTCWindowView.h; sourceTree = "<group>"; };
-		94FA3F23925A186D2E851A0F1E26E50B /* ReactNativeJuseRTC.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ReactNativeJuseRTC.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
-		99A95A74A59E01F950371A2EC796D633 /* FloatingWindowUtil.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = FloatingWindowUtil.h; sourceTree = "<group>"; };
-		99DDB2FA0861384F9735861F63DA7BB4 /* WHToast.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = WHToast.h; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		9DD75D634E681A1F680483141C7BB1D0 /* UIImage+TExtension.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UIImage+TExtension.m"; sourceTree = "<group>"; };
-		9E2F9494FD773361753E9F21C484C9EC /* UIColor+XXYExtension.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UIColor+XXYExtension.h"; sourceTree = "<group>"; };
-		9F6E3684EDADC7233B6613515EAEA580 /* UIImage+WHToast.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UIImage+WHToast.h"; sourceTree = "<group>"; };
-		9FB7A79F3365AC84C48D78083F8BADB4 /* HSNetworkTool.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = HSNetworkTool.h; sourceTree = "<group>"; };
-		A10E735DD3B1D6734B00D0DA4C81714C /* WHToastView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = WHToastView.m; sourceTree = "<group>"; };
+		94FA3F23925A186D2E851A0F1E26E50B /* ReactNativeJuseRTC.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = ReactNativeJuseRTC.bundle; path = "ReactNativeJuseRTC-ReactNativeJuseRTC.bundle"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9696F50434EFDF28EBA6CC62FA32CDD3 /* HSNetworkTool.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = HSNetworkTool.h; sourceTree = "<group>"; };
+		986EFA3FDD87B3ABF49666CF39C35885 /* UIImage+TExtension.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UIImage+TExtension.m"; sourceTree = "<group>"; };
+		9D0C0236A73A66CBBC6FC092F4609ADE /* NSBundle+EXtension.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "NSBundle+EXtension.m"; sourceTree = "<group>"; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9EAE6AFCA8BD3529301D15F44B16F37A /* ReactNativeJuseRTC-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "ReactNativeJuseRTC-dummy.m"; sourceTree = "<group>"; };
+		A4249A5015F1AD24D0730C21EC317770 /* Reachability.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		A44EAB7F54883E3ADC3224245409B767 /* NMCBasicModuleFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NMCBasicModuleFramework.framework; path = NERTC/NERtcSDK/NMCBasicModuleFramework.framework; sourceTree = "<group>"; };
+		A48C3C12774E8FDE4D21F63E0C20C1BB /* ReactNativeJuseRTC.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = ReactNativeJuseRTC.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		A647569B1FF3FEC40B217D6EDF4B1B16 /* WHToast.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = WHToast.m; sourceTree = "<group>"; };
 		A657633B0A1497DFA44EBCD6407F2457 /* Pods-ReactNativeJuseRTC_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ReactNativeJuseRTC_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		AE406DA5EDC19D57B1E5F21634E8C87F /* Pods-ReactNativeJuseRTC_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-ReactNativeJuseRTC_Example-acknowledgements.plist"; sourceTree = "<group>"; };
-		B33A85C84D3282F277E8E0503D26AD93 /* RCTResource.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = RCTResource.bundle; path = ReactNativeJuseRTC/Assets/RCTResource.bundle; sourceTree = "<group>"; };
+		B43AD77ACF37F4E60AB61B30A00E2056 /* FloatingWindowView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = FloatingWindowView.m; sourceTree = "<group>"; };
 		BB9D9771019FEB0ABC0C2317B98B08B0 /* Pods-ReactNativeJuseRTC_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-ReactNativeJuseRTC_Example-frameworks.sh"; sourceTree = "<group>"; };
-		BE5B602C93138403CA466ECB4E667854 /* NTESDemoUserModel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = NTESDemoUserModel.h; sourceTree = "<group>"; };
 		C3B4A9F20B533F4E32EDD48ACC81AE89 /* Pods-ReactNativeJuseRTC_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ReactNativeJuseRTC_Example.release.xcconfig"; sourceTree = "<group>"; };
-		C8291BBB1B56C47FA14FE87FD7386BCF /* WHToastConfig.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = WHToastConfig.h; sourceTree = "<group>"; };
-		CBA67F36F07BF5881E9CA2EC0C09ABD8 /* UIView+XXYViewFrame.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UIView+XXYViewFrame.h"; sourceTree = "<group>"; };
-		CD0653E29E12DBD9CF4DF9E5C88CD403 /* RTCAlertView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = RTCAlertView.m; sourceTree = "<group>"; };
-		CF7B2BBCAE44FCD0CCD9DE33EA17B02A /* StringToDic.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = StringToDic.h; sourceTree = "<group>"; };
-		CFAE1C4DFD63EF1E5AF911D54FD4039E /* RTCAlertView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = RTCAlertView.h; sourceTree = "<group>"; };
-		D83DA8A50F30ED9CB6098B0481DC8E66 /* whtoast_error@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = "whtoast_error@2x.png"; sourceTree = "<group>"; };
+		C8A2500819F5AF481EC13572E3FC4703 /* RTCAlertView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = RTCAlertView.h; sourceTree = "<group>"; };
+		C8E94A1C4E77E0F1DA5D9E71CB18BE52 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		C967E7445A5A7E9C28FDF140BD0660F9 /* FloatingWindowUtil.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = FloatingWindowUtil.m; sourceTree = "<group>"; };
+		C9BB555D2143C8D0F95907C1C58BF928 /* UIColor+XXYExtension.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UIColor+XXYExtension.h"; sourceTree = "<group>"; };
+		CBFE7E92037B88A9AF8F2FA03CFFCE2F /* whtoast_success.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = whtoast_success.png; sourceTree = "<group>"; };
+		CE6FCE23FE1BA64B99464B564EB5FD67 /* FloatingWindowView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = FloatingWindowView.h; sourceTree = "<group>"; };
+		D18820D00402E5FFAE4C40F90B323F0C /* Safety.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = Safety.h; sourceTree = "<group>"; };
+		D1D635739CC282D0B28D7885A7C40BCA /* StringToDic.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = StringToDic.h; sourceTree = "<group>"; };
 		D8999EF6F7BD3C6C21AA9C9FFD3F6176 /* Pods-ReactNativeJuseRTC_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-ReactNativeJuseRTC_Example.modulemap"; sourceTree = "<group>"; };
-		D8FEF18E7C89C27CFB4A22FDFB185D27 /* UIImage+TExtension.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UIImage+TExtension.h"; sourceTree = "<group>"; };
-		D9D3A7DC743F454388D41A5A517378B5 /* ReactNativeJuseRTC.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ReactNativeJuseRTC.debug.xcconfig; sourceTree = "<group>"; };
-		DBCF0DC379E6F62EACEBAB11E67C5E4A /* NSBundle+EXtension.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "NSBundle+EXtension.h"; sourceTree = "<group>"; };
-		DBD9CDA9BB882930F12AC680A565B010 /* ReactNativeJuseRTC.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ReactNativeJuseRTC.release.xcconfig; sourceTree = "<group>"; };
-		DE0F1F325AD6C0D58356E160095AF26C /* Pods_ReactNativeJuseRTC_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ReactNativeJuseRTC_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		E2516254F92A72C944855BCEDF074307 /* Reachability.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		DA5A483572A455F25708EDFFB122546E /* WHToastConfig.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = WHToastConfig.h; sourceTree = "<group>"; };
+		DE00923F8CAF9B2A4EA49CEF7ECD6229 /* WHToastConfig.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = WHToastConfig.m; sourceTree = "<group>"; };
+		DE0F1F325AD6C0D58356E160095AF26C /* Pods_ReactNativeJuseRTC_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_ReactNativeJuseRTC_Tests.framework; path = "Pods-ReactNativeJuseRTC_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DF670C6581F608EFBA519EF60A77C2DF /* UIColor+XXYExtension.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UIColor+XXYExtension.m"; sourceTree = "<group>"; };
+		E09AD78AE998887126D6033659199A9A /* whtoast_success@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = "whtoast_success@2x.png"; sourceTree = "<group>"; };
+		E0DD966271A0AB35C551AF2265EF7AA3 /* ReactNativeJuseRTC.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ReactNativeJuseRTC.release.xcconfig; sourceTree = "<group>"; };
 		E463A1348D85AE437E6BEB658FDD06AA /* Pods-ReactNativeJuseRTC_Tests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-ReactNativeJuseRTC_Tests-Info.plist"; sourceTree = "<group>"; };
+		E574EF2766FADFD36037CD4B67669748 /* RTCButtonView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = RTCButtonView.m; sourceTree = "<group>"; };
 		E5D133B1DA9A4959A71D07256C81F7B9 /* NERtcSDK.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = NERtcSDK.release.xcconfig; sourceTree = "<group>"; };
-		E7E79593264824EA4D29273BFDC592D1 /* Reachability.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
-		E8A80E70069F8FC5E009DC4ACC34A43C /* ReactNativeJuseRTC-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "ReactNativeJuseRTC-dummy.m"; sourceTree = "<group>"; };
 		E8ED71A3147FBD976836D3E0E6448598 /* Pods-ReactNativeJuseRTC_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-ReactNativeJuseRTC_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
 		EA831ADBDCE879BBD074AE1C850B95D6 /* Pods-ReactNativeJuseRTC_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-ReactNativeJuseRTC_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
-		EDB3BB555B9CAC6BE563C041660C96F0 /* RTCButton.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = RTCButton.h; sourceTree = "<group>"; };
-		F0010C27334A12D1E95F409E016599C8 /* ReactNativeJuseRTC-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ReactNativeJuseRTC-prefix.pch"; sourceTree = "<group>"; };
-		F8C11DDDF1464FEF917D13167EB78BCD /* whtoast_success@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = "whtoast_success@3x.png"; sourceTree = "<group>"; };
+		EB3073990647AC074E6557634473BA72 /* whtoast_error@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = "whtoast_error@2x.png"; sourceTree = "<group>"; };
+		EE4D274E33D263A18486DE9F98B4AEDA /* RTCButtonView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = RTCButtonView.h; sourceTree = "<group>"; };
+		EF745557216BE6292B901D27F5759E04 /* NSURL+URLxtension.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "NSURL+URLxtension.m"; sourceTree = "<group>"; };
+		F8FF10B92A6BB2887B0CF7764A61AD27 /* StringToDic.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = StringToDic.m; sourceTree = "<group>"; };
+		F967FD973687F9EC3465B1E9607D93AC /* RTCWindowView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = RTCWindowView.h; sourceTree = "<group>"; };
+		FC42BC74D54A80AD648FC85713470920 /* UIImage+WHToast.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UIImage+WHToast.m"; sourceTree = "<group>"; };
 		FC954E65E7071A7E28B06FF4B13B9E81 /* Pods-ReactNativeJuseRTC_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-ReactNativeJuseRTC_Example-dummy.m"; sourceTree = "<group>"; };
+		FE7858DA0E618319D5191A9B64090F56 /* ReactNativeJuseRTC-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ReactNativeJuseRTC-umbrella.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -216,13 +215,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		89B60CADCAE8E240B17483E28924C29D /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		93733C662297AE35F698AF0A3E821209 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -231,11 +223,18 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E68E7A5E9E6CBED1D0EA329F825B3B9B /* Frameworks */ = {
+		A4450DFD653FBD8FC7227270484F2971 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F84BE09BDEFE735130E34C138C0CE18F /* Foundation.framework in Frameworks */,
+				6C6F0BEAA34DB47FC42E22B600CF23CB /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D3449603A839BDC5BE3ABBB97144A3A0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -259,22 +258,58 @@
 			path = "Target Support Files/Pods-ReactNativeJuseRTC_Example";
 			sourceTree = "<group>";
 		};
-		1BC2BCD27F056E6E80A56215CD400964 /* Category */ = {
+		1A7693845DF60BE618DE286DCD8C3FEA /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				DBCF0DC379E6F62EACEBAB11E67C5E4A /* NSBundle+EXtension.h */,
-				4083A94B0B65FD6AB4BDD35F59778BB7 /* NSBundle+EXtension.m */,
-				8EB42F381AA4E753FEEE4E3C1055D7C4 /* NSURL+URLxtension.h */,
-				87AA276A2955BF91858464F523817A3A /* NSURL+URLxtension.m */,
-				9E2F9494FD773361753E9F21C484C9EC /* UIColor+XXYExtension.h */,
-				6F6D2E4119AA6259F896824C014F39E1 /* UIColor+XXYExtension.m */,
-				D8FEF18E7C89C27CFB4A22FDFB185D27 /* UIImage+TExtension.h */,
-				9DD75D634E681A1F680483141C7BB1D0 /* UIImage+TExtension.m */,
-				CBA67F36F07BF5881E9CA2EC0C09ABD8 /* UIView+XXYViewFrame.h */,
-				6D1EFEF5FF52B1752491D6E966A9BB31 /* UIView+XXYViewFrame.m */,
+				9696F50434EFDF28EBA6CC62FA32CDD3 /* HSNetworkTool.h */,
+				255ADD26B0105968F6A1CE9B7D89C854 /* HSNetworkTool.m */,
+				303A831E4FA41B507E18AA946995E510 /* NTESDemoUserModel.h */,
+				4B65536E1C5E386387C49CF6B4CE24F9 /* NTESDemoUserModel.m */,
+				A4249A5015F1AD24D0730C21EC317770 /* Reachability.h */,
+				4AEB90F5545517F9EB8D9F29E086DDE4 /* Reachability.m */,
+				5C366353366CFFB1512CE9D684F72D50 /* RTCButton.h */,
+				670B48D1CE7C268B12EC419EB41F9AA2 /* RTCButton.m */,
+				D18820D00402E5FFAE4C40F90B323F0C /* Safety.h */,
+				6E89D5A32EAB8948904294BF4B8F3BBD /* Safety.m */,
+				D1D635739CC282D0B28D7885A7C40BCA /* StringToDic.h */,
+				F8FF10B92A6BB2887B0CF7764A61AD27 /* StringToDic.m */,
+			);
+			name = Utils;
+			path = ReactNativeJuseRTC/Classes/Utils;
+			sourceTree = "<group>";
+		};
+		206AEE75D5299199BFB074B64752D873 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				3C2C490E9079CF6B260DF52F81E2FCF2 /* NSBundle+EXtension.h */,
+				9D0C0236A73A66CBBC6FC092F4609ADE /* NSBundle+EXtension.m */,
+				5248639D4516B01514360FAC0707078B /* NSURL+URLxtension.h */,
+				EF745557216BE6292B901D27F5759E04 /* NSURL+URLxtension.m */,
+				C9BB555D2143C8D0F95907C1C58BF928 /* UIColor+XXYExtension.h */,
+				DF670C6581F608EFBA519EF60A77C2DF /* UIColor+XXYExtension.m */,
+				51A507AA1904D33D223311734BCCF79B /* UIImage+TExtension.h */,
+				986EFA3FDD87B3ABF49666CF39C35885 /* UIImage+TExtension.m */,
+				102F78CDB2824C76A2FA3B329CB1C879 /* UIView+XXYViewFrame.h */,
+				2D95F560AB5897A032D17EF9FFB02705 /* UIView+XXYViewFrame.m */,
 			);
 			name = Category;
 			path = ReactNativeJuseRTC/Classes/Category;
+			sourceTree = "<group>";
+		};
+		20AA39F4112BE742377029EE4D8907D9 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				14B5094F265DCF4E699B1C7903BA65F6 /* ReactNativeJuseRTC.modulemap */,
+				9EAE6AFCA8BD3529301D15F44B16F37A /* ReactNativeJuseRTC-dummy.m */,
+				725073D1A598D8EC2214AFA1F73FAA7B /* ReactNativeJuseRTC-Info.plist */,
+				010CF085CA9A9D07E43393F649D4FED0 /* ReactNativeJuseRTC-prefix.pch */,
+				FE7858DA0E618319D5191A9B64090F56 /* ReactNativeJuseRTC-umbrella.h */,
+				0B72D3A69882DB8ADCF3B7C042FB49ED /* ReactNativeJuseRTC.debug.xcconfig */,
+				E0DD966271A0AB35C551AF2265EF7AA3 /* ReactNativeJuseRTC.release.xcconfig */,
+				5E2F600381D807CB21E68A630600F750 /* ResourceBundle-ReactNativeJuseRTC-ReactNativeJuseRTC-Info.plist */,
+			);
+			name = "Support Files";
+			path = "Example/Pods/Target Support Files/ReactNativeJuseRTC";
 			sourceTree = "<group>";
 		};
 		29E65841575CEA70009540C31EF10D3E /* Products */ = {
@@ -313,72 +348,87 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		68DC7DCA89663AE339C8441FAD1A1F84 /* wtoast_icon */ = {
+		631629238987609BDFEC7706C2BFAFA0 /* ReactNativeJuseRTC */ = {
 			isa = PBXGroup;
 			children = (
-				0FE02155D446F3DBEB8AF182787E4203 /* whtoast_error.png */,
-				D83DA8A50F30ED9CB6098B0481DC8E66 /* whtoast_error@2x.png */,
-				03BE74C57229C436B72BB2AD4C7FEC9C /* whtoast_error@3x.png */,
-				73A10B071E78C81ADA290DEC7D738BF0 /* whtoast_success.png */,
-				14D505A2DE7B08791DB3042B00B2189B /* whtoast_success@2x.png */,
-				F8C11DDDF1464FEF917D13167EB78BCD /* whtoast_success@3x.png */,
+				547114C402661B5B6A942D58492825AA /* RCTResource.bundle */,
+				206AEE75D5299199BFB074B64752D873 /* Category */,
+				F6C07431177EAB62880AB12B9C1683BF /* Config */,
+				6E0EE6302AA6B8833914FD31E7BF5382 /* Pod */,
+				20AA39F4112BE742377029EE4D8907D9 /* Support Files */,
+				1A7693845DF60BE618DE286DCD8C3FEA /* Utils */,
+				78C5720D5DC768098F509CDCBA606339 /* View */,
+				928BA9F55D99DDDD926CF34FAB66CA5E /* WHToast */,
 			);
-			path = wtoast_icon;
+			name = ReactNativeJuseRTC;
+			path = ../..;
 			sourceTree = "<group>";
 		};
-		74D7013B3AB3D8FA185B61A5F3B4FD71 /* Config */ = {
+		6E0EE6302AA6B8833914FD31E7BF5382 /* Pod */ = {
 			isa = PBXGroup;
 			children = (
-				80E0DFED6B00852119718EEB66C18C84 /* Config.h */,
+				C8E94A1C4E77E0F1DA5D9E71CB18BE52 /* LICENSE */,
+				A48C3C12774E8FDE4D21F63E0C20C1BB /* ReactNativeJuseRTC.podspec */,
+				1935C9CF533CE022B937B2B184C937C0 /* README.md */,
 			);
-			name = Config;
-			path = ReactNativeJuseRTC/Classes/Config;
+			name = Pod;
 			sourceTree = "<group>";
 		};
-		7ACE140BE7FEAE015005D11179DD7A9C /* Development Pods */ = {
+		78C5720D5DC768098F509CDCBA606339 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				E02D165F2E6DA43B9831C7B94822F828 /* ReactNativeJuseRTC */,
-			);
-			name = "Development Pods";
-			sourceTree = "<group>";
-		};
-		7E6732608899E3CB58719ABC435F7C93 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				99A95A74A59E01F950371A2EC796D633 /* FloatingWindowUtil.h */,
-				0DD3C8CA9037C32EEE40CB3B7EB95E7C /* FloatingWindowUtil.m */,
-				677B37D4A6D6BE260E93AA9859D1DD17 /* FloatingWindowView.h */,
-				6DB87CB8986DA1465860967B7C7AF9AA /* FloatingWindowView.m */,
-				CFAE1C4DFD63EF1E5AF911D54FD4039E /* RTCAlertView.h */,
-				CD0653E29E12DBD9CF4DF9E5C88CD403 /* RTCAlertView.m */,
-				4D53A9774CFFEBF9DE5643CE195228DC /* RTCButtonView.h */,
-				4684F4D73212E5648188E03DA1B5A778 /* RTCButtonView.m */,
-				92A7643F3E3D9AE72BB1E640F2CE2BDF /* RTCWindowView.h */,
-				15ECCFD3BD6AFB99DFBDE817248C54B5 /* RTCWindowView.m */,
+				03D07EE4F305C8E386CDBA4EE36AB36F /* FloatingWindowUtil.h */,
+				C967E7445A5A7E9C28FDF140BD0660F9 /* FloatingWindowUtil.m */,
+				CE6FCE23FE1BA64B99464B564EB5FD67 /* FloatingWindowView.h */,
+				B43AD77ACF37F4E60AB61B30A00E2056 /* FloatingWindowView.m */,
+				C8A2500819F5AF481EC13572E3FC4703 /* RTCAlertView.h */,
+				48D7DB4E924B62656CB5766BD17588A9 /* RTCAlertView.m */,
+				EE4D274E33D263A18486DE9F98B4AEDA /* RTCButtonView.h */,
+				E574EF2766FADFD36037CD4B67669748 /* RTCButtonView.m */,
+				F967FD973687F9EC3465B1E9607D93AC /* RTCWindowView.h */,
+				7D9254BE3ACE9258BC7AAC838C9180AE /* RTCWindowView.m */,
 			);
 			name = View;
 			path = ReactNativeJuseRTC/Classes/View;
 			sourceTree = "<group>";
 		};
-		864084FCFC63191505B0FC5C1C52E36B /* Utils */ = {
+		7ACE140BE7FEAE015005D11179DD7A9C /* Development Pods */ = {
 			isa = PBXGroup;
 			children = (
-				9FB7A79F3365AC84C48D78083F8BADB4 /* HSNetworkTool.h */,
-				1EBF71FF7701764587E4CF7F606FD721 /* HSNetworkTool.m */,
-				BE5B602C93138403CA466ECB4E667854 /* NTESDemoUserModel.h */,
-				59EF576F21937F6ADCA15DB4D2CCDC45 /* NTESDemoUserModel.m */,
-				E7E79593264824EA4D29273BFDC592D1 /* Reachability.h */,
-				E2516254F92A72C944855BCEDF074307 /* Reachability.m */,
-				EDB3BB555B9CAC6BE563C041660C96F0 /* RTCButton.h */,
-				6BACDF384FCAA39BBAF9CE5CEFBF5A25 /* RTCButton.m */,
-				CF7B2BBCAE44FCD0CCD9DE33EA17B02A /* StringToDic.h */,
-				281D5DB5BB3C63860202BD366FB84029 /* StringToDic.m */,
-				5952E71B2768699200EEE5B6 /* Safety.h */,
-				5952E71A2768699200EEE5B6 /* Safety.m */,
+				631629238987609BDFEC7706C2BFAFA0 /* ReactNativeJuseRTC */,
 			);
-			name = Utils;
-			path = ReactNativeJuseRTC/Classes/Utils;
+			name = "Development Pods";
+			sourceTree = "<group>";
+		};
+		928BA9F55D99DDDD926CF34FAB66CA5E /* WHToast */ = {
+			isa = PBXGroup;
+			children = (
+				85261F1726D6DC22E6B6D43096749FDA /* UIImage+WHToast.h */,
+				FC42BC74D54A80AD648FC85713470920 /* UIImage+WHToast.m */,
+				7322B07EEFA26D95B0EC8244456CB1BE /* WHToast.h */,
+				A647569B1FF3FEC40B217D6EDF4B1B16 /* WHToast.m */,
+				DA5A483572A455F25708EDFFB122546E /* WHToastConfig.h */,
+				DE00923F8CAF9B2A4EA49CEF7ECD6229 /* WHToastConfig.m */,
+				0F21AD03574DD0D65F9230FD6E6BEC84 /* WHToastView.h */,
+				13E5F609EF376EC822C2E4A550BC9F52 /* WHToastView.m */,
+				AB5E5FAC3C31C68A00D1E4FD3DC375BF /* wtoast_icon */,
+			);
+			name = WHToast;
+			path = ReactNativeJuseRTC/Classes/WHToast;
+			sourceTree = "<group>";
+		};
+		AB5E5FAC3C31C68A00D1E4FD3DC375BF /* wtoast_icon */ = {
+			isa = PBXGroup;
+			children = (
+				1F6983354492B3DA42E679DD73606717 /* whtoast_error.png */,
+				EB3073990647AC074E6557634473BA72 /* whtoast_error@2x.png */,
+				1F0135D923A6EAA792E32616A2CD4B6F /* whtoast_error@3x.png */,
+				CBFE7E92037B88A9AF8F2FA03CFFCE2F /* whtoast_success.png */,
+				E09AD78AE998887126D6033659199A9A /* whtoast_success@2x.png */,
+				3DAEC3238BDC50A77197D7893555D6C4 /* whtoast_success@3x.png */,
+			);
+			name = wtoast_icon;
+			path = wtoast_icon;
 			sourceTree = "<group>";
 		};
 		CF1408CF629C7361332E53B88F7BD30C = {
@@ -401,29 +451,13 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		D5890073D07C7DAE343BFD8332B5130C /* WHToast */ = {
-			isa = PBXGroup;
-			children = (
-				9F6E3684EDADC7233B6613515EAEA580 /* UIImage+WHToast.h */,
-				883C2A51F705CF2C4B41472EBAB612C6 /* UIImage+WHToast.m */,
-				99DDB2FA0861384F9735861F63DA7BB4 /* WHToast.h */,
-				4B26C7AE4EAC1A95E3C6CE9F875F51FC /* WHToast.m */,
-				C8291BBB1B56C47FA14FE87FD7386BCF /* WHToastConfig.h */,
-				518ED3380D3D5C70038F278765ECC87C /* WHToastConfig.m */,
-				651F89B834851A0D7C7ED47EDBAC09A5 /* WHToastView.h */,
-				A10E735DD3B1D6734B00D0DA4C81714C /* WHToastView.m */,
-				68DC7DCA89663AE339C8441FAD1A1F84 /* wtoast_icon */,
-			);
-			name = WHToast;
-			path = ReactNativeJuseRTC/Classes/WHToast;
-			sourceTree = "<group>";
-		};
 		D9721CEAE200EF069EB510E454EA6CC4 /* NERtcSDK */ = {
 			isa = PBXGroup;
 			children = (
 				592B36123EBE2E511E71ECF6F5B82703 /* Frameworks */,
 				DAA3D4690E94DC867447B3C47FC55FA2 /* Support Files */,
 			);
+			name = NERtcSDK;
 			path = NERtcSDK;
 			sourceTree = "<group>";
 		};
@@ -435,38 +469,6 @@
 			);
 			name = "Support Files";
 			path = "../Target Support Files/NERtcSDK";
-			sourceTree = "<group>";
-		};
-		DF7435F7DFCFF626025E9E301B499C0F /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				50B76F42621A4DD9395344DF4B0AB572 /* ReactNativeJuseRTC.modulemap */,
-				E8A80E70069F8FC5E009DC4ACC34A43C /* ReactNativeJuseRTC-dummy.m */,
-				0683D11F1A25719B1ED76E689277880A /* ReactNativeJuseRTC-Info.plist */,
-				F0010C27334A12D1E95F409E016599C8 /* ReactNativeJuseRTC-prefix.pch */,
-				4E3159B41E7EAA3B8EDD495BDED359B1 /* ReactNativeJuseRTC-umbrella.h */,
-				D9D3A7DC743F454388D41A5A517378B5 /* ReactNativeJuseRTC.debug.xcconfig */,
-				DBD9CDA9BB882930F12AC680A565B010 /* ReactNativeJuseRTC.release.xcconfig */,
-				10173F6BF6C2230E97E7E6273C0B6E4C /* ResourceBundle-ReactNativeJuseRTC-ReactNativeJuseRTC-Info.plist */,
-			);
-			name = "Support Files";
-			path = "Example/Pods/Target Support Files/ReactNativeJuseRTC";
-			sourceTree = "<group>";
-		};
-		E02D165F2E6DA43B9831C7B94822F828 /* ReactNativeJuseRTC */ = {
-			isa = PBXGroup;
-			children = (
-				B33A85C84D3282F277E8E0503D26AD93 /* RCTResource.bundle */,
-				1BC2BCD27F056E6E80A56215CD400964 /* Category */,
-				74D7013B3AB3D8FA185B61A5F3B4FD71 /* Config */,
-				F09CA2A7F7517CA628E001C1E699FB61 /* Pod */,
-				DF7435F7DFCFF626025E9E301B499C0F /* Support Files */,
-				864084FCFC63191505B0FC5C1C52E36B /* Utils */,
-				7E6732608899E3CB58719ABC435F7C93 /* View */,
-				D5890073D07C7DAE343BFD8332B5130C /* WHToast */,
-			);
-			name = ReactNativeJuseRTC;
-			path = ../..;
 			sourceTree = "<group>";
 		};
 		E364C101B9658EAAD87C8CC79E6673AE /* Pods-ReactNativeJuseRTC_Tests */ = {
@@ -485,16 +487,6 @@
 			path = "Target Support Files/Pods-ReactNativeJuseRTC_Tests";
 			sourceTree = "<group>";
 		};
-		F09CA2A7F7517CA628E001C1E699FB61 /* Pod */ = {
-			isa = PBXGroup;
-			children = (
-				210AFEA083C5B670DDD44AAC025C3B66 /* LICENSE */,
-				85533C12F134D3966163F23E3BC9A382 /* ReactNativeJuseRTC.podspec */,
-				05F30D1B1977D859E9C0762F4879DF28 /* README.md */,
-			);
-			name = Pod;
-			sourceTree = "<group>";
-		};
 		F3B37B7A67581FD56E6382A6494F7077 /* Targets Support Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -504,38 +496,18 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
+		F6C07431177EAB62880AB12B9C1683BF /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				7C0586F232C627152F73434D85B8A077 /* FloatConfig.h */,
+			);
+			name = Config;
+			path = ReactNativeJuseRTC/Classes/Config;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		1253E647C244E9AA10AD5765E442D778 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				22D695B82E78EC111A9A1FD5C99ACF5B /* Config.h in Headers */,
-				763CF26D591931D1FD0B74B682EBF8C0 /* FloatingWindowUtil.h in Headers */,
-				B33A3B433A0721528D5150904A6045DF /* FloatingWindowView.h in Headers */,
-				0ADEE0D377187CE16300759B7A6001D8 /* HSNetworkTool.h in Headers */,
-				AF518D843DCFC55681C62AAB04F9D182 /* NSBundle+EXtension.h in Headers */,
-				A7B8366F2EFDA3052C70DB22EC816F48 /* NSURL+URLxtension.h in Headers */,
-				1B9FAA1DCAA8FA096EAA632678E50C54 /* NTESDemoUserModel.h in Headers */,
-				ADD5E26DC46D8F35000E5D3F7D248B04 /* Reachability.h in Headers */,
-				5952E71D2768699300EEE5B6 /* Safety.h in Headers */,
-				5CDF4CEE47A4B194BC5F60EF20F3A0CE /* ReactNativeJuseRTC-umbrella.h in Headers */,
-				23249A84592790AFE196E264F9592011 /* RTCAlertView.h in Headers */,
-				A32720F347112E9C91C56954C67A7188 /* RTCButton.h in Headers */,
-				9749881C5C4D5705799C3026A857680E /* RTCButtonView.h in Headers */,
-				8F0EA6D90E1D33160A2096D433666198 /* RTCWindowView.h in Headers */,
-				10262ECD2ADC7772A4B25B989F806541 /* StringToDic.h in Headers */,
-				ED05BB7E4E99B768263A035E5B9CFCE8 /* UIColor+XXYExtension.h in Headers */,
-				5137A30566442605E322C97821FF2ACF /* UIImage+TExtension.h in Headers */,
-				D80E30BD0F1AB58554576A890B482B17 /* UIImage+WHToast.h in Headers */,
-				FC94D4E9DDCED803026953402A0CC9FE /* UIView+XXYViewFrame.h in Headers */,
-				6004B8116C4D4BFC0E1536AFF6AAB273 /* WHToast.h in Headers */,
-				6437E0E5B60E1ECD9126F750ADE3573C /* WHToastConfig.h in Headers */,
-				AF6282271E1E3D91326C9755D435158E /* WHToastView.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		981B7FB84A3B0068C7FE46BCC2B940BB /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -552,16 +524,45 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		CD2E14C0AE20CC1D7565E1401E391DE2 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C7ABB23D0B19D8BCAC3AEE1D148B63BF /* FloatConfig.h in Headers */,
+				3FD2A0A9A30A320385E95ABF8461A861 /* FloatingWindowUtil.h in Headers */,
+				2C401166E558D476C168BCCCD280BB56 /* FloatingWindowView.h in Headers */,
+				D7B677627F5E477FE60E0C02D8E0EBAC /* HSNetworkTool.h in Headers */,
+				0F410AAFF6D5EA741D7E71F9D2C0A427 /* NSBundle+EXtension.h in Headers */,
+				DDAE746C6B830C55C49E6D926F325D9B /* NSURL+URLxtension.h in Headers */,
+				0E1ED9D62DA41222B4F41822862CCC46 /* NTESDemoUserModel.h in Headers */,
+				F66B3DB6C2E25C23611C3052C7F13363 /* Reachability.h in Headers */,
+				A0FF561733A6B5653DD05322AAD9CF1B /* ReactNativeJuseRTC-umbrella.h in Headers */,
+				B0C4DDA8F03B77F5CEEEC0CB89A8B7E8 /* RTCAlertView.h in Headers */,
+				094A97F54C6A9EE5ED0CC40244359AE8 /* RTCButton.h in Headers */,
+				BD16C92B4A9AC1E97724A97C76316B5F /* RTCButtonView.h in Headers */,
+				1B68B74DF87E7AF170540751F3689328 /* RTCWindowView.h in Headers */,
+				D4A9C2F845531C7D5F1ED68C53E5B2FB /* Safety.h in Headers */,
+				491DD86775FAC49806A4548DD146D622 /* StringToDic.h in Headers */,
+				90F893E34AE20855B7E9538221E0C44C /* UIColor+XXYExtension.h in Headers */,
+				40418B55F7B50E720D519A4EEDB3F1C7 /* UIImage+TExtension.h in Headers */,
+				67C2CDFD451C7201854C9DE926F5D5AC /* UIImage+WHToast.h in Headers */,
+				56BAA17F44E9DC00A04C3423B92C4E44 /* UIView+XXYViewFrame.h in Headers */,
+				232C64C3AFF839887E6010333379F89C /* WHToast.h in Headers */,
+				61D50225976C39F4159724B8686A7348 /* WHToastConfig.h in Headers */,
+				1BA20355F528CBD8FF885B8E68B9A07D /* WHToastView.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
 		0F591268EDF63FB94EFC0248BEBA22C8 /* ReactNativeJuseRTC-ReactNativeJuseRTC */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 5E06594FE8D1AF11F447369CEA692E6E /* Build configuration list for PBXNativeTarget "ReactNativeJuseRTC-ReactNativeJuseRTC" */;
+			buildConfigurationList = 200C53FCC45CBCD6FD6971849B144188 /* Build configuration list for PBXNativeTarget "ReactNativeJuseRTC-ReactNativeJuseRTC" */;
 			buildPhases = (
-				80FE11620D2E6DD78B304DCE7D289857 /* Sources */,
-				89B60CADCAE8E240B17483E28924C29D /* Frameworks */,
-				75D86C1BECFBF406AAF10FF53356FAD4 /* Resources */,
+				8D0F57F155FC010BC51F6FB9FB477AA7 /* Sources */,
+				D3449603A839BDC5BE3ABBB97144A3A0 /* Frameworks */,
+				C608FD868308F95493FC6EFC5A71AA35 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -584,8 +585,8 @@
 			buildRules = (
 			);
 			dependencies = (
-				B0E37A79FEEAC1CDD95DF87021F1E189 /* PBXTargetDependency */,
-				491131E3FCE0929D3E64C6161DB1CA83 /* PBXTargetDependency */,
+				5E61F9FC0E9E0837359B0965B1B75F47 /* PBXTargetDependency */,
+				D606E4AF06A39E4EAFD9247BD0A76052 /* PBXTargetDependency */,
 			);
 			name = "Pods-ReactNativeJuseRTC_Example";
 			productName = "Pods-ReactNativeJuseRTC_Example";
@@ -604,7 +605,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				3E00414D56DB64197144CC7D1EA23CFD /* PBXTargetDependency */,
+				687FFA7C12850FE675C1A7484F51F962 /* PBXTargetDependency */,
 			);
 			name = "Pods-ReactNativeJuseRTC_Tests";
 			productName = "Pods-ReactNativeJuseRTC_Tests";
@@ -613,18 +614,18 @@
 		};
 		4254021B58CA49C8C826B740DA8C2571 /* ReactNativeJuseRTC */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 428A8506E470E12F1523F6B67CBC3B38 /* Build configuration list for PBXNativeTarget "ReactNativeJuseRTC" */;
+			buildConfigurationList = 90C751771157BD77D6ACAB5A6EDB65DC /* Build configuration list for PBXNativeTarget "ReactNativeJuseRTC" */;
 			buildPhases = (
-				1253E647C244E9AA10AD5765E442D778 /* Headers */,
-				221318589F2BC101CDFDB367BCA1B505 /* Sources */,
-				E68E7A5E9E6CBED1D0EA329F825B3B9B /* Frameworks */,
-				E2A1EB499BBCA86DDD984DCEA6A6D56F /* Resources */,
+				CD2E14C0AE20CC1D7565E1401E391DE2 /* Headers */,
+				AF0AD3C6CBC4F25245E2342ADA4AAE75 /* Sources */,
+				A4450DFD653FBD8FC7227270484F2971 /* Frameworks */,
+				9618D4B2D5F20A4802FECD216777219E /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				6DC29BB28626212297D013EB2EF9BB0B /* PBXTargetDependency */,
-				C273F6441A3421D82569408553CF56F6 /* PBXTargetDependency */,
+				2E5B521883526FACE8013E3D69CA6A2A /* PBXTargetDependency */,
+				BE7205BAAA6460433B213780603E33CF /* PBXTargetDependency */,
 			);
 			name = ReactNativeJuseRTC;
 			productName = ReactNativeJuseRTC;
@@ -670,11 +671,19 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		75D86C1BECFBF406AAF10FF53356FAD4 /* Resources */ = {
+		9618D4B2D5F20A4802FECD216777219E /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5CC99BA62BB5332F76096B452AE03A5E /* RCTResource.bundle in Resources */,
+				F9CB9B784A5D03834E429DE2028BA000 /* ReactNativeJuseRTC.bundle in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C608FD868308F95493FC6EFC5A71AA35 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4BF4B7E29C96BE422F75C73269C1C76A /* RCTResource.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -682,14 +691,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		E2A1EB499BBCA86DDD984DCEA6A6D56F /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				98EA1EB182D73C191EE7A1A92D40CAAF /* ReactNativeJuseRTC.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -704,40 +705,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		221318589F2BC101CDFDB367BCA1B505 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				D2AC98E6ED35165EE6A5B3B9AC3CA2EE /* FloatingWindowUtil.m in Sources */,
-				DA0E41F4BFC32C4BB49D06EB1E5150D6 /* FloatingWindowView.m in Sources */,
-				A334845470854576EC2FA6241E15ACA7 /* HSNetworkTool.m in Sources */,
-				33BAD814B12CFE8F87CA57479A23CFAC /* NSBundle+EXtension.m in Sources */,
-				746B9A4F24130D8D39378AE046FDA5FD /* NSURL+URLxtension.m in Sources */,
-				E7DA625AF58F09D2003FA90906F92225 /* NTESDemoUserModel.m in Sources */,
-				5952E71C2768699300EEE5B6 /* Safety.m in Sources */,
-				7EF4970D801800EDFCD88A677885CA16 /* Reachability.m in Sources */,
-				D0B94ED110A7B5B60F22FE18B1C9391D /* ReactNativeJuseRTC-dummy.m in Sources */,
-				A0273D609CA41084C07889A9179A6DAE /* RTCAlertView.m in Sources */,
-				93AC8157E3F5864403B894FA2912E2F7 /* RTCButton.m in Sources */,
-				6DF9D919A55C6712B8037B6FD9ACD65E /* RTCButtonView.m in Sources */,
-				00F7C0A627912CDADB2E22305B69BFC1 /* RTCWindowView.m in Sources */,
-				8E1CC83658C5BF4CE5DE547E933BF01C /* StringToDic.m in Sources */,
-				D60D104AF626906C99B932C038B7BB3E /* UIColor+XXYExtension.m in Sources */,
-				0E0F0FA4440D0E8F97B7A52260B666DA /* UIImage+TExtension.m in Sources */,
-				7F582698BB0F5920A28466EF3A3409A5 /* UIImage+WHToast.m in Sources */,
-				4BC029295FC5F683C4BB3B1F6C7AD4DE /* UIView+XXYViewFrame.m in Sources */,
-				205939175A43EC38526E223249C4EC65 /* WHToast.m in Sources */,
-				8545AE947043DC8698059DAE2EAF657E /* whtoast_error.png in Sources */,
-				BDB9358977E6CAD6FB31C4719D75483D /* whtoast_error@2x.png in Sources */,
-				CFEBF73A654856A203B690D734F2B710 /* whtoast_error@3x.png in Sources */,
-				E74BB00B145333510679FE1A6EA3988A /* whtoast_success.png in Sources */,
-				4511CE9C6671D5DD86DB9886F41C7F30 /* whtoast_success@2x.png in Sources */,
-				AEE8E95E681A86D1256C16F5A9F1966F /* whtoast_success@3x.png in Sources */,
-				832DF09D8091F682F4DFE95738BC5CEA /* WHToastConfig.m in Sources */,
-				97B3DCCDFF6065C534F9BD2084D8CED9 /* WHToastView.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		71AE6863A27C7E806D29FD721AC35F60 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -746,45 +713,79 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		80FE11620D2E6DD78B304DCE7D289857 /* Sources */ = {
+		8D0F57F155FC010BC51F6FB9FB477AA7 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		AF0AD3C6CBC4F25245E2342ADA4AAE75 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				471C7FB77DA47DA942B3704929279E48 /* FloatingWindowUtil.m in Sources */,
+				E01DE0C2EED0EF7BDF2096CE05FF04B3 /* FloatingWindowView.m in Sources */,
+				A93187F762487028833B6FC67112EF0C /* HSNetworkTool.m in Sources */,
+				D7C0F93A655F7A20384A3604DD772A1B /* NSBundle+EXtension.m in Sources */,
+				13664B93D141EFCE6B8D37941AE0F097 /* NSURL+URLxtension.m in Sources */,
+				3CA5EFCF58CAB626145A9F36510317A5 /* NTESDemoUserModel.m in Sources */,
+				F511958618BD39D28E8FB9A937B8F2C2 /* Reachability.m in Sources */,
+				C6C0D09A016366C983FEACF38E8FA9FA /* ReactNativeJuseRTC-dummy.m in Sources */,
+				C848FB76A8BEDBD9CA0411E960C8C6A0 /* RTCAlertView.m in Sources */,
+				EF3D98B0744B7FECCC1F4911979DBBD6 /* RTCButton.m in Sources */,
+				B43C91F9AA062580438FE830C830C353 /* RTCButtonView.m in Sources */,
+				2DFA535BAA2A0C4C3B38B2E803F0CE10 /* RTCWindowView.m in Sources */,
+				8E77B64F59346386F6E992A344404E84 /* Safety.m in Sources */,
+				9ED144D275E6CFF978EAAA01B5DC1E4D /* StringToDic.m in Sources */,
+				71D12F4DCADD1E95FBEB6099CFF4CB75 /* UIColor+XXYExtension.m in Sources */,
+				A3EF1FB4B85D2FEA88863D4892B0D503 /* UIImage+TExtension.m in Sources */,
+				B32702924B3BA342A0AB4057B04C54D7 /* UIImage+WHToast.m in Sources */,
+				9F8B394FB48BE12F582D7C56016E6AB2 /* UIView+XXYViewFrame.m in Sources */,
+				673151943E7969CF2AAF27FCA9FB287A /* WHToast.m in Sources */,
+				D435C245DEAEBB5CA71200C87C318959 /* whtoast_error.png in Sources */,
+				A53B6670D259561EB09051A06EA0F98E /* whtoast_error@2x.png in Sources */,
+				DF1D39308C8C36F48BC8CF3C41D217B0 /* whtoast_error@3x.png in Sources */,
+				6BC586A28B99F29AB878DB077AA64EA4 /* whtoast_success.png in Sources */,
+				32091CE253CB5EF2183B0B57BE53BD0C /* whtoast_success@2x.png in Sources */,
+				681D2AA8A7C12FD872387CD27C42131A /* whtoast_success@3x.png in Sources */,
+				AC7C58F57D548D6D0CADF35FE0ECE216 /* WHToastConfig.m in Sources */,
+				37A507D7E518BD20DEFF1E099BD8C5C3 /* WHToastView.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		3E00414D56DB64197144CC7D1EA23CFD /* PBXTargetDependency */ = {
+		2E5B521883526FACE8013E3D69CA6A2A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = NERtcSDK;
+			target = 37A6A8EAD658245BC447B0CB223076FD /* NERtcSDK */;
+			targetProxy = E20E8679614751659A63F2E0576C8B5A /* PBXContainerItemProxy */;
+		};
+		5E61F9FC0E9E0837359B0965B1B75F47 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = NERtcSDK;
+			target = 37A6A8EAD658245BC447B0CB223076FD /* NERtcSDK */;
+			targetProxy = 5ED48B5BBCF06941CD3442CC33063785 /* PBXContainerItemProxy */;
+		};
+		687FFA7C12850FE675C1A7484F51F962 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "Pods-ReactNativeJuseRTC_Example";
 			target = 32A91B845124664501E7D0D6A4E9FDAE /* Pods-ReactNativeJuseRTC_Example */;
-			targetProxy = 3E2E802916AB6B5F307548836347CD16 /* PBXContainerItemProxy */;
+			targetProxy = B0E7091B322F40AB2203AF1715016987 /* PBXContainerItemProxy */;
 		};
-		491131E3FCE0929D3E64C6161DB1CA83 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = ReactNativeJuseRTC;
-			target = 4254021B58CA49C8C826B740DA8C2571 /* ReactNativeJuseRTC */;
-			targetProxy = 8B6314968367D7B48005FE6745F4A29D /* PBXContainerItemProxy */;
-		};
-		6DC29BB28626212297D013EB2EF9BB0B /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = NERtcSDK;
-			target = 37A6A8EAD658245BC447B0CB223076FD /* NERtcSDK */;
-			targetProxy = B407115B104DAFE56F4136FD72D05F9F /* PBXContainerItemProxy */;
-		};
-		B0E37A79FEEAC1CDD95DF87021F1E189 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = NERtcSDK;
-			target = 37A6A8EAD658245BC447B0CB223076FD /* NERtcSDK */;
-			targetProxy = 6F40F29566A961E4E9EDDE748C07A27E /* PBXContainerItemProxy */;
-		};
-		C273F6441A3421D82569408553CF56F6 /* PBXTargetDependency */ = {
+		BE7205BAAA6460433B213780603E33CF /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "ReactNativeJuseRTC-ReactNativeJuseRTC";
 			target = 0F591268EDF63FB94EFC0248BEBA22C8 /* ReactNativeJuseRTC-ReactNativeJuseRTC */;
-			targetProxy = EC4AFE094FF0D360AC08D87452E546EE /* PBXContainerItemProxy */;
+			targetProxy = 07CBEB2906F3272B96426936996F6215 /* PBXContainerItemProxy */;
+		};
+		D606E4AF06A39E4EAFD9247BD0A76052 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = ReactNativeJuseRTC;
+			target = 4254021B58CA49C8C826B740DA8C2571 /* ReactNativeJuseRTC */;
+			targetProxy = EB9E1599D358FAD42A36F09077F09F13 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -834,6 +835,36 @@
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
+		};
+		1F0163A72F9E0220C3B7EB8BCE9FBBD0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0B72D3A69882DB8ADCF3B7C042FB49ED /* ReactNativeJuseRTC.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/ReactNativeJuseRTC/ReactNativeJuseRTC-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/ReactNativeJuseRTC/ReactNativeJuseRTC-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/ReactNativeJuseRTC/ReactNativeJuseRTC.modulemap";
+				PRODUCT_MODULE_NAME = ReactNativeJuseRTC;
+				PRODUCT_NAME = ReactNativeJuseRTC;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
 		};
 		25AD9454612BF454A1E3DC4CD4FA8C6D /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -901,40 +932,9 @@
 			};
 			name = Debug;
 		};
-		36762E0C9E3A8F2221E77D010BCA77DA /* Release */ = {
+		534AFD7463252932BD4FF7EA8A01DB68 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = DBD9CDA9BB882930F12AC680A565B010 /* ReactNativeJuseRTC.release.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/ReactNativeJuseRTC/ReactNativeJuseRTC-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/ReactNativeJuseRTC/ReactNativeJuseRTC-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/ReactNativeJuseRTC/ReactNativeJuseRTC.modulemap";
-				PRODUCT_MODULE_NAME = ReactNativeJuseRTC;
-				PRODUCT_NAME = ReactNativeJuseRTC;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		797C187AC587278ABF1F2334E00B0C6C /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = DBD9CDA9BB882930F12AC680A565B010 /* ReactNativeJuseRTC.release.xcconfig */;
+			baseConfigurationReference = E0DD966271A0AB35C551AF2265EF7AA3 /* ReactNativeJuseRTC.release.xcconfig */;
 			buildSettings = {
 				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/ReactNativeJuseRTC";
 				IBSC_MODULE = ReactNativeJuseRTC;
@@ -947,22 +947,6 @@
 				WRAPPER_EXTENSION = bundle;
 			};
 			name = Release;
-		};
-		91035C757595563528332853DB7119BE /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = D9D3A7DC743F454388D41A5A517378B5 /* ReactNativeJuseRTC.debug.xcconfig */;
-			buildSettings = {
-				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/ReactNativeJuseRTC";
-				IBSC_MODULE = ReactNativeJuseRTC;
-				INFOPLIST_FILE = "Target Support Files/ReactNativeJuseRTC/ResourceBundle-ReactNativeJuseRTC-ReactNativeJuseRTC-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				PRODUCT_NAME = ReactNativeJuseRTC;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				WRAPPER_EXTENSION = bundle;
-			};
-			name = Debug;
 		};
 		C3781774585340D1C139B7B58C210AA0 /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -1052,15 +1036,29 @@
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_INSTALLED_PRODUCT = NO;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_VERSION = 5.0;
 				SYMROOT = "${SRCROOT}/../build";
 			};
 			name = Release;
 		};
-		D50B7AE30E9DDFC0C581DB9DDE4C584C /* Debug */ = {
+		DC68DA580685CA406C97BA889CA7AD94 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D9D3A7DC743F454388D41A5A517378B5 /* ReactNativeJuseRTC.debug.xcconfig */;
+			baseConfigurationReference = 5D4A77D22C6A72FC4C7DF98633BA1E2A /* NERtcSDK.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		E1820FBA8B007519198505504A701D5F /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E0DD966271A0AB35C551AF2265EF7AA3 /* ReactNativeJuseRTC.release.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -1083,23 +1081,11 @@
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Debug;
-		};
-		DC68DA580685CA406C97BA889CA7AD94 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5D4A77D22C6A72FC4C7DF98633BA1E2A /* NERtcSDK.debug.xcconfig */;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				SDKROOT = iphoneos;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
+			name = Release;
 		};
 		EDB3BBC2E7BADD4239CF4284807F04BE /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -1166,14 +1152,30 @@
 			};
 			name = Debug;
 		};
+		F8972647AE5CA602E2B8B6FD2762B36F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0B72D3A69882DB8ADCF3B7C042FB49ED /* ReactNativeJuseRTC.debug.xcconfig */;
+			buildSettings = {
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/ReactNativeJuseRTC";
+				IBSC_MODULE = ReactNativeJuseRTC;
+				INFOPLIST_FILE = "Target Support Files/ReactNativeJuseRTC/ResourceBundle-ReactNativeJuseRTC-ReactNativeJuseRTC-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				PRODUCT_NAME = ReactNativeJuseRTC;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Debug;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		428A8506E470E12F1523F6B67CBC3B38 /* Build configuration list for PBXNativeTarget "ReactNativeJuseRTC" */ = {
+		200C53FCC45CBCD6FD6971849B144188 /* Build configuration list for PBXNativeTarget "ReactNativeJuseRTC-ReactNativeJuseRTC" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				D50B7AE30E9DDFC0C581DB9DDE4C584C /* Debug */,
-				36762E0C9E3A8F2221E77D010BCA77DA /* Release */,
+				F8972647AE5CA602E2B8B6FD2762B36F /* Debug */,
+				534AFD7463252932BD4FF7EA8A01DB68 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1196,20 +1198,20 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		5E06594FE8D1AF11F447369CEA692E6E /* Build configuration list for PBXNativeTarget "ReactNativeJuseRTC-ReactNativeJuseRTC" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				91035C757595563528332853DB7119BE /* Debug */,
-				797C187AC587278ABF1F2334E00B0C6C /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		68D1846D8A4D89942053A35E0DD75221 /* Build configuration list for PBXNativeTarget "Pods-ReactNativeJuseRTC_Tests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1BD073682600D5E50A99146F706CC3C6 /* Debug */,
 				EDB3BBC2E7BADD4239CF4284807F04BE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		90C751771157BD77D6ACAB5A6EDB65DC /* Build configuration list for PBXNativeTarget "ReactNativeJuseRTC" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1F0163A72F9E0220C3B7EB8BCE9FBBD0 /* Debug */,
+				E1820FBA8B007519198505504A701D5F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

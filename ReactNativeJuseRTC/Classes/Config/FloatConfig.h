@@ -5,8 +5,8 @@
 //  Created by 888 on 2021/12/8.
 //
 
-#ifndef Config_h
-#define Config_h
+#ifndef  FloatConfig_h
+#define  FloatConfig_h
 
 #define ScreenW [UIScreen mainScreen].bounds.size.width
 #define ScreenH [UIScreen mainScreen].bounds.size.height

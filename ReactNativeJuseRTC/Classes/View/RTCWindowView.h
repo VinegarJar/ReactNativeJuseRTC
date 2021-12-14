@@ -7,7 +7,7 @@
 
 #import <UIKit/UIKit.h>
 #import "UIView+XXYViewFrame.h"
-#import "Config.h"
+#import "FloatConfig.h"
 #import <AVFoundation/AVFoundation.h>
 #import <AudioToolbox/AudioToolbox.h>
 #import "NSURL+URLxtension.h"
@@ -53,5 +53,6 @@ typedef NS_ENUM(NSInteger, RTCWindowState) {
 
 -(void)signalingCallinfo:(NSDictionary *)callinfo userInfo:(NSDictionary *)userInfo;
 - (void)setupRTCEngine;
+- (void)signalingMutilClientSyncNotify;
 @end
 
