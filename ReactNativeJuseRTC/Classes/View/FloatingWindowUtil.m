@@ -36,6 +36,11 @@
 
 
 - (void)setSignaUserInfo:(NSDictionary *)signaUserInfo{
+    //存储token数据到userdefaults
+    NSUserDefaults *userDefault = [NSUserDefaults standardUserDefaults];
+    NSString *token = [signaUserInfo objectForKey:@"token"];
+    [userDefault setObject:token forKey:@"token"];
+    [userDefault synchronize];
     _signaUserInfo = signaUserInfo;
 }
 

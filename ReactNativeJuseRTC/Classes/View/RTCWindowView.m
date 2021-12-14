@@ -56,8 +56,6 @@
 @property (assign, nonatomic)int duration;
 
 
-@property (copy, nonatomic) NSDictionary *callinfo;
-@property (copy, nonatomic) NSDictionary *userInfo;
 
 @end
 
@@ -564,8 +562,7 @@
     _token = [callinfo objectForKey:@"token"];
     _userID = [callinfo objectForKey:@"id"];
     
-    _callinfo = callinfo;
-    _userInfo = userInfo;
+
     
     NSNumber* duration = [dic objectForKey:@"duration"];
     NSLog(@"获取传递时间---->>>>>%@",duration);
