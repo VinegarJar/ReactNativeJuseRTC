@@ -22,12 +22,13 @@ typedef NS_ENUM(NSInteger, RTCWindowState) {
 
 @protocol RTCWindowViewDelegate <NSObject>
 //结束通话
-- (void)endCallButtonHandle;
+- (void)endCallButtonHandle:(NSString*)titleLabel;
 //接受通话请求
 - (void)acceptCallHandle;
 //通话销毁
 - (void)destroyCallHandle;
-
+// 无应答
+- (void)noAnswerCallHandle;
 //主动取消通话发送通知到rn端 @"CLOSE
 //主动拒绝通话发送通知到rn端 @"REJECT"
 //主动接受通话发送通知到rn端 @"ACCEPT"
@@ -50,7 +51,7 @@ typedef NS_ENUM(NSInteger, RTCWindowState) {
 
 @property (nonatomic, strong)  AVAudioPlayer *audioPlayer;/** 播放铃声player */
 
--(void)signalingCallinfo:(NSDictionary *)data userInfo:(NSDictionary *)dic;
+-(void)signalingCallinfo:(NSDictionary *)callinfo userInfo:(NSDictionary *)userInfo;
 - (void)setupRTCEngine;
 @end
 

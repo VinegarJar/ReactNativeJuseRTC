@@ -15,6 +15,7 @@
 			dependencies = (
 			);
 			name = NERtcSDK;
+			productName = NERtcSDK;
 		};
 /* End PBXAggregateTarget section */
 
@@ -37,6 +38,8 @@
 		5168C481B2326A9FEBE41B788E4114F7 /* Pods-ReactNativeJuseRTC_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 744440EB6F77054CDD37227F077062EE /* Pods-ReactNativeJuseRTC_Tests-dummy.m */; };
 		569CF66626203CE0357A930483834C15 /* Pods-ReactNativeJuseRTC_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = FC954E65E7071A7E28B06FF4B13B9E81 /* Pods-ReactNativeJuseRTC_Example-dummy.m */; };
 		58EECAC7098F19A832A61C83775953F4 /* Pods-ReactNativeJuseRTC_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 63C3C5FCFDF5224FB2CC01B76FA18CE0 /* Pods-ReactNativeJuseRTC_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5952E71C2768699300EEE5B6 /* Safety.m in Sources */ = {isa = PBXBuildFile; fileRef = 5952E71A2768699200EEE5B6 /* Safety.m */; };
+		5952E71D2768699300EEE5B6 /* Safety.h in Headers */ = {isa = PBXBuildFile; fileRef = 5952E71B2768699200EEE5B6 /* Safety.h */; };
 		5CC99BA62BB5332F76096B452AE03A5E /* RCTResource.bundle in Resources */ = {isa = PBXBuildFile; fileRef = B33A85C84D3282F277E8E0503D26AD93 /* RCTResource.bundle */; };
 		5CDF4CEE47A4B194BC5F60EF20F3A0CE /* ReactNativeJuseRTC-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 4E3159B41E7EAA3B8EDD495BDED359B1 /* ReactNativeJuseRTC-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6004B8116C4D4BFC0E1536AFF6AAB273 /* WHToast.h in Headers */ = {isa = PBXBuildFile; fileRef = 99DDB2FA0861384F9735861F63DA7BB4 /* WHToast.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -118,7 +121,7 @@
 /* Begin PBXFileReference section */
 		03BE74C57229C436B72BB2AD4C7FEC9C /* whtoast_error@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = "whtoast_error@3x.png"; sourceTree = "<group>"; };
 		054BE18FD01033ED0193D3C166C97345 /* Pods-ReactNativeJuseRTC_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-ReactNativeJuseRTC_Tests.modulemap"; sourceTree = "<group>"; };
-		05F30D1B1977D859E9C0762F4879DF28 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		05F30D1B1977D859E9C0762F4879DF28 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		0683D11F1A25719B1ED76E689277880A /* ReactNativeJuseRTC-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ReactNativeJuseRTC-Info.plist"; sourceTree = "<group>"; };
 		0CE1D9F20EA20C691F3B9A63BAA9F633 /* NERtcSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NERtcSDK.framework; path = NERTC/NERtcSDK/NERtcSDK.framework; sourceTree = "<group>"; };
 		0DD3C8CA9037C32EEE40CB3B7EB95E7C /* FloatingWindowUtil.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = FloatingWindowUtil.m; sourceTree = "<group>"; };
@@ -127,7 +130,7 @@
 		14D505A2DE7B08791DB3042B00B2189B /* whtoast_success@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = "whtoast_success@2x.png"; sourceTree = "<group>"; };
 		15ECCFD3BD6AFB99DFBDE817248C54B5 /* RTCWindowView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = RTCWindowView.m; sourceTree = "<group>"; };
 		1EBF71FF7701764587E4CF7F606FD721 /* HSNetworkTool.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = HSNetworkTool.m; sourceTree = "<group>"; };
-		210AFEA083C5B670DDD44AAC025C3B66 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		210AFEA083C5B670DDD44AAC025C3B66 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		281D5DB5BB3C63860202BD366FB84029 /* StringToDic.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = StringToDic.m; sourceTree = "<group>"; };
 		2BDA2477607B3EC75969D016182752C4 /* Pods-ReactNativeJuseRTC_Example-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-ReactNativeJuseRTC_Example-Info.plist"; sourceTree = "<group>"; };
 		4083A94B0B65FD6AB4BDD35F59778BB7 /* NSBundle+EXtension.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "NSBundle+EXtension.m"; sourceTree = "<group>"; };
@@ -139,12 +142,14 @@
 		4FE3EF8C1DA9012EFC8D5ADF4EE2CF8A /* Pods-ReactNativeJuseRTC_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ReactNativeJuseRTC_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		50B76F42621A4DD9395344DF4B0AB572 /* ReactNativeJuseRTC.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = ReactNativeJuseRTC.modulemap; sourceTree = "<group>"; };
 		518ED3380D3D5C70038F278765ECC87C /* WHToastConfig.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = WHToastConfig.m; sourceTree = "<group>"; };
+		5952E71A2768699200EEE5B6 /* Safety.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Safety.m; sourceTree = "<group>"; };
+		5952E71B2768699200EEE5B6 /* Safety.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Safety.h; sourceTree = "<group>"; };
 		59EF576F21937F6ADCA15DB4D2CCDC45 /* NTESDemoUserModel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = NTESDemoUserModel.m; sourceTree = "<group>"; };
-		5B30F0D5698331A9ED1216E935FD4E80 /* ReactNativeJuseRTC.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = ReactNativeJuseRTC.framework; path = ReactNativeJuseRTC.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5B30F0D5698331A9ED1216E935FD4E80 /* ReactNativeJuseRTC.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ReactNativeJuseRTC.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D4A77D22C6A72FC4C7DF98633BA1E2A /* NERtcSDK.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = NERtcSDK.debug.xcconfig; sourceTree = "<group>"; };
 		63C3C5FCFDF5224FB2CC01B76FA18CE0 /* Pods-ReactNativeJuseRTC_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-ReactNativeJuseRTC_Example-umbrella.h"; sourceTree = "<group>"; };
 		651F89B834851A0D7C7ED47EDBAC09A5 /* WHToastView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = WHToastView.h; sourceTree = "<group>"; };
-		675479013C026029D61A26D9F2A61937 /* Pods_ReactNativeJuseRTC_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_ReactNativeJuseRTC_Example.framework; path = "Pods-ReactNativeJuseRTC_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		675479013C026029D61A26D9F2A61937 /* Pods_ReactNativeJuseRTC_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ReactNativeJuseRTC_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		677B37D4A6D6BE260E93AA9859D1DD17 /* FloatingWindowView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = FloatingWindowView.h; sourceTree = "<group>"; };
 		6BACDF384FCAA39BBAF9CE5CEFBF5A25 /* RTCButton.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = RTCButton.m; sourceTree = "<group>"; };
 		6D1EFEF5FF52B1752491D6E966A9BB31 /* UIView+XXYViewFrame.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UIView+XXYViewFrame.m"; sourceTree = "<group>"; };
@@ -155,16 +160,16 @@
 		73A10B071E78C81ADA290DEC7D738BF0 /* whtoast_success.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = whtoast_success.png; sourceTree = "<group>"; };
 		744440EB6F77054CDD37227F077062EE /* Pods-ReactNativeJuseRTC_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-ReactNativeJuseRTC_Tests-dummy.m"; sourceTree = "<group>"; };
 		80E0DFED6B00852119718EEB66C18C84 /* Config.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = Config.h; sourceTree = "<group>"; };
-		85533C12F134D3966163F23E3BC9A382 /* ReactNativeJuseRTC.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = ReactNativeJuseRTC.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		85533C12F134D3966163F23E3BC9A382 /* ReactNativeJuseRTC.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = ReactNativeJuseRTC.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		87AA276A2955BF91858464F523817A3A /* NSURL+URLxtension.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "NSURL+URLxtension.m"; sourceTree = "<group>"; };
 		883C2A51F705CF2C4B41472EBAB612C6 /* UIImage+WHToast.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UIImage+WHToast.m"; sourceTree = "<group>"; };
 		8CFD1012D035AA7A95448C75FD64134E /* Pods-ReactNativeJuseRTC_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-ReactNativeJuseRTC_Tests-umbrella.h"; sourceTree = "<group>"; };
 		8EB42F381AA4E753FEEE4E3C1055D7C4 /* NSURL+URLxtension.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "NSURL+URLxtension.h"; sourceTree = "<group>"; };
 		92A7643F3E3D9AE72BB1E640F2CE2BDF /* RTCWindowView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = RTCWindowView.h; sourceTree = "<group>"; };
-		94FA3F23925A186D2E851A0F1E26E50B /* ReactNativeJuseRTC.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = ReactNativeJuseRTC.bundle; path = "ReactNativeJuseRTC-ReactNativeJuseRTC.bundle"; sourceTree = BUILT_PRODUCTS_DIR; };
+		94FA3F23925A186D2E851A0F1E26E50B /* ReactNativeJuseRTC.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ReactNativeJuseRTC.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		99A95A74A59E01F950371A2EC796D633 /* FloatingWindowUtil.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = FloatingWindowUtil.h; sourceTree = "<group>"; };
 		99DDB2FA0861384F9735861F63DA7BB4 /* WHToast.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = WHToast.h; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9DD75D634E681A1F680483141C7BB1D0 /* UIImage+TExtension.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UIImage+TExtension.m"; sourceTree = "<group>"; };
 		9E2F9494FD773361753E9F21C484C9EC /* UIColor+XXYExtension.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UIColor+XXYExtension.h"; sourceTree = "<group>"; };
 		9F6E3684EDADC7233B6613515EAEA580 /* UIImage+WHToast.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UIImage+WHToast.h"; sourceTree = "<group>"; };
@@ -188,7 +193,7 @@
 		D9D3A7DC743F454388D41A5A517378B5 /* ReactNativeJuseRTC.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ReactNativeJuseRTC.debug.xcconfig; sourceTree = "<group>"; };
 		DBCF0DC379E6F62EACEBAB11E67C5E4A /* NSBundle+EXtension.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "NSBundle+EXtension.h"; sourceTree = "<group>"; };
 		DBD9CDA9BB882930F12AC680A565B010 /* ReactNativeJuseRTC.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ReactNativeJuseRTC.release.xcconfig; sourceTree = "<group>"; };
-		DE0F1F325AD6C0D58356E160095AF26C /* Pods_ReactNativeJuseRTC_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_ReactNativeJuseRTC_Tests.framework; path = "Pods-ReactNativeJuseRTC_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DE0F1F325AD6C0D58356E160095AF26C /* Pods_ReactNativeJuseRTC_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ReactNativeJuseRTC_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2516254F92A72C944855BCEDF074307 /* Reachability.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		E463A1348D85AE437E6BEB658FDD06AA /* Pods-ReactNativeJuseRTC_Tests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-ReactNativeJuseRTC_Tests-Info.plist"; sourceTree = "<group>"; };
 		E5D133B1DA9A4959A71D07256C81F7B9 /* NERtcSDK.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = NERtcSDK.release.xcconfig; sourceTree = "<group>"; };
@@ -318,7 +323,6 @@
 				14D505A2DE7B08791DB3042B00B2189B /* whtoast_success@2x.png */,
 				F8C11DDDF1464FEF917D13167EB78BCD /* whtoast_success@3x.png */,
 			);
-			name = wtoast_icon;
 			path = wtoast_icon;
 			sourceTree = "<group>";
 		};
@@ -370,6 +374,8 @@
 				6BACDF384FCAA39BBAF9CE5CEFBF5A25 /* RTCButton.m */,
 				CF7B2BBCAE44FCD0CCD9DE33EA17B02A /* StringToDic.h */,
 				281D5DB5BB3C63860202BD366FB84029 /* StringToDic.m */,
+				5952E71B2768699200EEE5B6 /* Safety.h */,
+				5952E71A2768699200EEE5B6 /* Safety.m */,
 			);
 			name = Utils;
 			path = ReactNativeJuseRTC/Classes/Utils;
@@ -418,7 +424,6 @@
 				592B36123EBE2E511E71ECF6F5B82703 /* Frameworks */,
 				DAA3D4690E94DC867447B3C47FC55FA2 /* Support Files */,
 			);
-			name = NERtcSDK;
 			path = NERtcSDK;
 			sourceTree = "<group>";
 		};
@@ -514,6 +519,7 @@
 				A7B8366F2EFDA3052C70DB22EC816F48 /* NSURL+URLxtension.h in Headers */,
 				1B9FAA1DCAA8FA096EAA632678E50C54 /* NTESDemoUserModel.h in Headers */,
 				ADD5E26DC46D8F35000E5D3F7D248B04 /* Reachability.h in Headers */,
+				5952E71D2768699300EEE5B6 /* Safety.h in Headers */,
 				5CDF4CEE47A4B194BC5F60EF20F3A0CE /* ReactNativeJuseRTC-umbrella.h in Headers */,
 				23249A84592790AFE196E264F9592011 /* RTCAlertView.h in Headers */,
 				A32720F347112E9C91C56954C67A7188 /* RTCButton.h in Headers */,
@@ -708,6 +714,7 @@
 				33BAD814B12CFE8F87CA57479A23CFAC /* NSBundle+EXtension.m in Sources */,
 				746B9A4F24130D8D39378AE046FDA5FD /* NSURL+URLxtension.m in Sources */,
 				E7DA625AF58F09D2003FA90906F92225 /* NTESDemoUserModel.m in Sources */,
+				5952E71C2768699300EEE5B6 /* Safety.m in Sources */,
 				7EF4970D801800EDFCD88A677885CA16 /* Reachability.m in Sources */,
 				D0B94ED110A7B5B60F22FE18B1C9391D /* ReactNativeJuseRTC-dummy.m in Sources */,
 				A0273D609CA41084C07889A9179A6DAE /* RTCAlertView.m in Sources */,
@@ -1045,8 +1052,7 @@
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_INSTALLED_PRODUCT = NO;
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 5.0;
 				SYMROOT = "${SRCROOT}/../build";
 			};

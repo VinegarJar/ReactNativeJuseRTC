@@ -28,7 +28,8 @@
 @property (strong, nonatomic) RTCButtonView *btnContainerView;
 //振动计时器
 @property (nonatomic,strong) NSTimer *vibrationTimer;
-
+//呼叫未应答
+@property (strong, nonatomic)NSTimer *controlTimer;
 /** 对方昵称 */
 @property (strong, nonatomic) UILabel *nickNameLabel;
 /** 对方头像图片 */
@@ -42,27 +43,31 @@
 @property (strong, nonatomic) UIView *remoteRender;
 
 /** 呼叫房间ID */
-@property (copy, nonatomic) NSString            *roomID;
+@property (copy, nonatomic) NSString *roomID;
 /** 本人uid */
-@property (copy, nonatomic) NSString            *userID;
+@property (copy, nonatomic) NSString *userID;
 
-@property (copy, nonatomic) NSString            *token;
-@property (copy, nonatomic) NSString            *fromHeadUrl;
-@property (copy, nonatomic) NSString            *fromUserName;
-@property (copy, nonatomic) NSString            *toHeadUrl;
-@property (copy, nonatomic) NSString            *toUserName;
+@property (copy, nonatomic) NSString *token;
+@property (copy, nonatomic) NSString *fromHeadUrl;
+@property (copy, nonatomic) NSString *fromUserName;
+@property (copy, nonatomic) NSString *toHeadUrl;
+@property (copy, nonatomic) NSString *toUserName;
+//视频通话有效时间
+@property (assign, nonatomic)int duration;
 
+
+@property (copy, nonatomic) NSDictionary *callinfo;
+@property (copy, nonatomic) NSDictionary *userInfo;
 
 @end
 
-// 广告显示的时间
-static int const showtime = 70;
+
 
 @implementation RTCWindowView
 
 // GCD倒计时
 - (void)startCoundown{
-    __block int timeout = showtime + 1; //倒计时时间 + 1
+    __block int timeout =_duration + 1; //倒计时时间 + 1
     dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
     dispatch_source_t _timer = dispatch_source_create(DISPATCH_SOURCE_TYPE_TIMER, 0, 0,queue);
     dispatch_source_set_timer(_timer,dispatch_walltime(NULL, 0),1.0 * NSEC_PER_SEC, 0); //每秒执行
@@ -148,10 +153,10 @@ static int const showtime = 70;
 -(UIButton*)smallScreenButton{
     if (!_smallScreenButton) {
         _smallScreenButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        _smallScreenButton.backgroundColor = [UIColor clearColor];
         [_smallScreenButton addTarget:self action:@selector(floatingWindowButtonWithSender:) forControlEvents:UIControlEventTouchUpInside];
+        _smallScreenButton.imageView.contentMode  = UIViewContentModeScaleToFill;
         [_smallScreenButton setImage:[UIImage bundleForImage:@"cut_normal"] forState:UIControlStateNormal];
-        _smallScreenButton.frame = CGRectMake(30, 50, 50 , 50);
+        _smallScreenButton.frame = CGRectMake(30, 50, 40 , 40);
         [self addSubview:_smallScreenButton];
         _smallScreenButton.hidden = YES;
     }
@@ -243,21 +248,6 @@ static int const showtime = 70;
     }
 }
 
-/**
-@ 发送视频状态到后端,音视频状态（1:已支付未开始 2：视频中 ，3：已取消  4：对方无应答 5：对方忙线中 6：对方已拒绝,7视频通话完成
- */
-- (void) requestUpdateVideoStatus:(NSDictionary *) params{
-    [[HSNetworkTool shareInstance] requestPOST:@"/updateVideoStatus"
-          params:params
-    successBlock:^(NSDictionary * _Nonnull responseObject) {
-        NSInteger resultRep = [[responseObject objectForKey:@"code"] integerValue];
-        if(resultRep  == 200){
-            NSLog(@"发送视频状态到后端-->%@",responseObject);
-        }
-    }
-    failBlock:^(NSError * _Nonnull error) {}];
-}
-
 
 
 - (instancetype)initWithRTCWindowViewSignalingCall:(BOOL)signalingCall{
@@ -303,11 +293,9 @@ static int const showtime = 70;
     
 
     
-    
     if (_signalingCall) { // 视频通话时,被对方呼叫UI初始化
         //呼叫声音初始化调用
         [self.audioPlayer play];
-        
         if ([self internetStatus]) {
             RTCAlertView *alertVie = [[ RTCAlertView alloc]initWithAlertView];
             alertVie.delegate = self;
@@ -372,20 +360,17 @@ static int const showtime = 70;
 
 //挂断视频通话或者拒接
 - (void)hangupClick{
-    if (self.delegate && [self.delegate respondsToSelector:@selector(endCallButtonHandle)]) {
-        [self.delegate endCallButtonHandle];
-    }
-    
     [self dismiss];
+    NSString *title =_btnContainerView.hangupBtn.title.text;
+    
+    if (self.delegate&&[self.delegate respondsToSelector:@selector(endCallButtonHandle:)]) {
+        [self.delegate endCallButtonHandle:title];
+    }
 }
 
 
 //接听视频通话操作
 - (void)answerClick{
-    
-    
-    
-//    [self joinChannelWithRoomId:_roomID userId:_userID token:_token];
     //务必在主线程中执行UI刷新
    dispatch_async(dispatch_get_main_queue(), ^{
        [self->_smallScreenButton setHidden:NO];
@@ -404,7 +389,7 @@ static int const showtime = 70;
        [self->_audioPlayer stop];
    });
     
-
+    [self joinChannelWithRoomId:_roomID userId:_userID token:_token];
 }
 
 
@@ -429,6 +414,10 @@ static int const showtime = 70;
             //加入成功，建立本地canvas渲染本地视图
             NERtcVideoCanvas *canvas = [weakSelf setupLocalCanvas];
             [coreEngine setupLocalVideoCanvas:canvas];
+            
+            if (self.delegate && [self.delegate respondsToSelector:@selector(acceptCallHandle)]) {
+                [self.delegate acceptCallHandle];
+            }
         }
     }];
 
@@ -440,9 +429,11 @@ static int const showtime = 70;
    
     if([eventType isEqualToString:@"REJECT"]){
         //被对方拒接
-        [_audioPlayer stop];
+        [WHToast showMessage:@"对方拒接" duration:2 finishHandler:^{}];
+        [self hangupClick];
      }else if([eventType isEqualToString:@"ACCEPT"]){
          //接受邀请
+         
      }else if([eventType isEqualToString:@"ROOM_JOIN"]){
          //加入房间,走接听的逻辑
        [self answerClick];
@@ -456,7 +447,21 @@ static int const showtime = 70;
      }else if([eventType isEqualToString:@"finishVideo"]){
        //离开频道，结束或退出通话
        [self hangupClick];
-     }
+     }else if([eventType isEqualToString:@"CONTROL"]){
+         _controlTimer = [NSTimer scheduledTimerWithTimeInterval:3.0 target:self selector:@selector(delayMethod) userInfo:nil repeats:NO];
+         [NSTimer scheduledTimerWithTimeInterval:5.0 target:self selector:@selector(hangupClick) userInfo:nil repeats:NO];
+     }else if([eventType isEqualToString:@"CANCEL_INVITE"]){
+         //关闭房间
+       [self hangupClick];
+     }else  if([eventType isEqual: @"INVITE"]){//在线
+       [self answerClick];
+    }
+    
+}
+
+-(void)delayMethod{
+    
+    [WHToast showMessage:@"对方正忙" duration:2 finishHandler:^{}];
 }
 
 #pragma  mark -点击缩小窗口
@@ -545,10 +550,10 @@ static int const showtime = 70;
 
 
 //呼叫信息设置显示
--(void)signalingCallinfo:(NSDictionary *)data userInfo:(NSDictionary *)object{
+-(void)signalingCallinfo:(NSDictionary *)callinfo userInfo:(NSDictionary *)userInfo{
     
     
-    NSDictionary *dic = [StringToDic dictionaryWithJsonString:[object objectForKey:@"ext"]];
+    NSDictionary *dic = [StringToDic dictionaryWithJsonString:[userInfo objectForKey:@"ext"]];
     
     
     _roomID = [dic objectForKey:@"orderId"];
@@ -556,9 +561,11 @@ static int const showtime = 70;
     _toHeadUrl = [dic objectForKey:@"toHeadUrl"];
     _fromUserName = [dic objectForKey:@"fromUserName"];
     _fromHeadUrl = [dic objectForKey:@"fromHeadUrl"];
-    _token = [data objectForKey:@"token"];
-    _userID = [data objectForKey:@"id"];
+    _token = [callinfo objectForKey:@"token"];
+    _userID = [callinfo objectForKey:@"id"];
     
+    _callinfo = callinfo;
+    _userInfo = userInfo;
     
     
     //务必在主线程中执行UI刷新
@@ -566,19 +573,35 @@ static int const showtime = 70;
 //       NSData *imgData = [NSData dataWithContentsOfURL:[NSURL URLWithString:_toHeadUrl]];
 //       self.toHeadImage.image = [UIImage imageWithData:imgData];
 //       self.nickNameLabel.text = _toUserName;
-          self.nickNameLabel.text = @"刘磊医生22";
+       self.nickNameLabel.text = self->_toUserName?:@"刘磊医生";
+       self->_duration = 70;
  
    });
     
    
     if (!_signalingCall) {//自己呼叫对方
-//        NSString *eventType = [data objectForKey:@"eventType"];
-        [self signalingNotifyJoinWithEventType:@""];
+        NSString *eventType = [userInfo objectForKey:@"eventType"];
+        [self signalingNotifyJoinWithEventType:eventType];
+        [self performSelector:@selector(noAnswer) withObject:nil afterDelay:60.0];
     }
  
 
 }
 
+
+//无应答
+-(void)noAnswer{
+    
+    if (self.delegate && [self.delegate respondsToSelector:@selector(noAnswerCallHandle)]) {
+        [self.delegate noAnswerCallHandle];
+    }
+
+    [_audioPlayer stop];
+    [WHToast showMessage:@"对方无应答" duration:2 finishHandler:^{}];
+    [self performSelector:@selector(dismiss) withObject:nil afterDelay:2];
+    
+}
+  
 
 
 
@@ -618,12 +641,19 @@ static int const showtime = 70;
 //释放资源
 - (void)dismiss{
     
+    if (self.delegate && [self.delegate respondsToSelector:@selector(destroyCallHandle)]) {
+        [self.delegate destroyCallHandle];
+    }
+    
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        [NERtcEngine.sharedEngine leaveChannel];
         [NERtcEngine destroyEngine];
     });
-//    [NERtcEngine.sharedEngine stopPreview];
-    [NERtcEngine.sharedEngine leaveChannel];
 
+    [_controlTimer invalidate];
+    _controlTimer = nil;
+    [_vibrationTimer invalidate];
+    _vibrationTimer = nil;
     
     [_audioPlayer stop];
     _audioPlayer = nil;
@@ -631,8 +661,6 @@ static int const showtime = 70;
     [self.vibrationTimer invalidate];
     [self.btnContainerView.myTimer invalidate];
     [self.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
-    [self removeFromSuperview];
-
 }
 
 - (void)dealloc{
