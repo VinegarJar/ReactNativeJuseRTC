@@ -104,7 +104,7 @@
 {
     if (!_remoteRender) {
         _remoteRender = [[UIView alloc]initWithFrame:ScreenBounds];
-        _remoteRender.backgroundColor =  [UIColor orangeColor];
+        _remoteRender.backgroundColor =  [UIColor blackColor];
         _remoteRender.alpha = 0.5;
         [self addSubview:_remoteRender];
     }
@@ -567,14 +567,15 @@
     _callinfo = callinfo;
     _userInfo = userInfo;
     
+    NSNumber* duration = [dic objectForKey:@"duration"];
+    NSLog(@"获取传递时间---->>>>>%@",duration);
     
     //务必在主线程中执行UI刷新
    dispatch_async(dispatch_get_main_queue(), ^{
-//       NSData *imgData = [NSData dataWithContentsOfURL:[NSURL URLWithString:_toHeadUrl]];
-//       self.toHeadImage.image = [UIImage imageWithData:imgData];
-//       self.nickNameLabel.text = _toUserName;
-       self.nickNameLabel.text = self->_toUserName?:@"刘磊医生";
-       self->_duration = 70;
+       NSData *imgData = [NSData dataWithContentsOfURL:[NSURL URLWithString:self->_toHeadUrl]];
+       self.toHeadImage.image = [UIImage imageWithData:imgData];
+       self.nickNameLabel.text = self->_toUserName?:@"";
+       self->_duration = 600;
  
    });
     

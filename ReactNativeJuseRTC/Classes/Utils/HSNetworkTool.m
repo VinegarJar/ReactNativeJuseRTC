@@ -60,7 +60,9 @@
     */
   
     NSString *token = [[NSUserDefaults standardUserDefaults] objectForKey:@"token"];
-    [mutableRequest setValue:[@"Bearer " stringByAppendingString:token] forHTTPHeaderField:@"Authorization"];
+    if (token) {
+          [mutableRequest setValue:[@"Bearer " stringByAppendingString:token] forHTTPHeaderField:@"Authorization"];
+    }
     [mutableRequest addValue:@"application/json" forHTTPHeaderField:@"Accept"];
     [mutableRequest addValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
     [mutableRequest addValue:@"close" forHTTPHeaderField:@"Connection"];
