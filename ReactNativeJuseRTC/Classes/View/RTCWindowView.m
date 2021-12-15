@@ -22,6 +22,7 @@
 /** 远端canvasr */
 @property (strong, nonatomic) NERtcVideoCanvas *remoteVideoCanvas;
 
+
 @property (nonatomic, strong) NTESDemoUserModel *localCanvas;  //本地
 @property (nonatomic, strong) NTESDemoUserModel *remoteCanvas; //远端
 
@@ -291,15 +292,19 @@
     [self remoteRender];
     [self addSubviews];
     [self addGestureToWindowView];
-    [self performSelector:@selector(startPreview) withObject:nil/*可传任意类型参数*/ afterDelay:0.5];
+    if (!_signalingCall) {//自己呼叫对方
+        [self performSelector:@selector(noAnswer) withObject:nil afterDelay:60.0];
+    }
+//    [self performSelector:@selector(startPreview) withObject:nil/*可传任意类型参数*/ afterDelay:0.5];
 }
 
 
 //开启预览
-- (void)startPreview{
-  [NERtcEngine.sharedEngine setupLocalVideoCanvas:[self startVideoPreview]];
-  [NERtcEngine.sharedEngine startPreview];
-}
+//- (void)startPreview{
+//  [NERtcEngine.sharedEngine setupLocalVideoCanvas:[self startVideoPreview]];
+//  [NERtcEngine.sharedEngine startPreview];
+//}
+
 
 
 - (void)addSubviews{
@@ -308,8 +313,6 @@
     [self nickNameLabel];
     [self connectLabel];
     [self smallScreenButton];
-    
-
     
     if (_signalingCall) { // 视频通话时,被对方呼叫UI初始化
         //呼叫声音初始化调用
@@ -378,17 +381,34 @@
 
 //挂断视频通话或者拒接
 - (void)hangupClick{
-    [self dismiss];
+
     NSString *title =_btnContainerView.hangupBtn.title.text;
-    
     if (self.delegate&&[self.delegate respondsToSelector:@selector(endCallButtonHandle:)]) {
         [self.delegate endCallButtonHandle:title];
     }
+    [self dismiss];
 }
 
+//无应答
+-(void)noAnswer{
+    
+    [WHToast showMessage:@"对方无应答" duration:2 finishHandler:^{}];
+    NSString *title =_btnContainerView.hangupBtn.title.text;
+    if (self.delegate&&[self.delegate respondsToSelector:@selector(endCallButtonHandle:)]) {
+        [self.delegate endCallButtonHandle:title];
+    }
+    [self performSelector:@selector(dismiss) withObject:nil afterDelay:2];
+    
+}
+  
 
 //接听视频通话操作
 - (void)answerClick{
+    
+    if (self.delegate && [self.delegate respondsToSelector:@selector(acceptCallHandle)]) {
+        [self.delegate acceptCallHandle];
+    }
+    
     //务必在主线程中执行UI刷新
    dispatch_async(dispatch_get_main_queue(), ^{
        [self->_smallScreenButton setHidden:NO];
@@ -405,9 +425,10 @@
        self->_nickNameLabel.text = @"有效视频时长";
        [self startCoundown];
        [self->_audioPlayer stop];
+       [self joinChannelWithRoomId:self->_roomID userId:self->_userID token:self->_token];
    });
     
-    [self joinChannelWithRoomId:_roomID userId:_userID token:_token];
+
 }
 
 
@@ -435,9 +456,7 @@
             self->_localVideoCanvas = [weakSelf setupLocalCanvas];
             [NERtcEngine.sharedEngine setupLocalVideoCanvas:self->_localVideoCanvas];
             
-            if (self.delegate && [self.delegate respondsToSelector:@selector(acceptCallHandle)]) {
-                [self.delegate acceptCallHandle];
-            }
+            
         }
     }];
 
@@ -590,40 +609,23 @@
     
     //务必在主线程中执行UI刷新
    dispatch_async(dispatch_get_main_queue(), ^{
-       NSData *imgData = [NSData dataWithContentsOfURL:[NSURL URLWithString:self->_toHeadUrl]];
-       self.toHeadImage.image = [UIImage imageWithData:imgData];
-       self.nickNameLabel.text = self->_toUserName?:@"";
+     
        self->_duration = 600;
  
+       if (self->_signalingCall) {
+           NSData *imgData = [NSData dataWithContentsOfURL:[NSURL URLWithString:self->_toHeadUrl]];
+           self.toHeadImage.image = [UIImage imageWithData:imgData];
+           self.nickNameLabel.text = self->_toUserName?:@"";
+       }else{
+           NSData *imgData = [NSData dataWithContentsOfURL:[NSURL URLWithString:self->_fromHeadUrl]];
+           self.toHeadImage.image = [UIImage imageWithData:imgData];
+           self.nickNameLabel.text = self->_fromUserName?:@"";
+       }
+       
    });
     
-   
-//    if (_signalingCall) {//自己呼叫对方
-//        NSString *eventType = [userInfo objectForKey:@"eventType"];
-//        [self signalingNotifyJoinWithEventType:eventType];
-//        [self performSelector:@selector(noAnswer) withObject:nil afterDelay:60.0];
-//    }
- 
 
 }
-
-
-//无应答
--(void)noAnswer{
-    
-    if (self.delegate && [self.delegate respondsToSelector:@selector(noAnswerCallHandle)]) {
-        [self.delegate noAnswerCallHandle];
-    }
-
-    [_audioPlayer stop];
-    [WHToast showMessage:@"对方无应答" duration:2 finishHandler:^{}];
-    [self performSelector:@selector(dismiss) withObject:nil afterDelay:2];
-    
-}
-  
-
-
-
 
 
 //获取网络状态

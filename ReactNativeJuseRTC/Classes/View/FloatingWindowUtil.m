@@ -220,28 +220,27 @@
           [dict SafetySetObject:@"ACCEPT"  forKey:@"eventType"];
           [dict SafetySetObject:[_signaUserInfo objectForKey:@"creator"]  forKey:@"account"];
           [self postNotification:dict];
-          [self sendVideoStatus];
       }break;
        
       case RTCCANCEL:{
           [dict SafetySetObject:@"CANCEL"  forKey:@"eventType"];
           [dict SafetySetObject:[_signaUserInfo objectForKey:@"account"]  forKey:@"account"];
           [self postNotification:dict];
-          [self sendVideoStatus];
+          [self sendVideoStatus:4];
       }break;
           
       case RTCCLOSE:{
           [dict SafetySetObject:@"CLOSE"  forKey:@"eventType"];
           [dict SafetySetObject:[_signaUserInfo objectForKey:@"account"]  forKey:@"account"];
           [self postNotification:dict];
-          [self sendVideoStatus];
+          [self sendVideoStatus:7];
       }break;
       
       case RTCREJECT:{
           [dict SafetySetObject:@"REJECT"  forKey:@"eventType"];
           [dict SafetySetObject:[_signaUserInfo objectForKey:@"creator"]  forKey:@"account"];
           [self postNotification:dict];
-          [self sendVideoStatus];
+          [self sendVideoStatus:6];
       }break;
       
       case RTCDESTORY:{
@@ -261,7 +260,7 @@
 }
 
 //组装发送到后端的请求参数
-- (void)sendVideoStatus{
+- (void)sendVideoStatus:(int)status{
     
     //解析rn端传过来的数据字典
     NSDictionary *ext = [StringToDic dictionaryWithJsonString: [_signaUserInfo  objectForKey:@"ext"]];
@@ -276,22 +275,28 @@
     [dict SafetySetObject:@"VIDEO_STATUS"  forKey:@"eventType"];
     [dict SafetySetObject:[ext objectForKey:@"initiator"]?[ext objectForKey:@"initiator"]:[NSNull new]  forKey:@"initiator"];
     [dict SafetySetObject:[ext objectForKey:@"videoType"]?[ext objectForKey:@"videoType"]:[NSNull new]  forKey:@"videoType"];
-    [dict SafetySetObject:[NSNumber numberWithInteger:_callType]  forKey:@"videoStatus"];
+    [dict SafetySetObject:[NSNumber numberWithInt:status]  forKey:@"videoStatus"];
+
     
-    if (_callType == RTCREJECT) {
+    if (status == 6) {
         [dict SafetySetObject:[_signaUserInfo objectForKey:@"creator"]  forKey:@"account"];
-    }else if(_callType == RTCCLOSE){
-        [dict SafetySetObject:[NSNumber numberWithInt:1]  forKey:@"duration"];
+    
+    }else if(status == 7){
+        [dict SafetySetObject:[NSNumber numberWithInt:60]  forKey:@"duration"];
+        
     }else{
         [dict SafetySetObject:[_signaUserInfo objectForKey:@"account"]  forKey:@"account"];
     }
-   
+    
+    
   //发送消息到RN端
   [self postNotification:dict];
   //调用接口请求发送视频状态到后端
-  if(![[ext objectForKey:@"videoType"] isEqual:@"consultant"]){
-       [self requestUpdateVideoStatus:dict];
+  if([[ext objectForKey:@"videoType"] isEqual:@"consultant"]){
+   }else {
+        [self requestUpdateVideoStatus:dict];
   }
+
     
 }
 
