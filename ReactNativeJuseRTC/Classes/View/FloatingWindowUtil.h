@@ -27,8 +27,8 @@ typedef NS_ENUM(NSInteger, RTCCallType) {
 @interface FloatingWindowUtil : NSObject
 
 + (instancetype)shareInstance;
-
-- (void)startSignalingCall:(BOOL)signalingCall;
+- (void)signalingCall;
+- (void)signalingNotify;
 - (void)signalingMutilClientSyncNotify;
 @property(nonatomic,copy)NSString *developmentUrl;
 @property(nonatomic,copy)NSDictionary *signaUserInfo;

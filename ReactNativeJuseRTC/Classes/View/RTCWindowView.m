@@ -17,9 +17,13 @@
 @interface  RTCWindowView ()<UIGestureRecognizerDelegate,RTCAlertViewDelegate,NERtcEngineDelegateEx>
 @property (nonatomic, strong) UIButton *smallScreenButton;
 
+/** 本地canvas */
+@property (strong, nonatomic)NERtcVideoCanvas *localVideoCanvas;
+/** 远端canvasr */
+@property (strong, nonatomic) NERtcVideoCanvas *remoteVideoCanvas;
+
 @property (nonatomic, strong) NTESDemoUserModel *localCanvas;  //本地
 @property (nonatomic, strong) NTESDemoUserModel *remoteCanvas; //远端
-
 
 //被呼叫or呼叫
 @property (assign, nonatomic) BOOL  signalingCall;
@@ -224,8 +228,8 @@
         return;
     }
     //建立远端canvas，用来渲染远端画面
-    NERtcVideoCanvas *canvas = [self setupRemoteCanvasWithUid:userID];
-    [NERtcEngine.sharedEngine setupRemoteVideoCanvas:canvas
+    _remoteVideoCanvas = [self setupRemoteCanvasWithUid:userID];
+    [NERtcEngine.sharedEngine setupRemoteVideoCanvas:_remoteVideoCanvas
                                            forUserID:userID];
     
 }
@@ -410,7 +414,7 @@
 //网易云通信加入房间
 - (void)joinChannelWithRoomId:(NSString *)roomId
          userId:(NSString *)userId token:(NSString *)token {
-    NERtcEngine *coreEngine = [NERtcEngine sharedEngine];
+
     __weak typeof(self) weakSelf = self;
     
     int ivalue = [userId intValue];
@@ -427,8 +431,9 @@
             [self->_audioPlayer stop];
     
             //加入成功，建立本地canvas渲染本地视图
-            self->_localCanvas = [weakSelf setupLocalCanvas];
-            [NERtcEngine.sharedEngine setupLocalVideoCanvas:self->_localCanvas];
+            //加入成功，建立本地canvas渲染本地视图
+            self->_localVideoCanvas = [weakSelf setupLocalCanvas];
+            [NERtcEngine.sharedEngine setupLocalVideoCanvas:self->_localVideoCanvas];
             
             if (self.delegate && [self.delegate respondsToSelector:@selector(acceptCallHandle)]) {
                 [self.delegate acceptCallHandle];

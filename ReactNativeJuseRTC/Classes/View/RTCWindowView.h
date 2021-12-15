@@ -55,5 +55,6 @@ typedef NS_ENUM(NSInteger, RTCWindowState) {
 - (void)setupRTCEngine;
 - (void)signalingMutilClientSyncNotify;
 - (void)signalingNotifyJoinWithEventType:(NSString *)eventType;
+- (void)hangupClick;
 @end
 

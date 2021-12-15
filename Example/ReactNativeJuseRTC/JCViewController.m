@@ -34,7 +34,7 @@
 
 - (void)touchesButtonWithSender:(UIButton *)sender{
    
-    [[FloatingWindowUtil shareInstance] startSignalingCall:YES];
+    [[FloatingWindowUtil shareInstance]signalingNotify];
     
 }
 

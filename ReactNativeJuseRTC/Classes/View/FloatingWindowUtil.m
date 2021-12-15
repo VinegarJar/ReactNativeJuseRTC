@@ -11,6 +11,7 @@
 #import "HSNetworkTool.h"
 #import "StringToDic.h"
 #import "Safety.h"
+#import "WHToast.h"
 @interface FloatingWindowUtil ()<RTCWindowViewDelegate>
 // 通话管理对象
 @property (nonatomic, strong)FloatingWindowView *floatWindow;
@@ -53,38 +54,37 @@
     return  _floatWindow;
 }
 
-//1.初始化SDK
+//主动呼叫
+- (void)signalingCall{
+    [self.floatWindow startCallWithSignaling:NO];
+    [self requestToken];
+}
 
-
-- (void)startSignalingCall:(BOOL)signalingCall{
+//被呼叫
+- (void)signalingNotify{
     
-
-    [self.floatWindow startCallWithSignaling:signalingCall];
+    [self.floatWindow startCallWithSignaling:YES];
    
     NSString *eventType = [ _signaUserInfo objectForKey:@"eventType"];
     
     if([eventType isEqual: @"INVITE"]){
-
         [self requestToken];
-
     }else if([eventType isEqual: @"CANCEL_INVITE"]){
     
     }else if([eventType isEqual: @"REJECT"]){//对方拒接
-
+        [WHToast showMessage:@"对方拒接" duration:2 finishHandler:^{}];
+        [self.floatWindow.callRTCView hangupClick];
 
     }else if([eventType isEqualToString:@"finishVideo"]){
         //离开频道，结束或退出通话
-
+        [self.floatWindow.callRTCView hangupClick];
     }else if([eventType isEqualToString:@"CONTROL"]){//对方正忙
-
+        [WHToast showMessage:@"对方正忙" duration:2 finishHandler:^{}];
+        [self.floatWindow.callRTCView hangupClick];
         
     }else{
       [self.floatWindow.callRTCView signalingNotifyJoinWithEventType:eventType];
     }
-    
-    
-    
-  
 
 }
 
