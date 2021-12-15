@@ -447,10 +447,11 @@
 
 - (void)signalingNotifyJoinWithEventType:(NSString *)eventType{
     
+    
     if([eventType isEqualToString:@"REJECT"]){
         //被对方拒接
         [WHToast showMessage:@"对方拒接" duration:2 finishHandler:^{}];
-        [self hangupClick];
+        [self dismiss];
      }else if([eventType isEqualToString:@"ACCEPT"]){
          //接受邀请
          
@@ -459,28 +460,29 @@
     
      }else if([eventType isEqualToString:@"LEAVE"]){
          //离开房间
-         [self hangupClick];
+         [self dismiss];
      }else if([eventType isEqualToString:@"ROOM_CLOSE"]){
          //关闭房间
-       [self hangupClick];
+        [self dismiss];
      }else if([eventType isEqualToString:@"finishVideo"]){
        //离开频道，结束或退出通话
-       [self hangupClick];
+         [self dismiss];
      }else if([eventType isEqualToString:@"CONTROL"]){
          _controlTimer = [NSTimer scheduledTimerWithTimeInterval:3.0 target:self selector:@selector(delayMethod) userInfo:nil repeats:NO];
-         [NSTimer scheduledTimerWithTimeInterval:5.0 target:self selector:@selector(hangupClick) userInfo:nil repeats:NO];
+         [NSTimer scheduledTimerWithTimeInterval:5.0 target:self selector:@selector(dismiss) userInfo:nil repeats:NO];
      }else if([eventType isEqualToString:@"CANCEL_INVITE"]){
          //关闭房间
-       [self hangupClick];
-     }else  if([eventType isEqual: @"INVITE"]){//在线
-       [self answerClick];
-    }
+       [self dismiss];
+     }
     
 }
 
 -(void)delayMethod{
     
     [WHToast showMessage:@"对方正忙" duration:2 finishHandler:^{}];
+    if (self.delegate && [self.delegate respondsToSelector:@selector(delayMethodCallHandle)]) {
+        [self.delegate delayMethodCallHandle];
+    }
 }
 
 #pragma  mark -点击缩小窗口

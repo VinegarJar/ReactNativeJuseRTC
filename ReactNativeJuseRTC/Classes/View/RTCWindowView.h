@@ -29,6 +29,9 @@ typedef NS_ENUM(NSInteger, RTCWindowState) {
 - (void)destroyCallHandle;
 // 无应答
 - (void)noAnswerCallHandle;
+// 对方正忙
+- (void)delayMethodCallHandle;
+
 //主动取消通话发送通知到rn端 @"CLOSE
 //主动拒绝通话发送通知到rn端 @"REJECT"
 //主动接受通话发送通知到rn端 @"ACCEPT"

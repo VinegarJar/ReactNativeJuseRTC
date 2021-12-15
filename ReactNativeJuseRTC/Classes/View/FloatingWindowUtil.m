@@ -68,19 +68,6 @@
     if([eventType isEqual: @"INVITE"]){
         [self.floatWindow startCallWithSignaling:YES];
         [self requestToken];
-    }else if([eventType isEqual: @"CANCEL_INVITE"]){
-    
-    }else if([eventType isEqual: @"REJECT"]){//对方拒接
-        [WHToast showMessage:@"对方拒接" duration:2 finishHandler:^{}];
-        [self.floatWindow.callRTCView hangupClick];
-
-    }else if([eventType isEqualToString:@"finishVideo"]){
-        //离开频道，结束或退出通话
-        [self.floatWindow.callRTCView hangupClick];
-    }else if([eventType isEqualToString:@"CONTROL"]){//对方正忙
-        [WHToast showMessage:@"对方正忙" duration:2 finishHandler:^{}];
-        [self.floatWindow.callRTCView hangupClick];
-        
     }else{
       [self.floatWindow.callRTCView signalingNotifyJoinWithEventType:eventType];
     }
@@ -91,20 +78,19 @@
 //原生获取数据
 - (void)requestToken{
 
-    //加载UI显示
-   dispatch_async(dispatch_get_main_queue(), ^{
-        self.floatWindow.callRTCView.frame = [UIScreen mainScreen].bounds;
-        self.floatWindow.callRTCView.delegate = self;
-        self.floatWindow.callRTCView.alpha = .0f;
-        [UIView animateWithDuration:0.5 animations:^{
-            self.floatWindow.callRTCView.alpha = 1.0f;
-        } completion:^(BOOL finished) {
-            [UIView animateWithDuration:0.25 animations:^{
-              self->_floatWindow.callRTCView.transform = CGAffineTransformIdentity;
-             [[UIApplication sharedApplication].delegate.window addSubview:self.floatWindow.callRTCView];
-            }];
-        }];
-    });
+    dispatch_async(dispatch_get_main_queue(), ^{
+         self.floatWindow.callRTCView.frame = [UIScreen mainScreen].bounds;
+         self.floatWindow.callRTCView.delegate = self;
+         self.floatWindow.callRTCView.alpha = .0f;
+         [UIView animateWithDuration:0.5 animations:^{
+             self.floatWindow.callRTCView.alpha = 1.0f;
+         } completion:^(BOOL finished) {
+             [UIView animateWithDuration:0.25 animations:^{
+               self->_floatWindow.callRTCView.transform = CGAffineTransformIdentity;
+              [[UIApplication sharedApplication].delegate.window addSubview:self.floatWindow.callRTCView];
+             }];
+         }];
+  });
 
   HSNetworkTool *NetworkTool = [HSNetworkTool shareInstance];
   if([ _developmentUrl isEqual:@"development"]){
@@ -131,12 +117,16 @@
 
 //悬浮窗口消失
 - (void)dismissCurrentFloatView{
-    [UIView animateWithDuration:.3f animations:^{
-        self.floatWindow.callRTCView.alpha = .0f;
-    } completion:^(BOOL finished) {
-        [self.floatWindow.callRTCView removeFromSuperview];
-        self.floatWindow = nil;
-    }];
+    
+    if (self.floatWindow) {
+        [UIView animateWithDuration:.3f animations:^{
+            self.floatWindow.callRTCView.alpha = .0f;
+        } completion:^(BOOL finished) {
+            [self.floatWindow.callRTCView removeFromSuperview];
+            self.floatWindow = nil;
+        }];
+    }
+    
 }
 
 
@@ -167,6 +157,7 @@
 //通话销毁
 - (void)destroyCallHandle{
     _callType = RTCDESTORY;
+    [self dismissCurrentFloatView];
     [self sendEmitEvent];
 }
 
@@ -174,6 +165,11 @@
 -(void)noAnswerCallHandle{
     _callType = RTCCANCEL;
     [self sendEmitEvent];
+}
+
+// 对方正忙
+- (void)delayMethodCallHandle{
+    [self sendVideoStatus:5];
 }
 
 //发送消息到RN端
