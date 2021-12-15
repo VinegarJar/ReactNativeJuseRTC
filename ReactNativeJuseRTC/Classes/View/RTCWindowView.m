@@ -117,8 +117,8 @@
 -(UIImageView*)toHeadImage{
     if (!_toHeadImage) {
         _toHeadImage = [[UIImageView alloc]initWithFrame:CGRectMake(ScreenW-kMicVideoW-20, 50, kMicVideoW, kMicVideoH)];
-        [_toHeadImage setContentMode:UIViewContentModeScaleAspectFit];
-        [_toHeadImage setBackgroundColor: [UIColor whiteColor]];
+        [_toHeadImage setContentMode: UIViewContentModeScaleToFill];
+        [_toHeadImage setBackgroundColor: [UIColor clearColor]];
         [self addSubview:_toHeadImage];
     }
     return _toHeadImage;
