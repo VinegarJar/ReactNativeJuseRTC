@@ -166,16 +166,6 @@
     return _smallScreenButton;
 }
 
-//开启本地预览
-- (NERtcVideoCanvas *)startVideoPreview {
-  
-  if(_localCanvas == nil){
-    _localCanvas = [[NTESDemoUserModel alloc] init];
-  }
-  _localCanvas.uid = [_userID intValue];
-  _localCanvas.renderContainer = self.toHeadImage;
-  return [_localCanvas setupCanvas];
-}
 
 //建立本地canvas模型，表示已经接通/开启本地预览(显示对方头像)
 - (NERtcVideoCanvas *)setupLocalCanvas {
@@ -293,16 +283,9 @@
     [self addSubviews];
     [self addGestureToWindowView];
     if (!_signalingCall) {//自己呼叫对方
-        [self performSelector:@selector(noAnswer) withObject:nil afterDelay:60.0];
+        [self performSelector:@selector(noAnswer) withObject:nil afterDelay:30.0];
     }
 }
-
-
-//开启预览
-//- (void)startPreview{
-//  [NERtcEngine.sharedEngine setupLocalVideoCanvas:[self startVideoPreview]];
-//  [NERtcEngine.sharedEngine startPreview];
-//}
 
 
 - (void)addSubviews{
@@ -391,12 +374,7 @@
 -(void)noAnswer{
     
     [WHToast showMessage:@"对方无应答" duration:2 finishHandler:^{}];
-    NSString *title =_btnContainerView.hangupBtn.title.text;
-    if (self.delegate&&[self.delegate respondsToSelector:@selector(endCallButtonHandle:)]) {
-        [self.delegate endCallButtonHandle:title];
-    }
-    [self performSelector:@selector(dismiss) withObject:nil afterDelay:2];
-    
+    [self hangupClick];
 }
   
 
@@ -407,29 +385,31 @@
         [self.delegate acceptCallHandle];
     }
     
-    //务必在主线程中执行UI刷新
-   dispatch_async(dispatch_get_main_queue(), ^{
-       [self->_smallScreenButton setHidden:NO];
-       [self->_btnContainerView  removeAnswerButton];
-       [UIView animateWithDuration:0.25 animations:^{
-           [self->_btnContainerView replaceHangupButtonframe];
-       } completion:^(BOOL finished) {
-           [UIView animateWithDuration:0.25 animations:^{
-             self->_btnContainerView.hangupBtn.transform = CGAffineTransformIdentity;
-           }];
-       }];
-       [self->_btnContainerView startTimers];
-       [self stopShakeSound];
-       self->_nickNameLabel.text = @"有效视频时长";
-       [self startCoundown];
-       [self->_audioPlayer stop];
-       [self joinChannelWithRoomId:self->_roomID userId:self->_userID token:self->_token];
-   });
+    [self stopShakeSound];
+    [self joinChannelWithRoom];
     
 
 }
 
 
+- (void)joinChannelWithRoom{
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self->_smallScreenButton setHidden:NO];
+        [self->_btnContainerView  removeAnswerButton];
+        [UIView animateWithDuration:0.25 animations:^{
+            [self->_btnContainerView replaceHangupButtonframe];
+        } completion:^(BOOL finished) {
+            [UIView animateWithDuration:0.25 animations:^{
+              self->_btnContainerView.hangupBtn.transform = CGAffineTransformIdentity;
+            }];
+        }];
+        [self->_btnContainerView startTimers];
+        [self stopShakeSound];
+        self->_nickNameLabel.text = @"有效视频时长";
+        [self startCoundown];
+    });
+    [self joinChannelWithRoomId:self->_roomID userId:self->_userID token:self->_token];
+}
 
 
 
@@ -463,9 +443,10 @@
 
 }
 
+
+
 - (void)signalingNotifyJoinWithEventType:(NSString *)eventType{
     
-   
     if([eventType isEqualToString:@"REJECT"]){
         //被对方拒接
         [WHToast showMessage:@"对方拒接" duration:2 finishHandler:^{}];
@@ -474,27 +455,8 @@
          //接受邀请
          
      }else if([eventType isEqualToString:@"ROOM_JOIN"]){
-         //加入房间,走接听的逻辑
-//       [self answerClick];
-         //务必在主线程中执行UI刷新
-        dispatch_async(dispatch_get_main_queue(), ^{
-            [self->_smallScreenButton setHidden:NO];
-            [self->_btnContainerView  removeAnswerButton];
-            [UIView animateWithDuration:0.25 animations:^{
-                [self->_btnContainerView replaceHangupButtonframe];
-            } completion:^(BOOL finished) {
-                [UIView animateWithDuration:0.25 animations:^{
-                  self->_btnContainerView.hangupBtn.transform = CGAffineTransformIdentity;
-                }];
-            }];
-            [self->_btnContainerView startTimers];
-            [self stopShakeSound];
-            self->_nickNameLabel.text = @"有效视频时长";
-            [self startCoundown];
-            [self joinChannelWithRoomId:self->_roomID userId:self->_userID token:self->_token];
-        });
-         
-       
+         [self joinChannelWithRoom];
+    
      }else if([eventType isEqualToString:@"LEAVE"]){
          //离开房间
          [self hangupClick];
