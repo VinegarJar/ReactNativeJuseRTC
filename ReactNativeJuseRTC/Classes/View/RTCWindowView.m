@@ -8,7 +8,6 @@
 #import "RTCWindowView.h"
 #import "Reachability.h"
 #import "RTCAlertView.h"
-#import "RTCButtonView.h"
 #import "NTESDemoUserModel.h"
 #import "HSNetworkTool.h"
 #import "WHToast.h"
@@ -29,8 +28,6 @@
 //被呼叫or呼叫
 @property (assign, nonatomic) BOOL  signalingCall;
 
-/** 底部按钮容器视图 */
-@property (strong, nonatomic) RTCButtonView *btnContainerView;
 //振动计时器
 @property (nonatomic,strong) NSTimer *vibrationTimer;
 //呼叫未应答

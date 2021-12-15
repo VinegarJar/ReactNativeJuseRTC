@@ -284,8 +284,9 @@
         [dict SafetySetObject:[_signaUserInfo objectForKey:@"creator"]  forKey:@"account"];
     
     }else if(status == 7){
-        [dict SafetySetObject:[NSNumber numberWithInt:60]  forKey:@"duration"];
-        
+        //通话时长传递给后端
+        int seconds = self.floatWindow.callRTCView.btnContainerView.seconds;
+        [dict SafetySetObject:[NSNumber numberWithInt:seconds]  forKey:@"duration"];
     }else{
         [dict SafetySetObject:[_signaUserInfo objectForKey:@"account"]  forKey:@"account"];
     }

@@ -12,7 +12,7 @@
 #import <AudioToolbox/AudioToolbox.h>
 #import "NSURL+URLxtension.h"
 #import "StringToDic.h"
-
+#import "RTCButtonView.h"
 
 
 typedef NS_ENUM(NSInteger, RTCWindowState) {
@@ -45,7 +45,8 @@ typedef NS_ENUM(NSInteger, RTCWindowState) {
 
 
 @interface RTCWindowView : UIView
-
+/** 底部按钮容器视图 */
+@property (strong, nonatomic) RTCButtonView *btnContainerView;
 @property (nonatomic, weak) id<RTCWindowViewDelegate>delegate;
 
 @property (nonatomic, assign) RTCWindowState state;
