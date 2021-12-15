@@ -570,46 +570,47 @@
 }
 
 
-//呼叫信息设置显示
--(void)signalingCallinfo:(NSDictionary *)callinfo userInfo:(NSDictionary *)userInfo{
-    
-    
+//呼叫用户信息显示设置
+-(void)signalingUserInfo:(NSDictionary *)userInfo{
     NSDictionary *dic = [StringToDic dictionaryWithJsonString:[userInfo objectForKey:@"ext"]];
-    
-    
     _roomID = [dic objectForKey:@"orderId"];
     _toUserName = [dic objectForKey:@"toUserName"];
     _toHeadUrl = [dic objectForKey:@"toHeadUrl"];
     _fromUserName = [dic objectForKey:@"fromUserName"];
     _fromHeadUrl = [dic objectForKey:@"fromHeadUrl"];
-    _token = [callinfo objectForKey:@"token"];
-    _userID = [callinfo objectForKey:@"id"];
-    
-
     
     NSNumber* duration = [dic objectForKey:@"duration"];
     NSLog(@"获取传递时间---->>>>>%@",duration);
     
-    //务必在主线程中执行UI刷新
-   dispatch_async(dispatch_get_main_queue(), ^{
-     
-       self->_duration = 600;
- 
-       if (self->_signalingCall) {
-           NSData *imgData = [NSData dataWithContentsOfURL:[NSURL URLWithString:self->_fromHeadUrl]];
-           self.toHeadImage.image = [UIImage imageWithData:imgData];
-           self.nickNameLabel.text = self->_fromUserName?:@"";
-       }else{
-          
-           NSData *imgData = [NSData dataWithContentsOfURL:[NSURL URLWithString:self->_toHeadUrl]];
-           self.toHeadImage.image = [UIImage imageWithData:imgData];
-           self.nickNameLabel.text = self->_toUserName?:@"";
-       }
-       
-   });
+    dispatch_async(dispatch_get_main_queue(), ^{
+      
+        self->_duration = 600;
+  
+        if (self->_signalingCall) {
+            NSData *imgData = [NSData dataWithContentsOfURL:[NSURL URLWithString:self->_fromHeadUrl]];
+            self.toHeadImage.image = [UIImage imageWithData:imgData];
+            self.nickNameLabel.text = self->_fromUserName?:@"";
+        }else{
+           
+            NSData *imgData = [NSData dataWithContentsOfURL:[NSURL URLWithString:self->_toHeadUrl]];
+            self.toHeadImage.image = [UIImage imageWithData:imgData];
+            self.nickNameLabel.text = self->_toUserName?:@"";
+        }
+        
+    });
+}
+
+//设置Token
+-(void)setCallinfoToken:(NSDictionary *)callinfo{
     
+    if (callinfo) {
+        _token = [callinfo objectForKey:@"token"];
+        _userID = [callinfo objectForKey:@"id"];
+    }
 
 }
+
+
 
 
 //获取网络状态

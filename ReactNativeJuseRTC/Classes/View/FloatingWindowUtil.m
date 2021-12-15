@@ -75,9 +75,9 @@
 }
 
 
-//原生获取数据
-- (void)requestToken{
 
+- (void)showCallRTCView{
+    
     dispatch_async(dispatch_get_main_queue(), ^{
          self.floatWindow.callRTCView.frame = [UIScreen mainScreen].bounds;
          self.floatWindow.callRTCView.delegate = self;
@@ -89,9 +89,20 @@
                self->_floatWindow.callRTCView.transform = CGAffineTransformIdentity;
               [[UIApplication sharedApplication].delegate.window addSubview:self.floatWindow.callRTCView];
              }];
+             [self->_floatWindow.callRTCView signalingUserInfo:self->_signaUserInfo];
          }];
   });
 
+}
+
+
+
+
+//原生获取数据
+- (void)requestToken{
+
+  [self showCallRTCView];
+    
   HSNetworkTool *NetworkTool = [HSNetworkTool shareInstance];
   if([ _developmentUrl isEqual:@"development"]){
     NetworkTool.requestURL = @"https://strong.ylccmp.com/API/user";
@@ -106,7 +117,7 @@
         NSInteger resultRep = [[responseObject objectForKey:@"code"] integerValue];
         if(resultRep  == 200){
             NSDictionary *data = [responseObject objectForKey:@"data"];
-            [self->_floatWindow.callRTCView signalingCallinfo:data userInfo:self->_signaUserInfo];
+            [self->_floatWindow.callRTCView setCallinfoToken:data];
         }
     } failBlock:^(NSError *error) {
         
