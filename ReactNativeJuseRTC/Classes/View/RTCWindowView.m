@@ -613,13 +613,14 @@
        self->_duration = 600;
  
        if (self->_signalingCall) {
-           NSData *imgData = [NSData dataWithContentsOfURL:[NSURL URLWithString:self->_toHeadUrl]];
-           self.toHeadImage.image = [UIImage imageWithData:imgData];
-           self.nickNameLabel.text = self->_toUserName?:@"";
-       }else{
            NSData *imgData = [NSData dataWithContentsOfURL:[NSURL URLWithString:self->_fromHeadUrl]];
            self.toHeadImage.image = [UIImage imageWithData:imgData];
            self.nickNameLabel.text = self->_fromUserName?:@"";
+       }else{
+          
+           NSData *imgData = [NSData dataWithContentsOfURL:[NSURL URLWithString:self->_toHeadUrl]];
+           self.toHeadImage.image = [UIImage imageWithData:imgData];
+           self.nickNameLabel.text = self->_toUserName?:@"";
        }
        
    });

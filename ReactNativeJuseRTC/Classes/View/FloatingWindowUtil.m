@@ -183,7 +183,7 @@
 
 //发送消息到RN端
 -(void)postNotification:(NSDictionary*)payload{
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"event-emitted" object:payload];
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"event-emitted" object:self userInfo:payload];
 }
 
 /**
