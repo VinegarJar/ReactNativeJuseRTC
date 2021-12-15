@@ -367,7 +367,6 @@
     [self dismiss];
 }
 
-
 //无应答(处在按钮取消状态)
 -(void)noAnswer{
     NSString *title =_btnContainerView.hangupBtn.title.text;
@@ -377,7 +376,6 @@
     }
 }
   
-
 //接听视频通话操作
 - (void)answerClick{
     
@@ -388,7 +386,7 @@
     [self joinChannelWithRoom];
 }
 
-
+//进入视频聊天按钮状态、通话计数状态更新
 - (void)joinChannelWithRoom{
     dispatch_async(dispatch_get_main_queue(), ^{
         [self->_smallScreenButton setHidden:NO];
@@ -415,35 +413,29 @@
          userId:(NSString *)userId token:(NSString *)token {
 
     __weak typeof(self) weakSelf = self;
-    
     int ivalue = [userId intValue];
     [NERtcEngine.sharedEngine joinChannelWithToken:token
                                         channelName:roomId
                                              myUid:ivalue
                                         completion:^(NSError * _Nullable error, uint64_t channelId, uint64_t elapesd) {
         if (error) {
-            
             //加入失败了，弹框之后退出当前页面
             NSString *msg = [NSString stringWithFormat:@"join channel fail.code:%@", @(error.code)];
             NSLog(@"%@", msg);
         } else {
             [self->_audioPlayer stop];
-    
             //加入成功，建立本地canvas渲染本地视图
             //加入成功，建立本地canvas渲染本地视图
             self->_localVideoCanvas = [weakSelf setupLocalCanvas];
             [NERtcEngine.sharedEngine setupLocalVideoCanvas:self->_localVideoCanvas];
-            
-            
         }
     }];
 
 }
 
 
-
+//自己呼叫对方回调操作
 - (void)signalingNotifyJoinWithEventType:(NSString *)eventType{
-    
     
     if([eventType isEqualToString:@"REJECT"]){
         //被对方拒接
@@ -451,10 +443,9 @@
         [self dismiss];
      }else if([eventType isEqualToString:@"ACCEPT"]){
          //接受邀请
-         
      }else if([eventType isEqualToString:@"ROOM_JOIN"]){
+         //进入房间
          [self joinChannelWithRoom];
-    
      }else if([eventType isEqualToString:@"LEAVE"]){
          //离开房间
          [self dismiss];
@@ -471,11 +462,10 @@
          //关闭房间
        [self dismiss];
      }
-    
 }
 
+
 -(void)delayMethod{
-    
     [WHToast showMessage:@"对方正忙" duration:2 finishHandler:^{}];
     if (self.delegate && [self.delegate respondsToSelector:@selector(delayMethodCallHandle)]) {
         [self.delegate delayMethodCallHandle];
@@ -580,9 +570,7 @@
     NSLog(@"获取传递时间---->>>>>%@",duration);
     
     dispatch_async(dispatch_get_main_queue(), ^{
-      
         self->_duration = 600;
-  
         if (self->_signalingCall) {
             NSData *imgData = [NSData dataWithContentsOfURL:[NSURL URLWithString:self->_fromHeadUrl]];
             self.toHeadImage.image = [UIImage imageWithData:imgData];
@@ -593,19 +581,17 @@
             self.toHeadImage.image = [UIImage imageWithData:imgData];
             self.nickNameLabel.text = self->_toUserName?:@"";
         }
-        
     });
 }
 
+
 //设置Token
 -(void)setCallinfoToken:(NSDictionary *)callinfo{
-    
     if (callinfo) {
         _token = [callinfo objectForKey:@"token"];
         _userID = [callinfo objectForKey:@"id"];
     }
 }
-
 
 //获取网络状态
 -(BOOL)internetStatus {
@@ -616,7 +602,6 @@
         case ReachableViaWiFi:
             net = NO;
             break;
-            
         case ReachableViaWWAN:
              net = YES;
             //net = [self getNetType ];   //判断具体类型
@@ -628,6 +613,7 @@
     }
     return net;
 }
+
 
 //提示框上取消视频通话功能
 -(void)cancelCallHandle{
@@ -660,11 +646,6 @@
     [self.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
 }
 
-- (void)dealloc{
-    NSLog(@"%s",__func__);
-    [self dismiss];
-}
-
 
 //振动
  - (void)playkSystemSound{
@@ -673,13 +654,17 @@
 
 //停止振动
  -(void)stopShakeSound{
-
     [_vibrationTimer invalidate];
 }
 
 - (void)signalingMutilClientSyncNotify{
     [WHToast showMessage:@"多设备同步" duration:2 finishHandler:^{ }];
     [self hangupClick];
+}
+
+- (void)dealloc{
+    NSLog(@"%s",__func__);
+    [self dismiss];
 }
 
 @end

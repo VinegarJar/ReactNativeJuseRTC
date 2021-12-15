@@ -11,7 +11,7 @@
 #import "HSNetworkTool.h"
 #import "StringToDic.h"
 #import "Safety.h"
-#import "WHToast.h"
+
 @interface FloatingWindowUtil ()<RTCWindowViewDelegate>
 // 通话管理对象
 @property (nonatomic, strong)FloatingWindowView *floatWindow;
@@ -57,6 +57,7 @@
 //主动呼叫
 - (void)signalingCall{
     [self.floatWindow startCallWithSignaling:NO];
+    [self showCallRTCView];
     [self requestToken];
 }
 
@@ -68,6 +69,7 @@
     if([eventType isEqual: @"INVITE"]){
         [self.floatWindow startCallWithSignaling:YES];
         [self requestToken];
+        [self showCallRTCView];
     }else{
       [self.floatWindow.callRTCView signalingNotifyJoinWithEventType:eventType];
     }
@@ -84,12 +86,12 @@
          self.floatWindow.callRTCView.alpha = .0f;
          [UIView animateWithDuration:0.5 animations:^{
              self.floatWindow.callRTCView.alpha = 1.0f;
+             [self->_floatWindow.callRTCView signalingUserInfo:self->_signaUserInfo];
          } completion:^(BOOL finished) {
              [UIView animateWithDuration:0.25 animations:^{
                self->_floatWindow.callRTCView.transform = CGAffineTransformIdentity;
               [[UIApplication sharedApplication].delegate.window addSubview:self.floatWindow.callRTCView];
              }];
-             [self->_floatWindow.callRTCView signalingUserInfo:self->_signaUserInfo];
          }];
   });
 
@@ -97,11 +99,8 @@
 
 
 
-
 //原生获取数据
 - (void)requestToken{
-
-  [self showCallRTCView];
     
   HSNetworkTool *NetworkTool = [HSNetworkTool shareInstance];
   if([ _developmentUrl isEqual:@"development"]){
@@ -113,7 +112,6 @@
   }
     
   [NetworkTool requestGET:@"/video/token" params:nil successBlock:^(NSDictionary *responseObject) {
-
         NSInteger resultRep = [[responseObject objectForKey:@"code"] integerValue];
         if(resultRep  == 200){
             NSDictionary *data = [responseObject objectForKey:@"data"];
@@ -122,7 +120,6 @@
     } failBlock:^(NSError *error) {
         
     }];
-    
 }
 
 
@@ -137,15 +134,12 @@
             self.floatWindow = nil;
         }];
     }
-    
 }
 
 
 #pragma mark - CallManagerDelegate
 //结束通话操作
 - (void)endCallButtonHandle:(NSString *)titleLabel{
-    [self dismissCurrentFloatView];
-    
     if([titleLabel  isEqual: @"取消"]){
         _callType = RTCCANCEL;
         [self sendEmitEvent];
@@ -156,7 +150,7 @@
         _callType = RTCREJECT;
         [self sendEmitEvent];
     }
-    
+    [self dismissCurrentFloatView];
 }
 
 //接受通话请求
@@ -257,9 +251,8 @@
       default:
           break;
   }
-  
-    
 }
+
 
 //组装发送到后端的请求参数
 - (void)sendVideoStatus:(int)status{
@@ -268,7 +261,6 @@
     NSDictionary *ext = [StringToDic dictionaryWithJsonString: [_signaUserInfo  objectForKey:@"ext"]];
     NSString *channelId = [_signaUserInfo objectForKey:@"channelId"];
     NSString *requestId = [_signaUserInfo objectForKey:@"requestId"];
-    
     NSMutableDictionary *dict = [[NSMutableDictionary alloc] init];
     
     [dict SafetySetObject:channelId  forKey:@"channelId"];
@@ -282,7 +274,6 @@
     
     if (status == 6) {
         [dict SafetySetObject:[_signaUserInfo objectForKey:@"creator"]  forKey:@"account"];
-    
     }else if(status == 7){
         //通话时长传递给后端
         int seconds = self.floatWindow.callRTCView.btnContainerView.seconds;
@@ -291,7 +282,6 @@
         [dict SafetySetObject:[_signaUserInfo objectForKey:@"account"]  forKey:@"account"];
     }
     
-    
   //发送消息到RN端
   [self postNotification:dict];
   //调用接口请求发送视频状态到后端
@@ -299,12 +289,12 @@
    }else {
         [self requestUpdateVideoStatus:dict];
   }
-
     
 }
 
+
 - (void)signalingMutilClientSyncNotify{
-     
     [self.floatWindow.callRTCView signalingMutilClientSyncNotify];
 }
+
 @end
