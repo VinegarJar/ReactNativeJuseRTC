@@ -367,11 +367,14 @@
     [self dismiss];
 }
 
-//无应答
+
+//无应答(处在按钮取消状态)
 -(void)noAnswer{
-    
-    [WHToast showMessage:@"对方无应答" duration:2 finishHandler:^{}];
-    [self hangupClick];
+    NSString *title =_btnContainerView.hangupBtn.title.text;
+    if([title  isEqual: @"取消"]){
+        [WHToast showMessage:@"对方无应答" duration:2 finishHandler:^{}];
+        [self hangupClick];
+    }
 }
   
 
@@ -381,11 +384,8 @@
     if (self.delegate && [self.delegate respondsToSelector:@selector(acceptCallHandle)]) {
         [self.delegate acceptCallHandle];
     }
-    
     [self stopShakeSound];
     [self joinChannelWithRoom];
-    
-
 }
 
 
@@ -604,10 +604,7 @@
         _token = [callinfo objectForKey:@"token"];
         _userID = [callinfo objectForKey:@"id"];
     }
-
 }
-
-
 
 
 //获取网络状态
@@ -624,15 +621,12 @@
              net = YES;
             //net = [self getNetType ];   //判断具体类型
             break;
-            
         case NotReachable:
             net = YES;
         default:
             break;
     }
- 
     return net;
-    
 }
 
 //提示框上取消视频通话功能
