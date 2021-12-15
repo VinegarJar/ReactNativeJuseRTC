@@ -535,7 +535,6 @@
       
 }
 
-
 - (void)endPanPlayerViewWhenWindow{
     [UIView animateWithDuration:0.3f animations:^{
         CGPoint center = self.center;
@@ -568,7 +567,6 @@
     
     NSNumber* duration = [dic objectForKey:@"duration"];
     NSLog(@"获取传递时间---->>>>>%@",duration);
-    
     dispatch_async(dispatch_get_main_queue(), ^{
         self->_duration = 600;
         if (self->_signalingCall) {
@@ -582,6 +580,7 @@
             self.nickNameLabel.text = self->_toUserName?:@"";
         }
     });
+    
 }
 
 
@@ -664,7 +663,7 @@
 
 - (void)dealloc{
     NSLog(@"%s",__func__);
-    [self dismiss];
 }
+
 
 @end
