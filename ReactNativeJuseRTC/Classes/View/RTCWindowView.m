@@ -57,7 +57,9 @@
 //视频通话有效时间
 @property (assign, nonatomic)int duration;
 
-
+//呼叫30秒到计时
+@property (nonatomic, assign) int count;
+@property (nonatomic, strong) NSTimer *countTimer;
 
 @end
 
@@ -280,10 +282,39 @@
     [self addSubviews];
     [self addGestureToWindowView];
     if (!_signalingCall) {//自己呼叫对方
-        [self performSelector:@selector(noAnswer) withObject:nil afterDelay:30.0];
+        [self startTimer];
     }
 }
 
+- (NSTimer *)countTimer{
+    if (!_countTimer) {
+        _countTimer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(noAnswer) userInfo:nil repeats:YES];
+    }
+    return _countTimer;
+}
+
+// 定时器倒计时
+- (void)startTimer{
+    _count = 30;
+    [[NSRunLoop mainRunLoop] addTimer:self.countTimer forMode:NSRunLoopCommonModes];
+}
+
+
+//无应答(处在按钮取消状态)
+-(void)noAnswer{
+    //定时器存在
+    if (self.countTimer) {
+        _count --;
+        if (_count == 0) {
+            NSString *title =_btnContainerView.hangupBtn.title.text;
+            if([title  isEqual: @"取消"]){
+                [WHToast showMessage:@"对方无应答" duration:2 finishHandler:^{}];
+                [self hangupClick];
+            }
+        }
+    }
+   
+}
 
 - (void)addSubviews{
 
@@ -367,14 +398,7 @@
     [self dismiss];
 }
 
-//无应答(处在按钮取消状态)
--(void)noAnswer{
-    NSString *title =_btnContainerView.hangupBtn.title.text;
-    if([title  isEqual: @"取消"]){
-        [WHToast showMessage:@"对方无应答" duration:2 finishHandler:^{}];
-        [self hangupClick];
-    }
-}
+
   
 //接听视频通话操作
 - (void)answerClick{
@@ -636,6 +660,9 @@
     _controlTimer = nil;
     [_vibrationTimer invalidate];
     _vibrationTimer = nil;
+    
+    [self.countTimer invalidate];
+    self.countTimer = nil;
     
     [_audioPlayer stop];
     _audioPlayer = nil;
