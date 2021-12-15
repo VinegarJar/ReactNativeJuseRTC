@@ -295,7 +295,6 @@
     if (!_signalingCall) {//自己呼叫对方
         [self performSelector:@selector(noAnswer) withObject:nil afterDelay:60.0];
     }
-//    [self performSelector:@selector(startPreview) withObject:nil/*可传任意类型参数*/ afterDelay:0.5];
 }
 
 
@@ -304,7 +303,6 @@
 //  [NERtcEngine.sharedEngine setupLocalVideoCanvas:[self startVideoPreview]];
 //  [NERtcEngine.sharedEngine startPreview];
 //}
-
 
 
 - (void)addSubviews{
@@ -432,6 +430,9 @@
 }
 
 
+
+
+
 //网易云通信加入房间
 - (void)joinChannelWithRoomId:(NSString *)roomId
          userId:(NSString *)userId token:(NSString *)token {
@@ -474,7 +475,25 @@
          
      }else if([eventType isEqualToString:@"ROOM_JOIN"]){
          //加入房间,走接听的逻辑
-       [self answerClick];
+//       [self answerClick];
+         //务必在主线程中执行UI刷新
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self->_smallScreenButton setHidden:NO];
+            [self->_btnContainerView  removeAnswerButton];
+            [UIView animateWithDuration:0.25 animations:^{
+                [self->_btnContainerView replaceHangupButtonframe];
+            } completion:^(BOOL finished) {
+                [UIView animateWithDuration:0.25 animations:^{
+                  self->_btnContainerView.hangupBtn.transform = CGAffineTransformIdentity;
+                }];
+            }];
+            [self->_btnContainerView startTimers];
+            [self stopShakeSound];
+            self->_nickNameLabel.text = @"有效视频时长";
+            [self startCoundown];
+            [self joinChannelWithRoomId:self->_roomID userId:self->_userID token:self->_token];
+        });
+         
        
      }else if([eventType isEqualToString:@"LEAVE"]){
          //离开房间
