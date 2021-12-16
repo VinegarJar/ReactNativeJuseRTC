@@ -109,6 +109,12 @@
         _remoteRender.backgroundColor =  [UIColor blackColor];
         _remoteRender.alpha = 0.5;
         [self addSubview:_remoteRender];
+        if (_signalingCall) {
+            UIBlurEffect *effect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleLight];
+            UIVisualEffectView *effectView = [[UIVisualEffectView alloc] initWithEffect:effect];
+            effectView.frame = ScreenBounds;
+            [self addSubview:effectView];
+        }
     }
     return _remoteRender;
 }
@@ -284,6 +290,7 @@
     if (!_signalingCall) {//自己呼叫对方
         [self startTimer];
     }
+ 
 }
 
 - (NSTimer *)countTimer{
