@@ -21,26 +21,24 @@
 /** 远端canvasr */
 @property (strong, nonatomic) NERtcVideoCanvas *remoteVideoCanvas;
 
-
 @property (nonatomic, strong) NTESDemoUserModel *localCanvas;  //本地
 @property (nonatomic, strong) NTESDemoUserModel *remoteCanvas; //远端
 
+
 //被呼叫or呼叫
 @property (assign, nonatomic) BOOL  signalingCall;
-
 //振动计时器
 @property (nonatomic,strong) NSTimer *vibrationTimer;
 //呼叫未应答
 @property (strong, nonatomic)NSTimer *controlTimer;
 /** 对方昵称 */
 @property (strong, nonatomic) UILabel *nickNameLabel;
-/** 对方头像图片 */
-@property (strong, nonatomic)UIImageView *toHeadImage;
+
 /** 连接状态，如等待对方接听...、对方已拒绝、语音电话、视频电话 */
 @property (strong, nonatomic) UILabel  *connectLabel;
 
-/**自己的视频画面(本地渲染视图) */
-@property (strong, nonatomic) UIView *localRender;
+/** 自己的视频画面(本地渲染视图）呼叫时显示对方头像图片 */
+@property (strong, nonatomic)UIImageView *toHeadImage;
 /** 对方的视频画面(远端渲染视图) */
 @property (strong, nonatomic) UIView *remoteRender;
 
@@ -48,7 +46,6 @@
 @property (copy, nonatomic) NSString *roomID;
 /** 本人uid */
 @property (copy, nonatomic) NSString *userID;
-
 @property (copy, nonatomic) NSString *token;
 @property (copy, nonatomic) NSString *fromHeadUrl;
 @property (copy, nonatomic) NSString *fromUserName;
@@ -56,13 +53,11 @@
 @property (copy, nonatomic) NSString *toUserName;
 //视频通话有效时间
 @property (assign, nonatomic)int duration;
-
 //呼叫30秒到计时
 @property (nonatomic, assign) int count;
 @property (nonatomic, strong) NSTimer *countTimer;
 
 @end
-
 
 
 @implementation RTCWindowView
@@ -109,12 +104,6 @@
         _remoteRender.backgroundColor =  [UIColor blackColor];
         _remoteRender.alpha = 0.5;
         [self addSubview:_remoteRender];
-        if (_signalingCall) {
-            UIBlurEffect *effect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleLight];
-            UIVisualEffectView *effectView = [[UIVisualEffectView alloc] initWithEffect:effect];
-            effectView.frame = ScreenBounds;
-            [self addSubview:effectView];
-        }
     }
     return _remoteRender;
 }
@@ -316,7 +305,7 @@
             NSString *title =_btnContainerView.hangupBtn.title.text;
             if([title  isEqual: @"取消"]){
                 [WHToast showMessage:@"对方无应答" duration:2 finishHandler:^{}];
-                [self hangupClick];
+                [self performSelector:@selector(hangupClick) withObject:nil afterDelay:3];
             }
         }
     }
@@ -432,7 +421,9 @@
         [self->_btnContainerView startTimers];
         [self stopShakeSound];
         self->_nickNameLabel.text = @"有效视频时长";
-        [self startCoundown];
+        if (self->_duration) {
+            [self startCoundown];
+        }
     });
     [self joinChannelWithRoomId:self->_roomID userId:self->_userID token:self->_token];
 }
@@ -596,10 +587,14 @@
     _fromUserName = [dic objectForKey:@"fromUserName"];
     _fromHeadUrl = [dic objectForKey:@"fromHeadUrl"];
     
-    NSNumber* duration = [dic objectForKey:@"duration"];
-    NSLog(@"获取传递时间---->>>>>%@",duration);
+    NSNumber* timer = [dic objectForKey:@"duration"];
+    if (timer) {
+        int duration = [timer intValue];
+        self->_duration = duration;
+    }
+    NSLog(@"获取传递时间---->>>>>%@",timer);
     dispatch_async(dispatch_get_main_queue(), ^{
-        self->_duration = 600;
+     
         if (self->_signalingCall) {
             NSData *imgData = [NSData dataWithContentsOfURL:[NSURL URLWithString:self->_fromHeadUrl]];
             self.toHeadImage.image = [UIImage imageWithData:imgData];

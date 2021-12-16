@@ -81,12 +81,13 @@
 - (void)showCallRTCView{
     
     dispatch_async(dispatch_get_main_queue(), ^{
+        [self->_floatWindow.callRTCView signalingUserInfo:self->_signaUserInfo];
          self.floatWindow.callRTCView.frame = [UIScreen mainScreen].bounds;
          self.floatWindow.callRTCView.delegate = self;
          self.floatWindow.callRTCView.alpha = .0f;
-         [UIView animateWithDuration:0.5 animations:^{
+         [UIView animateWithDuration:0.25 animations:^{
              self.floatWindow.callRTCView.alpha = 1.0f;
-             [self->_floatWindow.callRTCView signalingUserInfo:self->_signaUserInfo];
+             
          } completion:^(BOOL finished) {
              [UIView animateWithDuration:0.25 animations:^{
                self->_floatWindow.callRTCView.transform = CGAffineTransformIdentity;
