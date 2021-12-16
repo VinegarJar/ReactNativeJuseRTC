@@ -20,6 +20,25 @@
 
     //第二种方式读取
     NSString *path = [[NSBundle bundleForClass:[self class]].resourcePath                           stringByAppendingPathComponent:@"/ReactNativeJuseRTC.bundle"];
+    
+    
+    
+    NSBundle *bundle = [NSBundle bundleWithPath:path];
+    UIImage *image = [UIImage imageNamed:@"answer"
+                                inBundle:bundle
+           compatibleWithTraitCollection:nil];
+    
+    NSLog(@"获取bundle---%@",bundle);
+    NSLog(@"获取image---%@",image);
+    
+    NSURL *url = [NSURL URLWithString:path];
+    NSLog(@"获取url---%@",url);
+    url = [[NSBundle bundleWithURL:associateBundleURL] URLForResource:@"RCTResource" withExtension:@"bundle"];
+    NSLog(@"获取url222---%@",url);
+    NSBundle *date  =  [NSBundle bundleWithURL:url];
+    NSLog(@"获取bundle---date%@",date);
+    
+    
     NSString *bundlePath = [[NSBundle bundleWithPath:path]pathForResource:@"RCTResource" ofType:@"bundle"];
     NSAssert(bundlePath, @"取不到关联bundle");
     return bundlePath?[NSBundle bundleWithPath:bundlePath]:nil;
