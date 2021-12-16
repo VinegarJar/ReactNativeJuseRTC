@@ -19,8 +19,9 @@
 
     
     NSString *bundlePath = [[NSBundle bundleForClass:[self class]].resourcePath
-                                stringByAppendingPathComponent:@"/ReactNativeJuseRTC.bundle"];
-    //bundlePath = [bundlePath stringByAppendingFormat:<#(nonnull NSString *), ...#>]
+                                stringByAppendingPathComponent:@"/ReactNativeJuseRTC.bundle/RCTResource.bundle"];
+    
+    NSLog(@"获取路径---->%@",bundlePath);
     NSAssert(bundlePath, @"取不到关联bundle");
     return bundlePath?[NSBundle bundleWithPath:bundlePath]:nil;
 }
