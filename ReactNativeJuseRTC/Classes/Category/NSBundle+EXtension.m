@@ -19,6 +19,8 @@
     }
 
     //第二种方式读取
+
+    
     NSString *path = [[NSBundle bundleForClass:[self class]].resourcePath                           stringByAppendingPathComponent:@"/ReactNativeJuseRTC.bundle"];
     
     
@@ -33,7 +35,7 @@
     
     NSURL *url = [NSURL URLWithString:path];
     NSLog(@"获取url---%@",url);
-    url = [[NSBundle bundleWithURL:associateBundleURL] URLForResource:@"RCTResource" withExtension:@"bundle"];
+    url = [[NSBundle bundleWithURL:url] URLForResource:@"RCTResource" withExtension:@"bundle"];
     NSLog(@"获取url222---%@",url);
     NSBundle *date  =  [NSBundle bundleWithURL:url];
     NSLog(@"获取bundle---date%@",date);
