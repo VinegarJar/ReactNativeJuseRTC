@@ -12,8 +12,16 @@
 +(NSBundle*)getBundleResource{
     
     NSURL *associateBundleURL = [[NSBundle mainBundle]URLForResource:@"ReactNativeJuseRTC"  withExtension:@"bundle"];
-    associateBundleURL = [[NSBundle bundleWithURL:associateBundleURL] URLForResource:@"RCTResource" withExtension:@"bundle"];
-    return [NSBundle bundleWithURL:associateBundleURL];
+    if (associateBundleURL) {
+        associateBundleURL = [[NSBundle bundleWithURL:associateBundleURL] URLForResource:@"RCTResource" withExtension:@"bundle"];
+        return [NSBundle bundleWithURL:associateBundleURL];
+    }
+    
+    NSURL *doctorURL = [[NSBundle mainBundle]URLForResource:@"Frameworks"  withExtension:nil];
+    doctorURL = [associateBundleURL URLByAppendingPathComponent:@"ReactNativeJuseRTC"];
+    doctorURL = [[NSBundle bundleWithURL:associateBundleURL] URLForResource:@"ReactNativeJuseRTC" withExtension:@"bundle"];
+    doctorURL = [[NSBundle bundleWithURL:associateBundleURL] URLForResource:@"RCTResource" withExtension:@"bundle"];
+    return [NSBundle bundleWithURL:doctorURL];
 }
 
 
