@@ -11,15 +11,16 @@
 
 +(NSBundle*)getBundleResource{
     
+    //直接读取ReactNativeJuseRTC
     NSURL *associateBundleURL = [[NSBundle mainBundle]URLForResource:@"ReactNativeJuseRTC"  withExtension:@"bundle"];
     if (associateBundleURL) {
         associateBundleURL = [[NSBundle bundleWithURL:associateBundleURL] URLForResource:@"RCTResource" withExtension:@"bundle"];
         return [NSBundle bundleWithURL:associateBundleURL];
     }
 
-    
+    //第二种方式读取
     NSString *path = [[NSBundle bundleForClass:[self class]].resourcePath                           stringByAppendingPathComponent:@"/ReactNativeJuseRTC.bundle"];
-    NSString *bundlePath = [[NSBundle bundleWithPath:path]pathForResource:@"RCTResource" ofType:@"bundle"];\
+    NSString *bundlePath = [[NSBundle bundleWithPath:path]pathForResource:@"RCTResource" ofType:@"bundle"];
     NSAssert(bundlePath, @"取不到关联bundle");
     return bundlePath?[NSBundle bundleWithPath:bundlePath]:nil;
 }
