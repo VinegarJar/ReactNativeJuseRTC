@@ -4,7 +4,6 @@
 //
 //  Created by 888 on 2021/12/8.
 //  Copyright © 2021 Jason_Xu. All rights reserved.
-//
 
 #import "FloatingWindowUtil.h"
 #import "FloatingWindowView.h"
@@ -20,7 +19,6 @@
 
 @implementation FloatingWindowUtil
 
-
 + (instancetype)shareInstance{
     static FloatingWindowUtil *floatViewUtil = nil;
     static dispatch_once_t onceToken;
@@ -30,11 +28,9 @@
     return floatViewUtil;
 }
 
-
 - (void)setDevelopmentUrl:(NSString *)developmentUrl{
   _developmentUrl = developmentUrl;
 }
-
 
 - (void)setSignaUserInfo:(NSDictionary *)signaUserInfo{
     //存储token数据到userdefaults
@@ -64,7 +60,6 @@
 //被呼叫
 - (void)signalingNotify{
     
-   
     NSString *eventType = [ _signaUserInfo objectForKey:@"eventType"];
     if([eventType isEqual: @"INVITE"]){
         [self.floatWindow startCallWithSignaling:YES];
@@ -73,13 +68,9 @@
     }else{
       [self.floatWindow.callRTCView signalingNotifyJoinWithEventType:eventType];
     }
-
 }
 
-
-
 - (void)showCallRTCView{
-    
     dispatch_async(dispatch_get_main_queue(), ^{
         [self->_floatWindow.callRTCView signalingUserInfo:self->_signaUserInfo];
          self.floatWindow.callRTCView.frame = [UIScreen mainScreen].bounds;
@@ -87,42 +78,12 @@
          self.floatWindow.callRTCView.alpha = .0f;
          [UIView animateWithDuration:0.25 animations:^{
              self.floatWindow.callRTCView.alpha = 1.0f;
-             
          } completion:^(BOOL finished) {
-             [UIView animateWithDuration:0.25 animations:^{
-               self->_floatWindow.callRTCView.transform = CGAffineTransformIdentity;
-              [[UIApplication sharedApplication].delegate.window addSubview:self.floatWindow.callRTCView];
-             }];
+             self->_floatWindow.callRTCView.transform = CGAffineTransformIdentity;
+             [[UIApplication sharedApplication].delegate.window addSubview:self.floatWindow.callRTCView];
          }];
   });
-
 }
-
-
-
-//原生获取数据
-- (void)requestToken{
-    
-  HSNetworkTool *NetworkTool = [HSNetworkTool shareInstance];
-  if([ _developmentUrl isEqual:@"development"]){
-    NetworkTool.requestURL = @"https://strong.ylccmp.com/API/user";
-  }else if([_developmentUrl isEqual:@"pre-release"]){
-    NetworkTool.requestURL = @"https://prem.gooeto120.com/API/user";
-  }else{
-    NetworkTool.requestURL = @"https://m.gooeto120.com/API/user";
-  }
-    
-  [NetworkTool requestGET:@"/video/token" params:nil successBlock:^(NSDictionary *responseObject) {
-        NSInteger resultRep = [[responseObject objectForKey:@"code"] integerValue];
-        if(resultRep  == 200){
-            NSDictionary *data = [responseObject objectForKey:@"data"];
-            [self->_floatWindow.callRTCView setCallinfoToken:data];
-        }
-    } failBlock:^(NSError *error) {
-        
-    }];
-}
-
 
 //悬浮窗口消失
 - (void)dismissCurrentFloatView{
@@ -136,7 +97,6 @@
         }];
     }
 }
-
 
 #pragma mark - CallManagerDelegate
 //结束通话操作
@@ -178,14 +138,15 @@
     [self sendVideoStatus:5];
 }
 
-//发送消息到RN端
+//通过Notification将送消息到发送到RN端
 -(void)postNotification:(NSDictionary*)payload{
     [[NSNotificationCenter defaultCenter] postNotificationName:@"event-emitted" object:self userInfo:payload];
 }
 
+
 /**
 @ 发送视频状态到后端,音视频状态（1:已支付未开始 2：视频中 ，3：已取消  4：对方无应答 5：对方忙线中 6：对方已拒绝,7视频通话完成
- */
+*/
 - (void) requestUpdateVideoStatus:(NSDictionary *) params{
     [[HSNetworkTool shareInstance] requestPOST:@"/updateVideoStatus"
           params:params
@@ -199,20 +160,39 @@
 }
 
 
-//处理发送消息到RN端参数
+//获取呼叫token和userId
+- (void)requestToken{
+  HSNetworkTool *NetworkTool = [HSNetworkTool shareInstance];
+  if([ _developmentUrl isEqual:@"development"]){
+    NetworkTool.requestURL = @"https://strong.ylccmp.com/API/user";
+  }else if([_developmentUrl isEqual:@"pre-release"]){
+    NetworkTool.requestURL = @"https://prem.gooeto120.com/API/user";
+  }else{
+    NetworkTool.requestURL = @"https://m.gooeto120.com/API/user";
+  }
+  [NetworkTool requestGET:@"/video/token" params:nil successBlock:^(NSDictionary *responseObject) {
+        NSInteger resultRep = [[responseObject objectForKey:@"code"] integerValue];
+        if(resultRep  == 200){
+            NSDictionary *data = [responseObject objectForKey:@"data"];
+            [self->_floatWindow.callRTCView setCallinfoToken:data];
+        }
+    } failBlock:^(NSError *error) {
+        
+    }];
+}
+
+//组装发送消息到RN端dict参数
 - (void)sendEmitEvent{
-    
     //解析rn端传过来的数据字典
     NSDictionary *ext = [StringToDic dictionaryWithJsonString: [_signaUserInfo  objectForKey:@"ext"]];
     NSString *channelId = [_signaUserInfo objectForKey:@"channelId"];
     NSString *requestId = [_signaUserInfo objectForKey:@"requestId"];
-  
     NSMutableDictionary *dict = [[NSMutableDictionary alloc] init];
     [dict SafetySetObject:channelId  forKey:@"channelId"];
     [dict SafetySetObject:requestId  forKey:@"requestId"];
     [dict SafetySetObject:[ext objectForKey:@"orderId"]  forKey:@"orderId"];
   
-   switch (_callType) {
+    switch (_callType) {
       case RTCACCEPT:{
           [dict SafetySetObject:@"ACCEPT"  forKey:@"eventType"];
           [dict SafetySetObject:[_signaUserInfo objectForKey:@"creator"]  forKey:@"account"];
@@ -255,7 +235,7 @@
 }
 
 
-//组装发送到后端的请求参数
+//组装发送到后端的dict请求参数
 - (void)sendVideoStatus:(int)status{
     
     //解析rn端传过来的数据字典
@@ -271,7 +251,6 @@
     [dict SafetySetObject:[ext objectForKey:@"initiator"]?[ext objectForKey:@"initiator"]:[NSNull new]  forKey:@"initiator"];
     [dict SafetySetObject:[ext objectForKey:@"videoType"]?[ext objectForKey:@"videoType"]:[NSNull new]  forKey:@"videoType"];
     [dict SafetySetObject:[NSNumber numberWithInt:status]  forKey:@"videoStatus"];
-
     
     if (status == 6) {
         [dict SafetySetObject:[_signaUserInfo objectForKey:@"creator"]  forKey:@"account"];
@@ -288,11 +267,10 @@
   //调用接口请求发送视频状态到后端
   if([[ext objectForKey:@"videoType"] isEqual:@"consultant"]){
    }else {
-        [self requestUpdateVideoStatus:dict];
+     [self requestUpdateVideoStatus:dict];
   }
     
 }
-
 
 - (void)signalingMutilClientSyncNotify{
     [self.floatWindow.callRTCView signalingMutilClientSyncNotify];
