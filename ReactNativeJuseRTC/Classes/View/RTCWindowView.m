@@ -403,7 +403,14 @@
         }];
         [self->_btnContainerView startTimers];
         [self stopShakeSound];
-        self->_nickNameLabel.text = @"有效视频时长";
+        
+        NSNumber *signaDoctor = [[NSUserDefaults standardUserDefaults] objectForKey:@"signaDoctor"];
+        if (signaDoctor&&[signaDoctor boolValue]) {
+            self->_nickNameLabel.text = @"";
+            self->_connectLabel.text = @"";
+        }else{
+            self->_nickNameLabel.text = @"有效视频时长";
+        }
         if (self->_duration) {
             [self startCoundown];
         }
