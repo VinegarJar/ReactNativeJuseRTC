@@ -76,6 +76,7 @@
     [self addGestureToWindowView];
     if (!_signalingCall) {//自己呼叫对方
         [self startTimer];
+        [self performSelector:@selector(localCanvasMethod) withObject:nil afterDelay:0.5];
     }
 }
 
@@ -529,6 +530,7 @@
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         [NERtcEngine.sharedEngine leaveChannel];
         [NERtcEngine destroyEngine];
+        [NERtcEngine.sharedEngine stopPreview];
     });
     [_controlTimer invalidate];
     _controlTimer = nil;
@@ -653,6 +655,22 @@
     _localCanvas.uid = [_userID intValue];
     _localCanvas.renderContainer = self.toHeadImage;
     return [_localCanvas setupCanvas];
+}
+
+//开启本地预览(自己呼叫对方)
+- (NERtcVideoCanvas *)startVideoPreview {
+  if(_localCanvas == nil){
+    _localCanvas = [[NTESDemoUserModel alloc] init];
+  }
+  _localCanvas.uid = [_userID intValue];
+  _localCanvas.renderContainer = self.remoteRender;
+  return [_localCanvas setupCanvas];
+}
+
+//开启预览(自己呼叫对方)
+- (void)localCanvasMethod{
+  [NERtcEngine.sharedEngine setupLocalVideoCanvas:[self startVideoPreview]];
+  [NERtcEngine.sharedEngine startPreview];
 }
 
 //建立远端canvas模型
