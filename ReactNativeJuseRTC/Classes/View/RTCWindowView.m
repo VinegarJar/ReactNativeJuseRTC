@@ -237,7 +237,7 @@
         if (_signalingCall) {
             _connectLabel.text = @"视频通话";
         }else{
-           _connectLabel.text = @"正在等待对接受邀请";
+           _connectLabel.text = @"正在等待对方接受邀请";
         }
         _connectLabel.font = [UIFont systemFontOfSize:15.0f];
         _connectLabel.textColor = [UIColor whiteColor];

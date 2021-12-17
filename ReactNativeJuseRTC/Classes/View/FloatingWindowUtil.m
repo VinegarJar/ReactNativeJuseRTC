@@ -85,7 +85,7 @@
         self.floatWindow.callRTCView.frame = [UIScreen mainScreen].bounds;
         self.floatWindow.callRTCView.delegate = self;
         self.floatWindow.callRTCView.alpha = .0f;
-        [UIView animateWithDuration:0.25 animations:^{
+        [UIView animateWithDuration:0.1 animations:^{
             self.floatWindow.callRTCView.alpha = 1.0f;
         } completion:^(BOOL finished) {
             self->_floatWindow.callRTCView.transform = CGAffineTransformIdentity;
