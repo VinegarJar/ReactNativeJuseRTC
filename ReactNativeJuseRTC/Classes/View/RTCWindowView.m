@@ -72,7 +72,6 @@
 -(void)initWithsubviewsfloatingWindow{
     self.backgroundColor =  [UIColor blackColor];
     [self remoteRender];
-    [self addSubviews];
     [self addGestureToWindowView];
     if (!_signalingCall) {//自己呼叫对方
         [self startTimer];
@@ -405,15 +404,20 @@
         [self->_btnContainerView startTimers];
         [self stopShakeSound];
         
+        //医生呼叫用户没有时长限制
         NSNumber *signaDoctor = [[NSUserDefaults standardUserDefaults] objectForKey:@"signaDoctor"];
         if (signaDoctor&&[signaDoctor boolValue]) {
             self->_nickNameLabel.text = @"";
             self->_connectLabel.text = @"";
-        }else{
-            self->_nickNameLabel.text = @"有效视频时长";
         }
+        
+        //有时间到计时,开始有效时长倒数计时
         if (self->_duration) {
+            self->_nickNameLabel.text = @"有效视频时长";
             [self startCoundown];
+        }else{
+            self->_nickNameLabel.text = @"";
+            self->_connectLabel.text = @"";
         }
     });
     [self joinChannelWithRoomId:self->_roomID userId:self->_userID token:self->_token];
@@ -490,6 +494,8 @@
 
 //设置Token
 -(void)setCallinfoToken:(NSDictionary *)callinfo{
+    //进入视频通话,开始初始化视图
+    [self addSubviews];
     if (callinfo) {
         _token = [callinfo objectForKey:@"token"];
         _userID = [callinfo objectForKey:@"id"];

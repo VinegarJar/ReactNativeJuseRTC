@@ -62,6 +62,7 @@
 //主动呼叫
 - (void)signalingCall{
     [self.floatWindow startCallWithSignaling:NO];
+    [self showCallRTCView];
     [self requestToken];
 }
 
@@ -72,6 +73,7 @@
     if([eventType isEqual: @"INVITE"]){
         [self.floatWindow startCallWithSignaling:YES];
         [self requestToken];
+        [self showCallRTCView];
     }else{
       [self.floatWindow.callRTCView signalingNotifyJoinWithEventType:eventType];
     }
@@ -177,7 +179,6 @@
             NSDictionary *data = [responseObject objectForKey:@"data"];
             [self->_floatWindow.callRTCView setCallinfoToken:data];
         }
-      [self showCallRTCView];
     } failBlock:^(NSError *error) {
         
     }];
