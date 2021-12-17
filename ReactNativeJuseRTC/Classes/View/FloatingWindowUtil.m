@@ -28,6 +28,10 @@
     return floatViewUtil;
 }
 
+- (void)setSignaDoctor:(BOOL)signaDoctor{
+    _signaDoctor = signaDoctor;
+}
+
 - (void)setDevelopmentUrl:(NSString *)developmentUrl{
   _developmentUrl = developmentUrl;
 }
@@ -163,13 +167,7 @@
 //获取呼叫token和userId
 - (void)requestToken{
   HSNetworkTool *NetworkTool = [HSNetworkTool shareInstance];
-  if([ _developmentUrl isEqual:@"development"]){
-    NetworkTool.requestURL = @"https://strong.ylccmp.com/API/user";
-  }else if([_developmentUrl isEqual:@"pre-release"]){
-    NetworkTool.requestURL = @"https://prem.gooeto120.com/API/user";
-  }else{
-    NetworkTool.requestURL = @"https://m.gooeto120.com/API/user";
-  }
+  NetworkTool.requestURL = [self matchingAppServerUrl];
   [NetworkTool requestGET:@"/video/token" params:nil successBlock:^(NSDictionary *responseObject) {
         NSInteger resultRep = [[responseObject objectForKey:@"code"] integerValue];
         if(resultRep  == 200){
@@ -180,6 +178,36 @@
         
     }];
 }
+
+
+- (NSString *)matchingAppServerUrl{
+  
+    NSString *baseUrl;
+    if (_signaDoctor) {
+        if([_developmentUrl isEqual:@"development"]){
+            baseUrl = @"https://ihtest.gooeto.com/API/doctor";
+        }else if([_developmentUrl isEqual:@"pre-release"]){
+            baseUrl = @"https://prem.gooeto120.com/API/doctor";
+        }else{
+            baseUrl = @"https://m.gooeto120.com/API/doctor";
+        }
+    }else{
+        if([ _developmentUrl isEqual:@"development"]){
+            baseUrl = @"https://strong.ylccmp.com/API/user";
+        }else if([_developmentUrl isEqual:@"pre-release"]){
+            baseUrl = @"https://prem.gooeto120.com/API/user";
+        }else{
+           baseUrl = @"https://m.gooeto120.com/API/user";
+        }
+    }
+    return baseUrl;
+}
+
+
+
+
+
+
 
 //组装发送消息到RN端dict参数
 - (void)sendEmitEvent{

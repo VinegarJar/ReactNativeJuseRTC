@@ -31,6 +31,7 @@ typedef NS_ENUM(NSInteger, RTCCallType) {
 - (void)signalingNotify;
 - (void)signalingMutilClientSyncNotify;
 @property(nonatomic,copy)NSString *developmentUrl;
+@property(nonatomic,assign)BOOL signaDoctor;
 @property(nonatomic,copy)NSDictionary *signaUserInfo;
 @property (nonatomic, assign) RTCCallType callType;
 @end
