@@ -73,6 +73,7 @@
     self.backgroundColor =  [UIColor blackColor];
     [self remoteRender];
     [self addGestureToWindowView];
+    [self addSubviews];
     if (!_signalingCall) {//自己呼叫对方
         [self startTimer];
         [self performSelector:@selector(localCanvasMethod) withObject:nil afterDelay:0.5];
@@ -179,14 +180,14 @@
     [self connectLabel];
     [self smallScreenButton];
     if (_signalingCall) { // 视频通话时,被对方呼叫UI初始化
-        //呼叫声音初始化调用
-        [self.audioPlayer play];
+ 
+        
         if ([self internetStatus]) {
             RTCAlertView *alertVie = [[ RTCAlertView alloc]initWithAlertView];
             alertVie.delegate = self;
             [self addSubview:alertVie];
         }
-        [self vibrationTimer];
+     
         [UIView animateWithDuration:0.5 animations:^{
             self.alpha = 1;
         } completion:^(BOOL finished) {
@@ -415,9 +416,6 @@
         if (self->_duration) {
             self->_nickNameLabel.text = @"有效视频时长";
             [self startCoundown];
-        }else{
-            self->_nickNameLabel.text = @"";
-            self->_connectLabel.text = @"";
         }
     });
     [self joinChannelWithRoomId:self->_roomID userId:self->_userID token:self->_token];
@@ -494,8 +492,11 @@
 
 //设置Token
 -(void)setCallinfoToken:(NSDictionary *)callinfo{
-    //进入视频通话,开始初始化视图
-    [self addSubviews];
+    //进入视频通话,被对方呼叫开始声音和手机被呼叫振动
+    if (_signalingCall) {
+        [self.audioPlayer play];
+        [self vibrationTimer];
+    }
     if (callinfo) {
         _token = [callinfo objectForKey:@"token"];
         _userID = [callinfo objectForKey:@"id"];
