@@ -15,45 +15,17 @@
     NSURL *associateBundleURL = [[NSBundle mainBundle]URLForResource:@"ReactNativeJuseRTC"  withExtension:@"bundle"];
     if (associateBundleURL) {
         associateBundleURL = [[NSBundle bundleWithURL:associateBundleURL] URLForResource:@"RCTResource" withExtension:@"bundle"];
+        NSAssert(associateBundleURL, @"取不到关联BundleURL");
         return [NSBundle bundleWithURL:associateBundleURL];
     }
 
     //第二种方式读取
-
-    
-//    NSString *bundlePath = [[NSBundle bundleForClass:[self class]].resourcePath                           stringByAppendingPathComponent:@"/ReactNativeJuseRTC.bundle"];
-    
-    NSString *bundlePath = [NSBundle bundleForClass:[self class]].resourcePath;
-    bundlePath = [bundlePath stringByAppendingPathComponent:@"ReactNativeJuseRTC.bundle"];
-    NSBundle *bundle = [NSBundle bundleWithPath:bundlePath];
-    
-    
-
-    NSLog(@"获取bundle---%@",bundle);
-    
-    
-    NSURL *URL = [[NSBundle mainBundle]URLForResource:@"Frameworks"  withExtension:nil];
-    URL = [[URL URLByAppendingPathComponent:@"ReactNativeJuseRTC"] URLByAppendingPathExtension:@"framework"];
-    URL = [[NSBundle bundleWithURL:URL] URLForResource:@"ReactNativeJuseRTC" withExtension:@"bundle"];
-    URL = [[NSBundle bundleWithURL:URL] URLForResource:@"RCTResource" withExtension:@"bundle"];
-    NSBundle *bundleS = [NSBundle bundleWithURL:URL];
-    
-    NSLog(@"获取bundleSS---%@",bundleS);
-    
-    
-//    NSLog(@"获取image---%@",image);
-//
-//    NSURL *url = [NSURL URLWithString:path];
-//    NSLog(@"获取url---%@",url);
-//    url = [[NSBundle bundleWithURL:url] URLForResource:@"RCTResource" withExtension:@"bundle"];
-//    NSLog(@"获取url222---%@",url);
-//    NSBundle *date  =  [NSBundle bundleWithURL:url];
-//    NSLog(@"获取bundle---date%@",date);
-    
-    
-//    NSString *bundlePath = [[NSBundle bundleWithPath:path]pathForResource:@"RCTResource" ofType:@"bundle"];
+    NSURL *bundlePath = [[NSBundle mainBundle]URLForResource:@"Frameworks"  withExtension:nil];
+    bundlePath = [[bundlePath URLByAppendingPathComponent:@"ReactNativeJuseRTC"] URLByAppendingPathExtension:@"framework"];
+    bundlePath = [[NSBundle bundleWithURL:bundlePath] URLForResource:@"ReactNativeJuseRTC" withExtension:@"bundle"];
+    bundlePath = [[NSBundle bundleWithURL:bundlePath] URLForResource:@"RCTResource" withExtension:@"bundle"];
     NSAssert(bundlePath, @"取不到关联bundle");
-    return bundlePath?[NSBundle bundleWithPath:bundlePath]:nil;
+    return bundlePath?[NSBundle bundleWithURL:bundlePath]:nil;
 }
 
 

@@ -186,7 +186,6 @@
             alertVie.delegate = self;
             [self addSubview:alertVie];
         }
-//        _vibrationTimer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(playkSystemSound) userInfo:nil repeats:YES];
         [self vibrationTimer];
         [UIView animateWithDuration:0.5 animations:^{
             self.alpha = 1;
@@ -214,7 +213,7 @@
 -(UIImageView*)toHeadImage{
     if (!_toHeadImage) {
         _toHeadImage = [[UIImageView alloc]initWithFrame:CGRectMake(ScreenW-kMicVideoW-20, 50, kMicVideoW, kMicVideoH)];
-        [_toHeadImage setContentMode: UIViewContentModeScaleToFill];
+        [_toHeadImage setContentMode: UIViewContentModeCenter];
         [_toHeadImage setBackgroundColor: [UIColor clearColor]];
         [self addSubview:_toHeadImage];
     }
