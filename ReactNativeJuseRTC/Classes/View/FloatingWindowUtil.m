@@ -185,11 +185,14 @@
 }
 
 
+//设置用户端和医生端请求接口
 - (NSString *)matchingAppServerUrl{
-  
+    
     NSString *baseUrl;
     if (_signaDoctor) {
         if([_developmentUrl isEqual:@"development"]){
+            baseUrl = @"https://ihdev.gooeto.com/API/doctor";
+        }else if([_developmentUrl isEqual:@"testing"]){
             baseUrl = @"https://ihtest.gooeto.com/API/doctor";
         }else if([_developmentUrl isEqual:@"pre-release"]){
             baseUrl = @"https://prem.gooeto120.com/API/doctor";
@@ -198,8 +201,11 @@
         }
     }else{
         if([ _developmentUrl isEqual:@"development"]){
-            baseUrl = @"https://strong.ylccmp.com/API/user";
-        }else if([_developmentUrl isEqual:@"pre-release"]){
+            baseUrl = @"https://ihdev.gooeto.com/API/user";
+        }else if([_developmentUrl isEqual:@"testing"]){
+            baseUrl = @"https://ihtest.gooeto.com/API/user";
+        }
+        else if([_developmentUrl isEqual:@"pre-release"]){
             baseUrl = @"https://prem.gooeto120.com/API/user";
         }else{
            baseUrl = @"https://m.gooeto120.com/API/user";
@@ -207,12 +213,6 @@
     }
     return baseUrl;
 }
-
-
-
-
-
-
 
 //组装发送消息到RN端dict参数
 - (void)sendEmitEvent{
