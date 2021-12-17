@@ -21,15 +21,24 @@
     //第二种方式读取
 
     
-    NSString *bundlePath = [[NSBundle bundleForClass:[self class]].resourcePath                           stringByAppendingPathComponent:@"/ReactNativeJuseRTC.bundle"];
+//    NSString *bundlePath = [[NSBundle bundleForClass:[self class]].resourcePath                           stringByAppendingPathComponent:@"/ReactNativeJuseRTC.bundle"];
     
-    
+    NSString *bundlePath = [NSBundle bundleForClass:[self class]].resourcePath;
+    bundlePath = [bundlePath stringByAppendingPathComponent:@"ReactNativeJuseRTC.bundle"];
     NSBundle *bundle = [NSBundle bundleWithPath:bundlePath];
+    
+    
+
     NSLog(@"获取bundle---%@",bundle);
     
     
+    NSURL *URL = [[NSBundle mainBundle]URLForResource:@"Frameworks"  withExtension:nil];
+    URL = [[URL URLByAppendingPathComponent:@"ReactNativeJuseRTC"] URLByAppendingPathExtension:@"framework"];
+    URL = [[NSBundle bundleWithURL:URL] URLForResource:@"ReactNativeJuseRTC" withExtension:@"bundle"];
+    URL = [[NSBundle bundleWithURL:URL] URLForResource:@"RCTResource" withExtension:@"bundle"];
+    NSBundle *bundleS = [NSBundle bundleWithURL:URL];
     
-    
+    NSLog(@"获取bundleSS---%@",bundleS);
     
     
 //    NSLog(@"获取image---%@",image);
