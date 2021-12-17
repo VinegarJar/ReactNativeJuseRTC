@@ -84,8 +84,13 @@
         [self->_floatWindow.callRTCView signalingUserInfo:self->_signaUserInfo];
         self.floatWindow.callRTCView.frame = [UIScreen mainScreen].bounds;
         self.floatWindow.callRTCView.delegate = self;
-        self->_floatWindow.callRTCView.transform = CGAffineTransformIdentity;
-        [[UIApplication sharedApplication].delegate.window addSubview:self.floatWindow.callRTCView];
+        self.floatWindow.callRTCView.alpha = .0f;
+        [UIView animateWithDuration:0.25 animations:^{
+            self.floatWindow.callRTCView.alpha = 1.0f;
+        } completion:^(BOOL finished) {
+            self->_floatWindow.callRTCView.transform = CGAffineTransformIdentity;
+            [[UIApplication sharedApplication].delegate.window addSubview:self.floatWindow.callRTCView];
+        }];
   });
 }
 
