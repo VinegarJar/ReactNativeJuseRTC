@@ -180,14 +180,11 @@
     [self connectLabel];
     [self smallScreenButton];
     if (_signalingCall) { // 视频通话时,被对方呼叫UI初始化
- 
-        
         if ([self internetStatus]) {
             RTCAlertView *alertVie = [[ RTCAlertView alloc]initWithAlertView];
             alertVie.delegate = self;
             [self addSubview:alertVie];
         }
-     
         [UIView animateWithDuration:0.5 animations:^{
             self.alpha = 1;
         } completion:^(BOOL finished) {
@@ -492,11 +489,13 @@
 
 //设置Token
 -(void)setCallinfoToken:(NSDictionary *)callinfo{
-    //进入视频通话,被对方呼叫开始声音和手机被呼叫振动
-    if (_signalingCall) {
-        [self.audioPlayer play];
-        [self vibrationTimer];
-    }
+    dispatch_async(dispatch_get_main_queue(), ^{
+        //进入视频通话,被对方呼叫开始声音和手机被呼叫振动
+        if (self->_signalingCall) {
+            [self vibrationTimer];
+            [self.audioPlayer play];
+        }
+    });
     if (callinfo) {
         _token = [callinfo objectForKey:@"token"];
         _userID = [callinfo objectForKey:@"id"];
