@@ -341,6 +341,10 @@
             if([title  isEqual: @"取消"]){
                 [WHToast showMessage:@"对方无应答" duration:2 finishHandler:^{}];
                 [self performSelector:@selector(hangupClick) withObject:nil afterDelay:3];
+                
+                if (self.delegate&&[self.delegate respondsToSelector:@selector(noAnswerCallHandle)]) {
+                    [self.delegate noAnswerCallHandle];
+                }
             }
         }
     }

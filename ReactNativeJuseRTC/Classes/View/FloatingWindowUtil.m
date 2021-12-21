@@ -138,7 +138,7 @@
 
 //无应答
 -(void)noAnswerCallHandle{
-    _callType = RTCCANCEL;
+    _callType = RTCNoAnswer;
     [self sendEmitEvent];
 }
 
@@ -236,9 +236,14 @@
           [dict SafetySetObject:@"CANCEL"  forKey:@"eventType"];
           [dict SafetySetObject:[_signaUserInfo objectForKey:@"account"]  forKey:@"account"];
           [self postNotification:dict];
-          [self sendVideoStatus:4];
+          [self sendVideoStatus:3];
       }break;
-          
+       
+      case  RTCNoAnswer:{
+           //无应答
+           [self sendVideoStatus:4];
+       }break;
+            
       case RTCCLOSE:{
           [dict SafetySetObject:@"CLOSE"  forKey:@"eventType"];
           [dict SafetySetObject:[_signaUserInfo objectForKey:@"account"]  forKey:@"account"];

@@ -12,13 +12,14 @@ NS_ASSUME_NONNULL_BEGIN
 //呼叫状态
 typedef NS_ENUM(NSInteger, RTCCallType) {
     RTCACCEPT = 0,//接听
-    RTCCANCEL = 1,//主动取消(含无应答)
+    RTCCANCEL = 1,//主动取消
     RTCCLOSE  = 2,//挂断
     RTCREJECT = 3,//拒接
     RTCLEAVE  = 4,//有人离开房间
     RTCVIDEOSTATUS =5,//需要更新到后台并且发送自定义消息
     RTCGETTOKEN  = 6,//通知到rn端获取TOKEN
-    RTCDESTORY = 99//页面销毁
+    RTCDESTORY = 99,//页面销毁
+    RTCNoAnswer = 100,//无应答
 };
 
 
