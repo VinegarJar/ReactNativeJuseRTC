@@ -76,7 +76,7 @@
     [self addSubviews];
     if (!_signalingCall) {//自己呼叫对方
         [self startTimer];
-        [self localCanvasMethod];
+        [self performSelector:@selector(localCanvasMethod) withObject:nil afterDelay:0.5];
     }
 }
 
