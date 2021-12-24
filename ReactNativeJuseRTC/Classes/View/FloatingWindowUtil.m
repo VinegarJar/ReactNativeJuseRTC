@@ -133,8 +133,7 @@
 
 //无应答
 -(void)noAnswerCallHandle{
-    _callType = RTCNoAnswer;
-    [self sendEmitEvent];
+    [self sendVideoStatus:4];
 }
 
 // 对方正忙
@@ -233,12 +232,7 @@
           [self postNotification:dict];
           [self sendVideoStatus:3];
       }break;
-       
-      case  RTCNoAnswer:{
-           //无应答
-           [self sendVideoStatus:4];
-       }break;
-            
+      case  RTCNoAnswer:break;
       case RTCCLOSE:{
           [dict SafetySetObject:@"CLOSE"  forKey:@"eventType"];
           [dict SafetySetObject:[_signaUserInfo objectForKey:@"account"]  forKey:@"account"];

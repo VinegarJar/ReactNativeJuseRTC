@@ -76,7 +76,7 @@
     [self addSubviews];
     if (!_signalingCall) {//自己呼叫对方
         [self startTimer];
-        [self performSelector:@selector(localCanvasMethod) withObject:nil afterDelay:0.5];
+        [self performSelector:@selector(localCanvasMethod) withObject:nil afterDelay:0.25];
     }
 }
 
@@ -341,14 +341,21 @@
             if([title  isEqual: @"取消"]){
                 [WHToast showMessage:@"对方无应答" duration:2 finishHandler:^{}];
                 [self performSelector:@selector(hangupClick) withObject:nil afterDelay:3];
-                
-                if (self.delegate&&[self.delegate respondsToSelector:@selector(noAnswerCallHandle)]) {
-                    [self.delegate noAnswerCallHandle];
-                }
+                [self performSelector:@selector(noAnswerCallHandleClick) withObject:nil afterDelay:5];
             }
         }
     }
 }
+
+
+
+-(void)noAnswerCallHandleClick{
+    if (self.delegate&&[self.delegate respondsToSelector:@selector(noAnswerCallHandle)]) {
+        [self.delegate noAnswerCallHandle];
+    }
+}
+
+
 
 #pragma mark --被呼叫振动
 - (NSTimer *)vibrationTimer{
