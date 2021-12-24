@@ -46,6 +46,7 @@
     NSUserDefaults *userDefault = [NSUserDefaults standardUserDefaults];
     NSString *token = [signaUserInfo objectForKey:@"token"];
     [userDefault setObject:token forKey:@"token"];
+    [userDefault synchronize];
     _signaUserInfo = signaUserInfo;
 }
 
@@ -126,8 +127,8 @@
 //通话销毁
 - (void)destroyCallHandle{
     _callType = RTCDESTORY;
-    [self dismissCurrentFloatView];
     [self sendEmitEvent];
+    [self dismissCurrentFloatView];
 }
 
 //无应答
