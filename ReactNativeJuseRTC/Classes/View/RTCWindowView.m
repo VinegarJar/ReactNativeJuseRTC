@@ -477,18 +477,16 @@
         self->_duration = duration;
     }
     NSLog(@"获取传递时间---->>>>>%@",timer);
-    dispatch_async(dispatch_get_main_queue(), ^{
-        if (self->_signalingCall) {
-            NSData *imgData = [NSData dataWithContentsOfURL:[NSURL URLWithString:self->_fromHeadUrl]];
-            self.toHeadImage.image = [UIImage imageWithData:imgData];
-            self.nickNameLabel.text = self->_fromUserName?:@"";
-        }else{
-           
-            NSData *imgData = [NSData dataWithContentsOfURL:[NSURL URLWithString:self->_toHeadUrl]];
-            self.toHeadImage.image = [UIImage imageWithData:imgData];
-            self.nickNameLabel.text = self->_toUserName?:@"";
-        }
-    });
+    if (self->_signalingCall) {
+        NSData *imgData = [NSData dataWithContentsOfURL:[NSURL URLWithString:self->_fromHeadUrl]];
+        self.toHeadImage.image = [UIImage imageWithData:imgData];
+        self.nickNameLabel.text = self->_fromUserName?:@"";
+    }else{
+       
+        NSData *imgData = [NSData dataWithContentsOfURL:[NSURL URLWithString:self->_toHeadUrl]];
+        self.toHeadImage.image = [UIImage imageWithData:imgData];
+        self.nickNameLabel.text = self->_toUserName?:@"";
+    }
 }
 
 //设置Token
