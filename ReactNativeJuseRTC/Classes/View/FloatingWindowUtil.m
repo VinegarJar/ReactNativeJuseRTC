@@ -46,7 +46,6 @@
     NSUserDefaults *userDefault = [NSUserDefaults standardUserDefaults];
     NSString *token = [signaUserInfo objectForKey:@"token"];
     [userDefault setObject:token forKey:@"token"];
-    [userDefault synchronize];
     _signaUserInfo = signaUserInfo;
 }
 
@@ -86,14 +85,6 @@
         self.floatWindow.callRTCView.delegate = self;
         self->_floatWindow.callRTCView.transform = CGAffineTransformIdentity;
         [[UIApplication sharedApplication].delegate.window addSubview:self.floatWindow.callRTCView];
-        
-//        self.floatWindow.callRTCView.alpha = .0f;
-//        [UIView animateWithDuration:0.1 animations:^{
-//            self.floatWindow.callRTCView.alpha = 1.0f;
-//        } completion:^(BOOL finished) {
-//            self->_floatWindow.callRTCView.transform = CGAffineTransformIdentity;
-//            [[UIApplication sharedApplication].delegate.window addSubview:self.floatWindow.callRTCView];
-//        }];
   });
 }
 
