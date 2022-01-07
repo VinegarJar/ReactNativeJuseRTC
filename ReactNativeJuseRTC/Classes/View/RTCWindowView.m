@@ -394,6 +394,7 @@
     if (self.delegate && [self.delegate respondsToSelector:@selector(acceptCallHandle)]) {
         [self.delegate acceptCallHandle];
     }
+    _connectLabel.text = @"视频通话中";
     [self stopShakeSound];
     [self joinChannelWithRoom];
 }
