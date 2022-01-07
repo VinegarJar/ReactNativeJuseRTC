@@ -417,8 +417,8 @@
         //医生呼叫用户没有时长限制
         NSNumber *signaDoctor = [[NSUserDefaults standardUserDefaults] objectForKey:@"signaDoctor"];
         if (signaDoctor&&[signaDoctor boolValue]) {
-            self->_nickNameLabel.text = @"";
-            self->_connectLabel.text = @"";
+//            self->_nickNameLabel.text = @"";
+//            self->_connectLabel.text = @"";
         }
         
         //有时间到计时,开始有效时长倒数计时
