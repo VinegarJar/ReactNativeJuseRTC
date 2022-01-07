@@ -232,11 +232,12 @@
           [self postNotification:dict];
           [self sendVideoStatus:3];
       }break;
-      case  RTCNoAnswer:break;
       case RTCCLOSE:{
           [dict SafetySetObject:@"CLOSE"  forKey:@"eventType"];
           [dict SafetySetObject:[_signaUserInfo objectForKey:@"account"]  forKey:@"account"];
-          [self postNotification:dict];
+          if (_signaUserInfo) {
+              [self postNotification:dict];
+          }
           [self sendVideoStatus:7];
       }break;
       
