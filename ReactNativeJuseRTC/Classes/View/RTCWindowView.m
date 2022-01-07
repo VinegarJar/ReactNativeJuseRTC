@@ -394,7 +394,6 @@
     if (self.delegate && [self.delegate respondsToSelector:@selector(acceptCallHandle)]) {
         [self.delegate acceptCallHandle];
     }
-    _connectLabel.text = @"视频通话中";
     [self stopShakeSound];
     [self joinChannelWithRoom];
 }
@@ -421,6 +420,7 @@
 //            self->_connectLabel.text = @"";
         }
         
+        self->_nickNameLabel.text = @"视频通话中";
         //有时间到计时,开始有效时长倒数计时
         if (self->_duration) {
             self->_nickNameLabel.text = @"有效视频时长";
