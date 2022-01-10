@@ -124,7 +124,7 @@
 //计时器计数
 -(void)start:(NSTimer *)timer{
     self->_seconds ++;
-    NSLog(@"计时器计数--->>%d",self->_seconds);
+//    NSLog(@"计时器计数--->>%d",self->_seconds);
     NSString *str = [self getMMSSFromSS:[NSString stringWithFormat:@"%ds",self->_seconds]];
     _timerLabel.text = [NSString stringWithString:str];
 }
