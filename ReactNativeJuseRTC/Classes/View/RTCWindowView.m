@@ -431,7 +431,7 @@
 }
 
 //自己呼叫对方回调操作
-- (void)signalingNotifyJoinWithEventType:(NSString *)eventType{
+- (void)signalingNotifyJoinWithEventType:(NSString *)eventType controlType:(NSString *)controlType{
     if([eventType isEqualToString:@"REJECT"]){
         //被对方拒接
         [WHToast showMessage:@"对方拒接" duration:2 finishHandler:^{}];
@@ -451,9 +451,10 @@
        //离开频道，结束或退出通话
          [self dismiss];
      }else if([eventType isEqualToString:@"CONTROL"]){
-         _controlTimer = [NSTimer scheduledTimerWithTimeInterval:3.0 target:self selector:@selector(delayMethod) userInfo:nil repeats:NO];
-         [self performSelector:@selector(dismiss) withObject:nil afterDelay:5.0];
-         
+        if (controlType&&[controlType isEqual:@"busyLine"]) {
+             _controlTimer = [NSTimer scheduledTimerWithTimeInterval:3.0 target:self selector:@selector(delayMethod) userInfo:nil repeats:NO];
+             [self performSelector:@selector(dismiss) withObject:nil afterDelay:5.0];
+        }
      }else if([eventType isEqualToString:@"CANCEL_INVITE"]){
          //关闭房间
        [self dismiss];

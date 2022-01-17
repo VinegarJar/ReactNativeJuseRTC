@@ -70,12 +70,16 @@
 - (void)signalingNotify{
     
     NSString *eventType = [ _signaUserInfo objectForKey:@"eventType"];
+    NSString *attachExt = [ _signaUserInfo objectForKey:@"attachExt"];
+    NSDictionary *dic = [StringToDic dictionaryWithJsonString:attachExt];
+    NSString *controlType =  [dic objectForKey:@"controlType"]?[dic objectForKey:@"controlType"]:[NSNull new];
+
     if([eventType isEqual: @"INVITE"]){
         [self.floatWindow startCallWithSignaling:YES];
         [self requestToken];
         [self showCallRTCView];
     }else{
-      [self.floatWindow.callRTCView signalingNotifyJoinWithEventType:eventType];
+      [self.floatWindow.callRTCView signalingNotifyJoinWithEventType:eventType controlType:controlType];
     }
 }
 
