@@ -479,14 +479,16 @@
     _toHeadUrl = [dic objectForKey:@"toHeadUrl"];
     _fromUserName = [dic objectForKey:@"fromUserName"];
     _fromHeadUrl = [dic objectForKey:@"fromHeadUrl"];
-    /**
+ 
      NSNumber* timer = [dic objectForKey:@"duration"];
      if (timer) {
          int duration = [timer intValue];
-         self->_duration = duration;
+         self->_duration = 600-duration;
+     }else{
+         self->_duration = 600;
      }
      NSLog(@"获取传递时间---->>>>>%@",timer);
-     */
+  
     if (self->_signalingCall) {
         NSData *imgData = [NSData dataWithContentsOfURL:[NSURL URLWithString:self->_fromHeadUrl]];
         self.toHeadImage.image = [UIImage imageWithData:imgData];
