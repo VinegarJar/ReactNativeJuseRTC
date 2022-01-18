@@ -419,12 +419,11 @@
         if (signaDoctor&&[signaDoctor boolValue]) {
 //            self->_nickNameLabel.text = @"";
 //            self->_connectLabel.text = @"";
-        }else{
-            //有时间到计时,开始有效时长倒数计时
-            if (self->_duration) {
-                self->_nickNameLabel.text = @"有效视频时长";
-                [self startCoundown];
-            }
+        }
+        //有时间到计时,开始有效时长倒数计时
+        if (self->_duration) {
+            self->_nickNameLabel.text = @"有效视频时长";
+            [self startCoundown];
         }
     });
     
@@ -484,12 +483,9 @@
      NSNumber* timer = [dic objectForKey:@"duration"];
      if (timer) {
          int duration = [timer intValue];
-         self->_duration = 600-duration;
-     }else{
-         self->_duration = 600;
+         self->_duration = duration;
      }
      NSLog(@"获取传递时间---->>>>>%@",timer);
-  
     if (self->_signalingCall) {
         NSData *imgData = [NSData dataWithContentsOfURL:[NSURL URLWithString:self->_fromHeadUrl]];
         self.toHeadImage.image = [UIImage imageWithData:imgData];
