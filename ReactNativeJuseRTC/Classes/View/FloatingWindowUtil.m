@@ -31,9 +31,6 @@
 - (void)setSignaDoctor:(BOOL)signaDoctor{
     _signaDoctor = signaDoctor;
     //存储是否是医生端signaDoctor到userdefaults
-    NSUserDefaults *userDefault = [NSUserDefaults standardUserDefaults];
-    [userDefault setObject:[NSNumber numberWithBool:signaDoctor] forKey:@"signaDoctor"];
-    [userDefault synchronize];
 }
 
 
@@ -46,7 +43,6 @@
     NSUserDefaults *userDefault = [NSUserDefaults standardUserDefaults];
     NSString *token = [signaUserInfo objectForKey:@"token"];
     [userDefault setObject:token forKey:@"token"];
-    [userDefault synchronize];
     _signaUserInfo = signaUserInfo;
 }
 

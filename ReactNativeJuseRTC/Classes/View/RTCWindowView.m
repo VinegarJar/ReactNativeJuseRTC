@@ -415,11 +415,6 @@
         self->_connectLabel.text = @"视频通话中";
         
         //医生呼叫用户没有时长限制
-        NSNumber *signaDoctor = [[NSUserDefaults standardUserDefaults] objectForKey:@"signaDoctor"];
-        if (signaDoctor&&[signaDoctor boolValue]) {
-//            self->_nickNameLabel.text = @"";
-//            self->_connectLabel.text = @"";
-        }
         //有时间到计时,开始有效时长倒数计时
         if (self->_duration) {
             self->_nickNameLabel.text = @"有效视频时长";
