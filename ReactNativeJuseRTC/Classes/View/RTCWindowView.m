@@ -481,8 +481,9 @@
          int duration = [timer intValue];
          self->_duration = duration;
      }
-     */
      NSLog(@"获取传递时间---->>>>>%@",timer);
+     */
+
     if (self->_signalingCall) {
         NSData *imgData = [NSData dataWithContentsOfURL:[NSURL URLWithString:self->_fromHeadUrl]];
         self.toHeadImage.image = [UIImage imageWithData:imgData];
