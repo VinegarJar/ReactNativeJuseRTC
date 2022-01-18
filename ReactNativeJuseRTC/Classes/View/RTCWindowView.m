@@ -412,21 +412,22 @@
         }];
         [self->_btnContainerView startTimers];
         [self stopShakeSound];
+        self->_connectLabel.text = @"视频通话中";
         
         //医生呼叫用户没有时长限制
         NSNumber *signaDoctor = [[NSUserDefaults standardUserDefaults] objectForKey:@"signaDoctor"];
         if (signaDoctor&&[signaDoctor boolValue]) {
 //            self->_nickNameLabel.text = @"";
 //            self->_connectLabel.text = @"";
-        }
-        
-        self->_connectLabel.text = @"视频通话中";
-        //有时间到计时,开始有效时长倒数计时
-        if (self->_duration) {
-            self->_nickNameLabel.text = @"有效视频时长";
-            [self startCoundown];
+        }else{
+            //有时间到计时,开始有效时长倒数计时
+            if (self->_duration) {
+                self->_nickNameLabel.text = @"有效视频时长";
+                [self startCoundown];
+            }
         }
     });
+    
     [self joinChannelWithRoomId:self->_roomID userId:self->_userID token:self->_token];
 }
 
