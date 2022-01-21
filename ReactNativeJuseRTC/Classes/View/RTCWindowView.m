@@ -211,8 +211,10 @@
 -(UIImageView*)toHeadImage{
     if (!_toHeadImage) {
         _toHeadImage = [[UIImageView alloc]initWithFrame:CGRectMake(ScreenW-kMicVideoW-20, 50, kMicVideoW, kMicVideoH)];
-        [_toHeadImage setContentMode: UIViewContentModeScaleToFill];
+        [_toHeadImage setContentMode: UIViewContentModeScaleAspectFit];
         [_toHeadImage setBackgroundColor: [UIColor clearColor]];
+        _toHeadImage.layer.cornerRadius = 8;
+        _toHeadImage.layer.masksToBounds = YES;
         [self addSubview:_toHeadImage];
     }
     return _toHeadImage;
