@@ -29,7 +29,7 @@
 // 视频聊天时，小窗口的宽
 #define kMicVideoW   (100 * RTCRate)
 // 视频聊天时，小窗口的高
-#define kMicVideoH   (120 * RTCRate)
+#define kMicVideoH   (100 * RTCRate)
 
 // 视频聊天时，昵称的宽
 #define NickWidth   (120 * RTCRate)

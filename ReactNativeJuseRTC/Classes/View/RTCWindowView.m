@@ -211,9 +211,8 @@
 -(UIImageView*)toHeadImage{
     if (!_toHeadImage) {
         _toHeadImage = [[UIImageView alloc]initWithFrame:CGRectMake(ScreenW-kMicVideoW-20, 50, kMicVideoW, kMicVideoH)];
-        [_toHeadImage setContentMode: UIViewContentModeScaleAspectFit];
         [_toHeadImage setBackgroundColor: [UIColor clearColor]];
-        _toHeadImage.layer.cornerRadius = 8;
+        _toHeadImage.layer.cornerRadius = 10;
         _toHeadImage.layer.masksToBounds = YES;
         [self addSubview:_toHeadImage];
     }
@@ -670,6 +669,8 @@
       _localCanvas = [[NTESDemoUserModel alloc] init];
     }
     _localCanvas.uid = [_userID intValue];
+    self.toHeadImage.layer.cornerRadius = 0;
+    self.toHeadImage.layer.masksToBounds = YES;
     _localCanvas.renderContainer = self.toHeadImage;
     return [_localCanvas setupCanvas];
 }
