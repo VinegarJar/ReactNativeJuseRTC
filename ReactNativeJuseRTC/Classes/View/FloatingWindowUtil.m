@@ -57,6 +57,7 @@
 
 //主动呼叫
 - (void)signalingCall{
+    [[[UIApplication sharedApplication] keyWindow] endEditing:YES];
     [self.floatWindow startCallWithSignaling:NO];
     [self showCallRTCView];
     [self requestToken];
@@ -64,12 +65,11 @@
 
 //被呼叫
 - (void)signalingNotify{
-    
+    [[[UIApplication sharedApplication] keyWindow] endEditing:YES];
     NSString *eventType = [ _signaUserInfo objectForKey:@"eventType"];
     NSString *attachExt = [ _signaUserInfo objectForKey:@"attachExt"];
     NSDictionary *dic = [StringToDic dictionaryWithJsonString:attachExt];
     NSString *controlType =  [dic objectForKey:@"controlType"]?[dic objectForKey:@"controlType"]:[NSNull new];
-
     if([eventType isEqual: @"INVITE"]){
         [self.floatWindow startCallWithSignaling:YES];
         [self requestToken];
