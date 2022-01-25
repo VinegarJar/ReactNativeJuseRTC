@@ -468,7 +468,7 @@
 
 
 #pragma mark-呼叫用户信息显示设置
--(void)signalingUserInfo:(NSDictionary *)userInfo{
+-(void)signalingUserInfo:(NSDictionary *)userInfo startorDuration:(BOOL)startorDuration{
     NSDictionary *dic = [StringToDic dictionaryWithJsonString:[userInfo objectForKey:@"ext"]];
     _roomID = [dic objectForKey:@"orderId"];
     _toUserName = [dic objectForKey:@"toUserName"];
@@ -477,7 +477,7 @@
     _fromHeadUrl = [dic objectForKey:@"fromHeadUrl"];
  
      NSNumber* timer = [dic objectForKey:@"duration"];
-     if (timer) {
+     if (timer&&startorDuration) {
          int duration = [timer intValue];
          self->_duration = duration;
      }

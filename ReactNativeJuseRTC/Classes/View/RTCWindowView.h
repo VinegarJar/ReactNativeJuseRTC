@@ -55,7 +55,7 @@ typedef NS_ENUM(NSInteger, RTCWindowState) {
 
 @property (nonatomic, strong)  AVAudioPlayer *audioPlayer;/** 播放铃声player */
 
--(void)signalingUserInfo:(NSDictionary *)userInfo;
+-(void)signalingUserInfo:(NSDictionary *)userInfo startorDuration:(BOOL)startorDuration;
 -(void)setCallinfoToken:(NSDictionary *)callinfo;
 - (void)setupRTCEngine;
 - (void)signalingMutilClientSyncNotify;

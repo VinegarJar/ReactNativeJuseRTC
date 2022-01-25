@@ -33,6 +33,9 @@
     //存储是否是医生端signaDoctor到userdefaults
 }
 
+- (void)setStartorDuration:(BOOL)startorDuration{
+    _startorDuration = startorDuration;
+}
 
 - (void)setDevelopmentUrl:(NSString *)developmentUrl{
   _developmentUrl = developmentUrl;
@@ -81,7 +84,7 @@
 
 - (void)showCallRTCView{
     dispatch_async(dispatch_get_main_queue(), ^{
-        [self->_floatWindow.callRTCView signalingUserInfo:self->_signaUserInfo];
+        [self->_floatWindow.callRTCView signalingUserInfo:self->_signaUserInfo startorDuration:self->_startorDuration];
         self.floatWindow.callRTCView.frame = [UIScreen mainScreen].bounds;
         self.floatWindow.callRTCView.delegate = self;
         self->_floatWindow.callRTCView.transform = CGAffineTransformIdentity;

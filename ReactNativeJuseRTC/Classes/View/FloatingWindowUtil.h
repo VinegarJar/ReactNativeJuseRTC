@@ -35,6 +35,7 @@ typedef NS_ENUM(NSInteger, RTCCallType) {
 @property(nonatomic,assign)BOOL signaDoctor;
 @property(nonatomic,copy)NSDictionary *signaUserInfo;
 @property (nonatomic, assign) RTCCallType callType;
+@property(nonatomic,assign)BOOL startorDuration;//是否开启到计时
 @end
 
 NS_ASSUME_NONNULL_END
