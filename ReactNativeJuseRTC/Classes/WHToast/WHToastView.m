@@ -9,7 +9,7 @@
 #import "WHToastView.h"
 #import "WHToastConfig.h"
 #import "UIImage+WHToast.h"
-
+#import "UIImage+TExtension.h"
 @interface WHToastView()
 
 @property (nonatomic, strong) UIImageView *tipImageView;
@@ -38,8 +38,9 @@
                         type:(WHToastType)type {
     
     self.backgroundColor = kToastConfig.backColor;
-    UIImage *successImage = [[UIImage imageNamed:@"whtoast_success" inBundle:[NSBundle bundleForClass:self.class] compatibleWithTraitCollection:nil] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
-    UIImage *errorImage = [[UIImage imageNamed:@"whtoast_error" inBundle:[NSBundle bundleForClass:self.class] compatibleWithTraitCollection:nil] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+   
+    UIImage *successImage = [[UIImage bundleForImage:@"whtoast_success"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+    UIImage *errorImage = [ [UIImage bundleForImage:@"whtoast_error"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
     self.tipImageView.image = (type == WHToastTypeSuccess) ? successImage : errorImage;
     if (self.displayImage && type == WHToastTypeImage) {
         self.tipImageView.image = kToastConfig.imageCornerRadius > 0 ? [self.displayImage whToast_cornerRadius:kToastConfig.imageCornerRadius size:kToastConfig.tipImageSize] : self.displayImage;
