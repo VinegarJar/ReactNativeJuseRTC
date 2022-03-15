@@ -77,11 +77,6 @@
     NSDictionary *dic = [StringToDic dictionaryWithJsonString:attachExt];
     NSString *controlType =  [dic objectForKey:@"controlType"]?[dic objectForKey:@"controlType"]:[NSNull new];
     if([eventType isEqual: @"INVITE"]){
-        if (self->_onLine) {
-            //在呼叫对方时,收到被呼叫
-                [self.floatWindow.callRTCView hangupClick];
-                self.onLine = NO;
-        }
         [self.floatWindow startCallWithSignaling:YES];
         [self requestToken];
         [self showCallRTCView];
