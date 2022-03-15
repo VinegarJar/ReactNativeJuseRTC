@@ -577,10 +577,6 @@
 #pragma mark -网易云通信初始化SDK,回调本地和远端视频通信
 - (void)setupRTCEngine{
     
-    if ([self startVideoPreview]) {//主叫对方,同时收到被呼叫时候
-        [self hangupClick];
-    }
-    
     NERtcEngine *coreEngine = [NERtcEngine sharedEngine];
     NERtcEngineContext *context = [[NERtcEngineContext alloc] init];
     NSArray *paths =NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,NSUserDomainMask, YES);

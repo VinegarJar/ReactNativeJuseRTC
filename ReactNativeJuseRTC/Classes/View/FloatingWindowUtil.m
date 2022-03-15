@@ -14,6 +14,8 @@
 @interface FloatingWindowUtil ()<RTCWindowViewDelegate>
 // 通话管理对象
 @property (nonatomic, strong)FloatingWindowView *floatWindow;
+//视频正在呼叫中
+@property (assign, nonatomic)BOOL onLine;
 
 @end
 
@@ -64,6 +66,7 @@
     [self.floatWindow startCallWithSignaling:NO];
     [self showCallRTCView];
     [self requestToken];
+    self.onLine = YES;
 }
 
 //被呼叫
@@ -74,6 +77,11 @@
     NSDictionary *dic = [StringToDic dictionaryWithJsonString:attachExt];
     NSString *controlType =  [dic objectForKey:@"controlType"]?[dic objectForKey:@"controlType"]:[NSNull new];
     if([eventType isEqual: @"INVITE"]){
+        if (self->_onLine) {
+            //在呼叫对方时,收到被呼叫
+                [self.floatWindow.callRTCView hangupClick];
+                self.onLine = NO;
+        }
         [self.floatWindow startCallWithSignaling:YES];
         [self requestToken];
         [self showCallRTCView];
@@ -83,6 +91,7 @@
 }
 
 - (void)showCallRTCView{
+
     dispatch_async(dispatch_get_main_queue(), ^{
         [self->_floatWindow.callRTCView signalingUserInfo:self->_signaUserInfo startorDuration:self->_startorDuration];
         self.floatWindow.callRTCView.frame = [UIScreen mainScreen].bounds;
@@ -101,6 +110,7 @@
         } completion:^(BOOL finished) {
             [self.floatWindow.callRTCView removeFromSuperview];
             self.floatWindow = nil;
+            self.onLine = NO;
         }];
     }
 }
