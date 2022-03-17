@@ -173,17 +173,21 @@
 
 //获取呼叫token和userId
 - (void)requestToken{
-  HSNetworkTool *NetworkTool = [HSNetworkTool shareInstance];
-  NetworkTool.requestURL = [self matchingAppServerUrl];
-  [NetworkTool requestGET:@"/video/token" params:nil successBlock:^(NSDictionary *responseObject) {
-        NSInteger resultRep = [[responseObject objectForKey:@"code"] integerValue];
-        if(resultRep  == 200){
-            NSDictionary *data = [responseObject objectForKey:@"data"];
-            [self->_floatWindow.callRTCView setCallinfoToken:data];
-        }
-    } failBlock:^(NSError *error) {
-        
-    }];
+    
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        HSNetworkTool *NetworkTool = [HSNetworkTool shareInstance];
+        NetworkTool.requestURL = [self matchingAppServerUrl];
+        [NetworkTool requestGET:@"/video/token" params:nil successBlock:^(NSDictionary *responseObject) {
+              NSInteger resultRep = [[responseObject objectForKey:@"code"] integerValue];
+              if(resultRep  == 200){
+                  NSDictionary *data = [responseObject objectForKey:@"data"];
+                  [self->_floatWindow.callRTCView setCallinfoToken:data];
+              }
+          } failBlock:^(NSError *error) {
+              
+          }];
+    });
+    
 }
 
 

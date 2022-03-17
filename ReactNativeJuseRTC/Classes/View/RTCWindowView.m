@@ -13,7 +13,7 @@
 #import "WHToast.h"
 
 
-@interface  RTCWindowView ()<UIGestureRecognizerDelegate,RTCAlertViewDelegate,NERtcEngineDelegateEx>
+@interface  RTCWindowView ()<UIGestureRecognizerDelegate,RTCAlertViewDelegate,NERtcEngineDelegateEx,AVAudioPlayerDelegate>
 //记录被呼叫or呼叫
 @property (assign, nonatomic) BOOL  signalingCall;
 /** 对方昵称 */
@@ -273,15 +273,62 @@
 }
 
 -(AVAudioPlayer *)audioPlayer{
+    
+    NSError *setCategoryError = nil;
+    AVAudioSession * session = [AVAudioSession sharedInstance];
+    [session setActive:YES error:nil];
+    BOOL success = [session setCategory:AVAudioSessionCategoryPlayback error:&setCategoryError];
+    if (!success) {
+        //这里可以读取查看错误原因
+        NSLog(@"查看错误原因=%@",setCategoryError.localizedDescription);
+    }
     if (!_audioPlayer) {
         // 1. 获取资源URL
         // 2. 根据资源URL, 创建 AVAudioPlayer 对象
-        _audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:[NSURL bundleForMusic:@"avchat_ring"] error:nil];
-        _audioPlayer.numberOfLoops = -1;
-        //3. 准备播放(音乐播放的内存空间的开辟等功能)  不写这行代码直接播放也会默认调用prepareToPlay
-        [_audioPlayer prepareToPlay];
+        NSError *error;
+        NSURL *musicUrl = [self getMusicUrl];
+        _audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:musicUrl error:&error];
+        if (_audioPlayer) {
+            _audioPlayer.delegate = self;
+            _audioPlayer.numberOfLoops = -1;
+            //3. 准备播放(音乐播放的内存空间的开辟等功能)  不写这行代码直接播放也会默认调用prepareToPlay
+            [_audioPlayer prepareToPlay];
+        }
     }
     return _audioPlayer;
+}
+
+
+- (void)startPlayAudio{
+    [self->_audioPlayer play];
+}
+
+- (void)stopPlayAudio{
+    [self->_audioPlayer stop];
+    self->_audioPlayer = nil;
+}
+
+-(NSURL*)getMusicUrl{
+    if (_signalingCall) {
+        return  [NSURL bundleForMusic:@"avchat_connecting"];
+    }else{
+        return  [NSURL bundleForMusic:@"avchat_ring"];
+    }
+    /*switch (self->_musicType) {
+        case CallConnect: return  [NSURL bundleForMusic:@"avchat_connecting"];
+        case CallReject: return  [NSURL bundleForMusic:@"avchat_peer_reject"];
+        case CallBusy: return  [NSURL bundleForMusic:@"avchat_peer_busy"];
+        case CallNoAnswer: return  [NSURL bundleForMusic:@"avchat_no_response"];
+        case CallRing: return  [NSURL bundleForMusic:@"avchat_ring"];
+        default:break;
+    }*/
+}
+- (void)audioPlayerDidFinishPlaying:(AVAudioPlayer *)player successfully:(BOOL)flag{
+    
+}
+
+- (void)audioPlayerDecodeErrorDidOccur:(AVAudioPlayer *)player error:(NSError * __nullable)error{
+    
 }
 
 #pragma mark -- 全部的计时器和NSTimer
@@ -497,13 +544,11 @@
 
 //设置Token
 -(void)setCallinfoToken:(NSDictionary *)callinfo{
-    dispatch_async(dispatch_get_main_queue(), ^{
-        //进入视频通话,被对方呼叫开始声音和手机被呼叫振动
-        if (self->_signalingCall) {
-            [self vibrationTimer];
-            [self.audioPlayer play];
-        }
-    });
+    //进入视频通话,被对方呼叫开始声音和手机被呼叫振动
+    if (self->_signalingCall) {
+        [self vibrationTimer];
+    }
+    [self startPlayAudio];
     if (callinfo) {
         _token = [callinfo objectForKey:@"token"];
         _userID = [callinfo objectForKey:@"id"];
@@ -544,7 +589,9 @@
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         [NERtcEngine.sharedEngine leaveChannel];
         [NERtcEngine destroyEngine];
-        [NERtcEngine.sharedEngine stopPreview];
+        if ([NERtcEngine.sharedEngine startPreview]) {
+            [NERtcEngine.sharedEngine stopPreview];
+        }
     });
     [_controlTimer invalidate];
     _controlTimer = nil;
@@ -554,8 +601,7 @@
     [self.countTimer invalidate];
     self.countTimer = nil;
     
-    [_audioPlayer stop];
-    _audioPlayer = nil;
+    [self stopPlayAudio];
     
     [self.vibrationTimer invalidate];
     [self.btnContainerView.myTimer invalidate];
@@ -612,7 +658,7 @@
             NSString *msg = [NSString stringWithFormat:@"join channel fail.code:%@", @(error.code)];
             NSLog(@"%@", msg);
         } else {
-            [self->_audioPlayer stop];
+            [self stopPlayAudio];
             //加入成功，建立本地canvas渲染本地视图
             //加入成功，建立本地canvas渲染本地视图
             self->_localVideoCanvas = [weakSelf setupLocalCanvas];
@@ -663,7 +709,6 @@
 
 //建立本地canvas模型，表示已经接通/开启本地预览(显示对方头像)
 - (NERtcVideoCanvas *)setupLocalCanvas {
-    [_audioPlayer stop];
     if(_localCanvas == nil){
       _localCanvas = [[NTESDemoUserModel alloc] init];
     }
@@ -671,6 +716,7 @@
     self.toHeadImage.layer.cornerRadius = 0;
     self.toHeadImage.layer.masksToBounds = YES;
     _localCanvas.renderContainer = self.toHeadImage;
+    [self stopPlayAudio];
     return [_localCanvas setupCanvas];
 }
 
